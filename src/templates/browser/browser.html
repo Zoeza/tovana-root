@@ -8,26 +8,26 @@
 {% endblock %}
 {% block main_banner %}
 <div class="overflow-hidden">
-  <div class="container content-space-t-2 content-space-b-3">
-    <div class="row justify-content-lg-between align-items-md-center">
-      <div class="col-md-6 col-lg-5 mb-7 mb-md-0" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
-        <!-- Heading -->
-        <div class="mb-5">
-          <h1 class="display-4 mb-3">Tovana Genome Browser</h1>
-          <p class="lead">This tool allows you to view the genome data</p>
-        </div>
-        <!-- End Heading -->
+      <div class="container content-space-t-2 content-space-b-3">
+          <div class="row justify-content-lg-between align-items-md-center">
+            <div class="col-md-6 col-lg-5 mb-7 mb-md-0" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
+              <!-- Heading -->
+              <div class="mb-5">
+                <h1 class="display-4 mb-3">Tovana Genome Browser</h1>
+                <p class="lead">This tool allows you to view the genome data</p>
+              </div>
+              <!-- End Heading -->
 
-        <div class="d-grid d-sm-flex gap-3">
-          <a class="btn btn-primary btn-transition" href="#pricing_list">try it</a>
-          <a class="btn btn-link" data-bs-toggle="modal" data-bs-target=".how_it_works_modal">how it works</a>
-        </div>
-      </div>
-      
-    <!-- End Row -->
-  </div>
+              <div class="d-grid d-sm-flex gap-3">
+                <a class="btn btn-primary btn-transition" href="#pricing_list">try it</a>
+                <a class="btn btn-link" data-bs-toggle="modal" data-bs-target=".how_it_works_modal">how it works</a>
+              </div>
+            </div>
 
-  <div class="modal fade how_it_works_modal" tabindex="-1" role="dialog" aria-labelledby="how_it_works_modal_id" aria-hidden="true">
+          <!-- End Row -->
+        </div>
+
+      <div class="modal fade how_it_works_modal" tabindex="-1" role="dialog" aria-labelledby="how_it_works_modal_id" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -54,6 +54,117 @@
       </div>
     </div>
   </div>
+</div>
+{% endblock %}
+
+  <!-- products check list -->
+{% block products_check_list %}
+<div class="container content-space-2 content-space-lg-3">
+  <!-- Heading -->
+  <div id="pricing_list" class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+    <h2>DNA UNLOCKED Genome testing.</h2>
+    <p></p>
+  </div>
+  <!-- End Heading -->
+
+  <!-- Table -->
+  <div class="table-responsive-lg w-lg-100 mx-lg-auto">
+    <table class="table table-lg table-striped table-borderless table-nowrap table-vertical-border-striped">
+      <thead class="table-text-center">
+        <tr>
+          <th scope="col" style="width: 40%;"></th>
+
+          <th scope="col" style="width: 20%;">
+            <span class="d-block">DNA UNLOCKED - Wellness</span>
+            <span class="d-block text-muted small">$189</span>
+          </th>
+
+          <th scope="col" style="width: 20%;">
+            <span class="d-block">DNA UNLOCKED - Comprehensive</span>
+            <span class="d-block text-muted small">$950</span>
+          </th>
+
+          <th scope="col" style="width: 20%;">
+            <span class="d-block">Professional</span>
+            <span class="d-block text-muted small">Custom</span>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row" class="text-dark">Cross-platform UI toolkit</th>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">14-days free trial</th>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">No user limit</th>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Long-term support</th>
+          <td></td>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Email support</th>
+          <td></td>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Developer tools</th>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Removal of Front branding</th>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Active maintenance & support</th>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Data storage for 365 days</th>
+          <td></td>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark"></th>
+          <td class="table-text-center"><button type="button" class="btn btn-soft-dark btn-sm btn-transition">Choose </button></td>
+          <td class="table-text-center"><button type="button" class="btn btn-soft-dark btn-sm btn-transition">Choose </button></td>
+          <td class="table-text-center"><button type="button" class="btn btn-primary btn-sm btn-transition">Contact us</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- End Table -->
 </div>
 {% endblock %}
 
