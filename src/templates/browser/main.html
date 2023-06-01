@@ -1,0 +1,768 @@
+{% extends "browser/base.html" %}
+{% load static %}
+
+<!-- title -->
+{% block title %}
+<title>
+  TOVANA HEALTH | DNA UNLOCKED Unlock the secrets of your DNA with our genome sequencing data analysis platform
+</title>
+{% endblock %}
+
+<!-- account -->
+{% block account %}
+<div class="modal fade" id="account_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <!-- Header -->
+      <div class="modal-close">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- End Header -->
+
+      <!-- Body -->
+      <div class="modal-body">
+        <!-- Login -->
+        <div id="login_modal_form">
+          <!-- login title -->
+          <div class="text-center mb-7">
+            <h2>Sign in</h2>
+          </div>
+          <!-- end login title -->
+          <form action="#" class="js-validate need-validate" novalidate method="post">
+            {% csrf_token %}
+            <!-- login email -->
+            <div class="mb-3">
+              <label class="form-label" for="login_modal_form_email">Your email</label>
+              <input type="email" class="form-control form-control-lg" name="email" id="login_modal_form_email" placeholder="email@site.com" aria-label="email@site.com" required>
+              <span class="invalid-feedback">Please enter a valid email address.</span>
+            </div>
+            <!-- end login email -->
+
+            <!-- login password -->
+            <div class="mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <label class="form-label" for="login_modal_form_password">Password</label>
+                <a class="js-animation-link form-label-link" href="javascript:;" data-hs-show-animation-options='{
+                     "targetSelector": "#reset_password_modal_form",
+                     "groupName": "idForm"
+                   }'>Forgot Password?</a>
+              </div>
+
+              <input type="password" class="form-control form-control-lg" name="password" id="login_modal_form_password" placeholder="8+ characters required" aria-label="8+ characters required" required minlength="8">
+              <span class="invalid-feedback">Please enter a valid password.</span>
+            </div>
+            <!-- end login password -->
+
+            <!-- submit -->
+            <div class="d-grid mb-4">
+              <button type="submit" class="btn btn-primary form-control-lg">Sign in</button>
+            </div>
+            <!-- end submit -->
+
+            <!-- toggle sign up -->
+            <div class="d-grid gap-3 text-center">
+              <span class="divider-center">OR</span>
+              <!-- google connect -->
+              <a type="button" class="btn btn-ghost-secondary" href="#">
+                <span class="d-flex justify-content-center align-items-center">
+                  <img class="avatar avatar-xss me-2" src="{% static 'landing_page/svg/brands/google-icon.svg' %}" alt="Image Description">
+                  Log in with Google
+                </span>
+              </a>
+              <!-- end google connect -->
+
+              <!-- sign up toggle -->
+              <p>Create new account
+                <a class="js-animation-link link" href="javascript:;" role="button" data-hs-show-animation-options='{
+                "targetSelector": "#signup_modal_form",
+                "groupName": "idForm"
+                }'>Sign up
+                </a>
+              </p>
+              <!-- end sign up toggle -->
+            </div>
+            <!-- end toggle sign up -->
+          </form>
+        </div>
+        <!-- End Login -->
+
+        <!-- Reset Password -->
+        <div id="reset_password_modal_form" style="display: none; opacity: 0;">
+          <!-- reset password title -->
+          <div class="text-center mb-7">
+            <h2>Forgot password?</h2>
+            <p>Enter the registering email address, and you'll receive instructions to reset your password.</p>
+          </div>
+          <!-- end reset password title -->
+          <form class="js-validate need-validate" novalidate>
+            <div class="mb-3">
+              <!-- reset password email -->
+              <div class="d-flex justify-content-between align-items-center">
+                <label class="form-label" for="reset_password_modal_form_email" tabindex="0">Your email</label>
+
+                <a class="js-animation-link form-label-link" href="javascript:;" data-hs-show-animation-options='{
+                       "targetSelector": "#login_modal_form",
+                       "groupName": "idForm"
+                     }'>
+                  <i class="bi-chevron-left small"></i> Back to Sign in
+                </a>
+              </div>
+
+              <input type="email" class="form-control form-control-lg" name="email" id="reset_password_modal_form_email" tabindex="1" placeholder="Enter your email address" aria-label="Enter your email address" required>
+              <span class="invalid-feedback">Please enter a valid email address.</span>
+              <!-- end reset password email -->
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary form-control-lg">Submit</button>
+            </div>
+          </form>
+        </div>
+        <!-- End Reset Password -->
+
+        <!-- Sign Up -->
+        <div id="signup_modal_form" style="display: none; opacity: 0;">
+          <!-- sign up title  -->
+          <div class="text-center mb-7">
+            <h2>Sign up</h2>
+            <p>Back to
+              <a class="js-animation-link link" href="javascript:;" role="button" data-hs-show-animation-options='{
+                       "targetSelector": "#login_modal_form",
+                       "groupName": "idForm"
+                     }'>sign in
+              </a>
+            </p>
+          </div>
+          <!-- end sign up title -->
+          <form action="#" class="js-validate need-validate" novalidate method="post">
+            {% csrf_token %}
+            <!-- sign up first name -->
+            <div class="mb-3">
+              <label class="form-label" for="signup_modal_form_first_name">First name</label>
+              <input type="text" class="form-control form-control-lg" name="{{ signup_form.first_name.name }}" id="signup_modal_form_first_name" placeholder="John" required>
+              <span class="invalid-feedback">Please enter your first name.</span>
+            </div>
+            <!-- end sign up first name -->
+
+            <!-- sign up last name -->
+            <div class="mb-3">
+              <label class="form-label" for="signup_modal_form_last_name">Last name</label>
+              <input type="text" class="form-control form-control-lg" name="{{ signup_form.last_name.name }}" id="signup_modal_form_last_name" placeholder="Doe" required>
+              <span class="invalid-feedback">Please enter your last name.</span>
+            </div>
+            <!-- end sign up last name -->
+
+            <!-- sign up gender -->
+            <div class="mb-3">
+              <label class="form-label" for="signup_modal_form_select_gender">Gender</label>
+              <select id="signup_modal_form_select_gender" name="{{ signup_form.gender.name }}" class="form-control" required>
+                <option></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <span class="invalid-feedback">Please select your gender.</span>
+            </div>
+            <!-- end sign up gender -->
+
+            <!-- sign up email -->
+            <div class="mb-3">
+              <label class="form-label" for="signup_modal_form_email">Your email</label>
+              <input type="email" class="form-control form-control-lg" name="{{ signup_form.email.name }}" id="signup_modal_form_email" placeholder="email@site.com" aria-label="email@site.com" required>
+              <span class="invalid-feedback">Please enter a valid email address.</span>
+            </div>
+            <!-- end sign up email -->
+
+            <!-- sign up password -->
+            <div class="mb-3">
+              <label class="form-label" for="signup_modal_form_password">Password</label>
+              <input type="password" class="form-control form-control-lg" name="{{ signup_form.password1.name }}" id="signup_modal_form_password" placeholder="8+ characters required" aria-label="8+ characters required" required>
+              <span class="invalid-feedback">Your password is invalid. Please try again.</span>
+            </div>
+            <!-- end sign up password -->
+
+            <!-- sign up confirm password -->
+            <div class="mb-3" data-hs-validation-validate-class>
+              <label class="form-label" for="signup_modal_form_confirm_password">Confirm password</label>
+              <input type="password" class="form-control form-control-lg" name="{{ signup_form.password2.name }}" id="signup_modal_form_confirm_password" placeholder="8+ characters required" aria-label="8+ characters required" required data-hs-validation-equal-field="#signup_modal_form_password">
+              <span class="invalid-feedback">Password does not match.</span>
+            </div>
+            <!-- end sign up confirm password -->
+
+            <!-- sign up as -->
+            <div class="mb-3">
+              <label class="form-label" for="signup_modal_form_select_signup_as">Sign up as</label>
+              <select id="signup_modal_form_select_signup_as" name="{{ signup_form.role.name }}" class="form-control">
+                <option value="patient">Patient</option>
+                <option value="clinician">Clinician</option>
+                <option value="researcher">Researcher</option>
+              </select>
+            </div>
+            <!-- end sign up as -->
+
+            <div class="d-grid mb-3">
+              <button type="submit" class="btn btn-primary form-control-lg">Sign up</button>
+            </div>
+          </form>
+        </div>
+        <!-- End Sign Up -->
+      </div>
+      <!-- End Body -->
+
+      <!-- Footer -->
+      <div class="modal-footer d-block text-center py-sm-5">
+        <div class="text-center">
+          <p class="small mb-0">By continuing you agree to our <a href="#">Terms and Conditions</a></p>
+        </div>
+      </div>
+      <!-- End Footer -->
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- header icons -->
+{% block header_icons %}
+{% if user.is_authenticated %}
+<a class="btn btn-ghost-secondary btn-sm btn-icon" href="#">
+  <i class="bi bi-person-fill" style="font-size: 1.5rem;"></i>
+</a>
+{% else %}
+<a class="btn btn-ghost-secondary btn-sm btn-icon" type="button" data-bs-toggle="modal" data-bs-target="#account_modal">
+  <i class="bi bi-person" style="font-size: 1.5rem;"></i>
+</a>
+{% endif %}
+
+<button type="button" class="btn btn-ghost-secondary btn-sm btn-icon" data-bs-toggle="offcanvas" data-bs-target="#shopping_cart" aria-controls="shopping_cart">
+  <i class="bi bi-bag" style="font-size: 1.3rem;"></i>
+  {% if selected_cart.cart_product.count %}
+  <span class="position-absolute translate-middle badge rounded-pill bg-secondary" style="top: 10px;left: 30px;">{{ selected_cart.cart_product.count }}</span>
+  {% endif %}
+</button>
+{% endblock %}
+
+<!-- main banner -->
+{% block main_banner %}
+<div class="overflow-hidden">
+  <div class="container content-space-t-2 content-space-b-3">
+    <div class="row justify-content-lg-between align-items-md-center">
+      <div class="col-md-6 col-lg-5 mb-7 mb-md-0" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
+        <!-- Heading -->
+        <div class="mb-5">
+          <h1 class="display-4 mb-3">Unlock the secrets of your DNA and health</h1>
+          <p class="lead">Gain insights about your predispositions to diseases or conditions, your reproductive health, the best medications that work you, lifestyle traits and more!</p>
+        </div>
+        <!-- End Heading -->
+
+        <div class="d-grid d-sm-flex gap-3">
+          <a class="btn btn-primary btn-transition" href="#pricing_list">Get Started</a>
+          <a class="btn btn-link" data-bs-toggle="modal" data-bs-target=".how_it_works_modal">how it works</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="position-relative">
+          <img class="img-fluid rounded-2" src="{% static 'landing_page/tovana_img/GenomeTesting.png' %}" alt="intro_image" style="width: 100%;" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
+          <div class="position-absolute top-0 end-0 w-100 h-100 bg-soft-primary rounded-2 zi-n1 mt-5 me-n5"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Row -->
+  </div>
+
+  <div class="modal fade how_it_works_modal" tabindex="-1" role="dialog" aria-labelledby="how_it_works_modal_id" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title h5 text-muted text-center mt-4" id="how_it_works_modal_id">{{ content.how_it_works_sub_title }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body mt-6">
+          <ul class="step step-timeline-lg">
+            {% for how_it_works_step in how_it_works_steps %}
+            <li class="step-item">
+              <div class="step-content-wrapper">
+                <span class="step-icon step-icon-soft-primary">
+                  <img class="step-avatar-img" src="{% get_media_prefix %}{{ how_it_works_step.image }}" alt="Image Description">
+                </span>
+                <div class="step-content">
+                  <h4>{{ how_it_works_step.title }}</h4>
+                  <p class="step-text">{{ how_it_works_step.content }}</p>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- shopping cart -->
+{% block shopping_cart %}
+<div class="offcanvas offcanvas-end" tabindex="-1" id="shopping_cart">
+  <div class="offcanvas-header justify-content-end border-0 pb-0">
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  {% if not selected_cart.cart_product.count %}
+  <!-- empty cart -->
+  <div class="offcanvas-body">
+    <div class="text-center">
+      <div class="mb-5">
+        <img class="avatar avatar-xl avatar-4x3" src="{% static 'landing_page/svg/illustrations/oc-empty-cart.svg' %}" alt="SVG">
+      </div>
+
+      <div class="mb-5">
+        <h3>Your cart is currently empty</h3>
+        <p>Before proceed to checkout you must add some products to your shopping cart.</p>
+      </div>
+
+      <button class="btn btn-primary btn-transition rounded-pill px-6" href="#" disabled>Checkout</button>
+    </div>
+  </div>
+  {% else %}
+  <!-- filled cart -->
+  <div class="offcanvas-body">
+      <div class="row">
+        {% for product in selected_cart.cart_product.all %}
+        <form action="#" id="remove_from_cart_{{ product.id }}" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="route" value="home_page">
+          <input type="hidden" name="product_id" value="{{ product.id }}">
+        </form>
+        <div class="border-bottom pb-4 mb-4">
+          <div class="d-flex">
+            <div class="flex-grow-1">
+              <h6>{{ product.product_title }}</h6>
+
+              <div class="d-grid">
+                <div class="text-body">
+                  <span class="small">Price:</span>
+                  <span class="small">{{ product.price }}</span>
+                </div>
+
+                <div class="text-body">
+                  <span class="small">Quantity:</span>
+                  <span class="small">{{ product.quantity }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex-grow-1">
+              <div class="d-grid gap-2">
+                <button class="btn btn-ghost-primary" form="remove_from_cart_{{ product.id }}"><i class="bi-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="border-bottom pb-4 mb-4">
+          <div class="d-grid gap-3">
+            <dl class="row">
+              <dt class="col-sm-6">Item subtotal ({{ selected_cart.cart_product.count }})</dt>
+              <dd class="col-sm-6 text-sm-end mb-0">$ {{ selected_cart.total_price }}</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="d-grid gap-3 mb-4">
+          <dl class="row">
+            <dt class="col-sm-6">Total</dt>
+            <dd class="col-sm-6 text-sm-end mb-0">$ {{ selected_cart.total_price }} </dd>
+          </dl>
+          <!-- End Row -->
+        </div>
+        <div class="d-grid">
+          <a class="btn btn-primary btn-lg" href="#">go to cart</a>
+        </div>
+      </div>
+      <!-- End Row -->
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+
+<!-- products pricing -->
+{% block products_pricing %}
+{% for product in products %}
+<form action="#" id="" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="route" value="home_page">
+  <input type="hidden" name="product_id" value="{{ product.id }}">
+</form>
+<form action="#" id="" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="route" value="cart">
+  <input type="hidden" name="product_id" value="{{ product.id }}">
+</form>
+{% endfor %}
+<div class="overflow-hidden content-space-t-2">
+  <div class="container">
+    <!-- Heading -->
+    <div class="w-md-75 text-center mx-md-auto mb-9">
+      <div class="h3">DNA UNLOCKED Genome testing</div>
+      <p></p>
+    </div>
+    <!-- End Heading -->
+    <div class="row mb-7">
+      {% for product in products %}
+      {% if product.selected %}
+      <!-- selected item -->
+      <div class="col-md mb-3 mb-md-0">
+        <div class="position-relative">
+          <!-- Card -->
+          <div class="card h-100 zi-1" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
+            <div class="card-header text-center">
+              <div class="mb-2">
+                <img class="avatar avatar-lg avatar-4x3" src="{% get_media_prefix %}{{ product.product_image }}" alt="Image Description" style="width: 100%;">
+              </div>
+
+              <div class="mb-2">
+                <span class="fs-5 align-top text-dark fw-semibold">$</span>
+                <span id="pricingCount2" class="fs-1 text-dark fw-semibold">{{ product.product_price|floatformat:"0g" }}</span>
+              </div>
+
+              <h3 class="card-title">{{ product.product_title }}</h3>
+              <p class="card-text">{{ product.product_sub_title }}</p>
+            </div>
+            <div class="card-body d-flex justify-content-center py-0">
+              <ul class="list-checked list-checked-primary">
+                {% for feature in product.product_feature.all %}
+                <li class="list-checked-item">{{ feature.feature_content }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="card-footer text-center">
+              <div class="d-grid mb-2">
+                {% if selected_cart.cart_product.count %}
+                <button class="btn btn-primary" form="add_to_cart_{{ product.id }}">add to cart</button>
+                {% else %}
+                <button class="btn btn-primary" form="main_{{ product.id }}">get started</button>
+                {% endif %}
+              </div>
+              <a class="btn btn-link" data-bs-toggle="modal" data-bs-target=".details_{{ product.id }}">
+                <p class="card-text text-muted">see details</p>
+              </a>
+            </div>
+          </div>
+          <!-- End Card -->
+
+          <!-- SVG Elements -->
+          <figure class="position-absolute bottom-0 start-0 mb-n7 ms-n7" style="width: 9rem;" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 260 260" xml:space="preserve">
+              <circle fill="#ffc107" cx="130" cy="130" r="130"/>
+            </svg>
+          </figure>
+          <figure class="position-absolute top-0 end-0 mt-n7 me-n7" style="width: 7rem;" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 260 260" xml:space="preserve">
+              <circle fill="#ffc107" cx="130" cy="130" r="130"/>
+            </svg>
+          </figure>
+          <!-- End SVG Elements -->
+        </div>
+      </div>
+      <!-- end selected item -->
+      {% else %}
+      <!-- unselected item -->
+      <div class="col-md mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+        <!-- Card -->
+        <div class="card h-100 shadow-none zi-1">
+          <div class="card-header text-center">
+            <div class="mb-2">
+              <img class="avatar avatar-lg avatar-4x3" src="{% get_media_prefix %}{{ product.product_image }}" alt="Image Description" style="width: 100%;">
+            </div>
+
+            <div class="mb-2">
+              <span class="fs-5 align-top text-dark fw-semibold">$</span>
+              <span id="pricingCount3" class="fs-1 text-dark fw-semibold">{{ product.product_price|floatformat:"0g" }}</span>
+            </div>
+
+            <h3 class="card-title">{{ product.product_title }}</h3>
+            <p class="card-text">{{ product.product_sub_title }}</p>
+          </div>
+          <div class="card-body d-flex justify-content-center py-0">
+            <ul class="list-checked list-checked-primary">
+              {% for feature in product.product_feature.all %}
+              <li class="list-checked-item">{{ feature.feature_content }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="card-footer text-center">
+            <div class="d-grid mb-2">
+              {% if selected_cart.cart_product.count %}
+              <button class="btn btn-ghost-primary" form="add_to_cart_{{ product.id }}">add to cart</button>
+              {% else %}
+              <button class="btn btn-ghost-primary" form="main_{{ product.id }}">get started</button>
+              {% endif %}
+            </div>
+            <a class="btn btn-link" data-bs-toggle="modal" data-bs-target=".details_{{ product.id }}">
+              <p class="card-text text-muted">see details</p>
+            </a>
+          </div>
+        </div>
+        <!-- End Card -->
+      </div>
+      <!-- end unselected item -->
+      {% endif %}
+      <div class="modal fade details_{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="product_details_modal_id" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title h5 text-muted text-center mt-4" id="product_details_modal_id">{{ product.product_title }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mt-6">
+              <ul class="step step-timeline-lg">
+                {% for how_it_works_step in how_it_works_steps %}
+                <li class="step-item">
+                  <div class="step-content-wrapper">
+                    <span class="step-icon step-icon-soft-primary">
+                      <img class="step-avatar-img" src="{% get_media_prefix %}{{ how_it_works_step.image }}" alt="Image Description">
+                    </span>
+                    <div class="step-content">
+                      <h4>{{ how_it_works_step.title }}</h4>
+                      <p class="step-text">{{ how_it_works_step.content }}</p>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- End Row -->
+  </div>
+</div>
+{% endblock %}
+
+<!-- services -->
+{% block services %}
+<div class="w-lg-75 mx-lg-auto">
+  <div class="d-block d-sm-flex align-items-sm-center">
+    <div class="flex-grow-1 ms-4">
+      <h4>Post-test physician consultation (Included with your order).</h4>
+      <p class="mb-0">You will receive an email to register with <a class="link" href="https://www.elicity.health/">elicity.health</a> to start the telehealth process. When your DNA UNLOCKED® report is ready, your elicity healthcare provider will contact you for a telehealth consultation to review your results with you and answer your questions.</p>
+    </div>
+  </div>
+</div>
+<div class="container content-space-2 content-space-lg-1">
+
+  <div class="row gx-0 align-items-lg-center mb-7 mb-md-10">
+    <div class="col-lg-7">
+      <!-- Card -->
+      <div class="card card-lg text-center zi-2" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-header pb-0">
+        </div>
+
+        <div class="card-body">
+          <ul class="list-pointer list-pointer-soft-bg-light list-pointer-lg">
+            <li class="list-pointer-item">
+              <h4 class="text-black mb-1">DNA UNLOCKED® test review</h4>
+              <p class="text-black-70 mb-0">authorization when medically appropriate, and telehealth consultation to review your results with you, are available through an independent network of experienced healthcare providers from <a class="link" href="https://www.elicity.health/">elicity.health</a>. ($110 value)</p>
+            </li>
+
+            <li class="list-pointer-item">
+              <h4 class="text-black mb-1">Test authorization (Included with your order).</h4>
+              <p class="text-black-70 mb-0">If you do not have a healthcare provider to authorize your DNA UNLOCKED® test, an independent elicity telehealth provider will review and authorize your test.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Card -->
+    </div>
+
+    <div class="col-lg-5">
+      <div class="card card-lg bg-dark ms-md-n2" style="background: #086aad;" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-body">
+          <img class="avatar avatar-lg avatar-4x3" src="{% static 'landing_page/tovana_img/telehealth_product.png' %}" alt="Image Description" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- products check list -->
+{% block products_check_list %}
+<div class="container content-space-2 content-space-lg-3">
+  <!-- Heading -->
+  <div id="pricing_list" class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+    <h2>DNA UNLOCKED Genome testing.</h2>
+    <p></p>
+  </div>
+  <!-- End Heading -->
+
+  <!-- Table -->
+  <div class="table-responsive-lg w-lg-100 mx-lg-auto">
+    <table class="table table-lg table-striped table-borderless table-nowrap table-vertical-border-striped">
+      <thead class="table-text-center">
+        <tr>
+          <th scope="col" style="width: 40%;"></th>
+
+          <th scope="col" style="width: 20%;">
+            <span class="d-block">DNA UNLOCKED - Wellness</span>
+            <span class="d-block text-muted small">$189</span>
+          </th>
+
+          <th scope="col" style="width: 20%;">
+            <span class="d-block">DNA UNLOCKED - Comprehensive</span>
+            <span class="d-block text-muted small">$950</span>
+          </th>
+
+          <th scope="col" style="width: 20%;">
+            <span class="d-block">Professional</span>
+            <span class="d-block text-muted small">Custom</span>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row" class="text-dark">Cross-platform UI toolkit</th>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">14-days free trial</th>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">No user limit</th>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Long-term support</th>
+          <td></td>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Email support</th>
+          <td></td>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Developer tools</th>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Removal of Front branding</th>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Active maintenance & support</th>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Data storage for 365 days</th>
+          <td></td>
+          <td></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark"></th>
+          <td class="table-text-center"><button type="button" class="btn btn-soft-dark btn-sm btn-transition">Choose </button></td>
+          <td class="table-text-center"><button type="button" class="btn btn-soft-dark btn-sm btn-transition">Choose </button></td>
+          <td class="table-text-center"><button type="button" class="btn btn-primary btn-sm btn-transition">Contact us</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- End Table -->
+</div>
+{% endblock %}
+
+<!-- FAQ -->
+{% block FAQ %}
+<div class="container content-space-b-2 position-relative">
+  <div class="text-center">
+    <figure class="w-md-80 w-lg-50 mx-md-auto mb-8">
+      <figcaption class="blockquote-footer">
+        DNA UNLOCKED® Explained
+        <span class="blockquote-footer-source">Get answers to some common questions below. Have more questions? Go to our <a href="#"> FAQ page. </a> </span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="accordion" id="home_page_accordion">
+    {% for question in questions %}
+    <div class="accordion-item">
+      <div class="accordion-header" id="heading_{{question.id}}">
+        <a class="accordion-button {% if not question.id == 1 %} collapsed {% endif %}" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_{{question.id}}" aria-expanded="true" aria-controls="collapse_{{question.id}}">
+          {{ question.question_abstract_content }}
+        </a>
+      </div>
+      <div id="collapse_{{question.id}}" class="accordion-collapse collapse {% if question.id == 1 %} show {% endif %}" aria-labelledby="heading_{{question.id}}" data-bs-parent="#home_page_accordion">
+        <div class="accordion-body">
+          {% for answer in question.question_abstract_answer.all %}
+          {% if answer.answer_abstract_prefix %}
+          <strong>{{ answer.answer_abstract_prefix }}</strong>
+          {% endif %}
+           {{ answer.answer_abstract_content }}
+          <br>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+<!-- subscribe to newsletter -->
+{% block subscribe_to_newsletter %}
+<div class="bg-light">
+  <div class="container content-space-2">
+    <div class="w-md-75 w-lg-50 text-center mx-md-auto">
+      <div class="row justify-content-lg-between">
+        <!-- Heading -->
+        <div class="mb-5">
+          <span class="text-cap">Subscribe</span>
+          <h2>Get the latest from TOVANA HEALTH</h2>
+        </div>
+        <!-- End Heading -->
+
+        <form>
+          <!-- Input Card -->
+          <div class="input-card input-card-pill input-card-sm border mb-3">
+            <div class="input-card-form">
+              <label for="subscribeForm" class="form-label visually-hidden">Enter email</label>
+              <input type="text" class="form-control form-control-lg" id="subscribeForm" placeholder="Enter email" aria-label="Enter email">
+            </div>
+            <button type="button" class="btn btn-primary btn-lg rounded-pill">Subscribe</button>
+          </div>
+          <!-- End Input Card -->
+        </form>
+
+        <p class="small">You can unsubscribe at any time. Read our <a href="#">privacy policy</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,330 @@
+=head2 Thu Jun  1 14:42:06 2023: C<Module> L<Data|Data>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.14>
+
+=item *
+
+C<EXE_FILES: scripts/stag-autoschema.pl scripts/stag-db.pl scripts/stag-diff.pl scripts/stag-drawtree.pl scripts/stag-filter.pl scripts/stag-findsubtree.pl scripts/stag-flatten.pl scripts/stag-grep.pl scripts/stag-handle.pl scripts/stag-itext2simple.pl scripts/stag-itext2simple.pl scripts/stag-itext2sxpr.pl scripts/stag-itext2xml.pl scripts/stag-join.pl scripts/stag-merge.pl scripts/stag-mogrify.pl scripts/stag-parse.pl scripts/stag-query.pl scripts/stag-splitter.pl scripts/stag-view.pl scripts/stag-xml2itext.pl>
+
+=back
+
+=head2 Thu Jun  1 14:43:39 2023: C<Module> L<Digest::Crc32|Digest::Crc32>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:43:42 2023: C<Module> L<File::ReadBackwards|File::ReadBackwards>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:43:43 2023: C<Module> L<Bio::GFF3|Bio::GFF3>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.0>
+
+=item *
+
+C<EXE_FILES: bin/gff3_from_fasta>
+
+=back
+
+=head2 Thu Jun  1 14:43:47 2023: C<Module> L<libxml-perl|libxml-perl>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:43:49 2023: C<Module> L<XML::RegExp|XML::RegExp>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:43:50 2023: C<Module> L<XML::DOM|XML::DOM>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.46>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:43:52 2023: C<Module> L<XML::XPathEngine|XML::XPathEngine>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.14>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:43:53 2023: C<Module> L<XML::DOM::XPath|XML::DOM::XPath>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.14>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:43:54 2023: C<Module> L<Bio::FeatureIO|Bio::FeatureIO>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.6.905>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:43:56 2023: C<Module> L<Heap::Simple|Heap::Simple>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.13>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:44:03 2023: C<Module> L<Heap::Simple::XS|Heap::Simple::XS>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.10>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:44:04 2023: C<Module> L<File::Next|File::Next>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.18>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:44:07 2023: C<Module> L<Devel::Size|Devel::Size>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.83>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Jun  1 14:44:09 2023: C<Module> L<local::lib|local::lib>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/macbook/software-projects/django-projects/gbrowser/site/public/static/jbrowse/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.000029>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
