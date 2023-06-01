@@ -1,11 +1,65 @@
-
+{% extends "browser/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-        <!--begin::Head-->
-        <head>
-                <title> Gbrowser - Tovana genome browser </title>
-        </head>
+
+{% block title %}
+<title>
+   Gbrowser | Tovana genome browser
+</title>
+{% endblock %}
+{% block main_banner %}
+<div class="overflow-hidden">
+  <div class="container content-space-t-2 content-space-b-3">
+    <div class="row justify-content-lg-between align-items-md-center">
+      <div class="col-md-6 col-lg-5 mb-7 mb-md-0" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
+        <!-- Heading -->
+        <div class="mb-5">
+          <h1 class="display-4 mb-3">Tovana Genome Browser</h1>
+          <p class="lead">This tool allows you to view the genome data</p>
+        </div>
+        <!-- End Heading -->
+
+       
+
+      <div class="col-md-6">
+        <div class="position-relative">
+          <img class="img-fluid rounded-2" src="{% static 'landing_page/tovana_img/GenomeTesting.png' %}" alt="intro_image" style="width: 100%;" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
+          <div class="position-absolute top-0 end-0 w-100 h-100 bg-soft-primary rounded-2 zi-n1 mt-5 me-n5"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Row -->
+  </div>
+
+  <div class="modal fade how_it_works_modal" tabindex="-1" role="dialog" aria-labelledby="how_it_works_modal_id" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title h5 text-muted text-center mt-4" id="how_it_works_modal_id">{{ content.how_it_works_sub_title }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body mt-6">
+          <ul class="step step-timeline-lg">
+            {% for how_it_works_step in how_it_works_steps %}
+            <li class="step-item">
+              <div class="step-content-wrapper">
+                <span class="step-icon step-icon-soft-primary">
+                  <img class="step-avatar-img" src="{% get_media_prefix %}{{ how_it_works_step.image }}" alt="Image Description">
+                </span>
+                <div class="step-content">
+                  <h4>{{ how_it_works_step.title }}</h4>
+                  <p class="step-text">{{ how_it_works_step.content }}</p>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
 <iframe style="border : 2px solide #505050 ;" src="{% static 'jbrowse/index.html' %}" height="800" width="1400"></iframe>
 
 </html>
