@@ -7,7 +7,6 @@
 </title>
 {% endblock %}
 {% block main_banner %}
-<div class="overflow-hidden">
       <div class="container content-space-t-2 content-space-b-3">
           <div class="row justify-content-lg-between align-items-md-center">
             <div class="col-md-6 col-lg-5 mb-7 mb-md-0" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
@@ -27,7 +26,7 @@
           <!-- End Row -->
         </div>
 
-      <div class="modal fade how_it_works_modal" tabindex="-1" role="dialog" aria-labelledby="how_it_works_modal_id" aria-hidden="true">
+          <div class="modal fade how_it_works_modal" tabindex="-1" role="dialog" aria-labelledby="how_it_works_modal_id" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -54,24 +53,22 @@
       </div>
     </div>
   </div>
-</div>
+      </div>
 {% endblock %}
 
   <!-- products check list -->
 {% block products_check_list %}
-<div class="container content-space-2 content-space-lg-3">
-  <!-- Heading -->
-  <div id="pricing_list" class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-    <h2>DNA UNLOCKED Genome testing.</h2>
+    <div class="container content-space-2 content-space-lg-3">
+      <!-- Heading -->
+      <div id="pricing_list" class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <h2>Gbrowser </h2>
+      </div>
+      <!-- End Heading -->
+      <div class="w-lg-75 mx-lg-auto">
+      <iframe style="border : 2px solide #505050 ;" src="{% static 'jbrowse/index.html' %}" height="500" width="1000"></iframe>
+      </div>
 
-  </div>
-  <!-- End Heading -->
-  <div class="w-lg-75 mx-lg-auto">
-  <iframe style="border : 2px solide #505050 ;" src="{% static 'jbrowse/index.html' %}" height="500" width="1000"></iframe>
-
-  </div>
-
-</div>
+    </div>
 {% endblock %}
 
 
