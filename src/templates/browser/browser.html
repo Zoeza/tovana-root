@@ -66,12 +66,14 @@
   <!-- products check list -->
 
 {% block products_check_list %}
-<div class="w-lg-75 mx-lg-auto">
+<div class="container content-space-2 content-space-lg-3">
      <div id="genome_browser" class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-
         <h2>Genome Browser </h2>
     </div>
+    <div class="table-responsive-lg w-lg-100 mx-lg-auto">
+
     <iframe style="border : 2px solide #505050 ;" src="{% static 'jbrowse/index.html' %}" height="600" width="1200"></iframe>
+    </div>
 </div>
 
 {% endblock %}
