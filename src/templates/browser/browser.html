@@ -7,26 +7,33 @@
 </title>
 {% endblock %}
 {% block main_banner %}
-      <div class="container content-space-t-2 content-space-b-3">
-          <div class="row justify-content-lg-between align-items-md-center">
-            <div class="col-md-6 col-lg-5 mb-7 mb-md-0" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
-              <!-- Heading -->
-              <div class="mb-5">
-                <h1 class="display-4 mb-3">Tovana Genome Browser</h1>
-                <p class="lead">This tool allows you to view the genome data</p>
-              </div>
-              <!-- End Heading -->
+<div class="overflow-hidden">
+  <div class="container content-space-t-2 content-space-b-3">
+    <div class="row justify-content-lg-between align-items-md-center">
+      <div class="col-md-6 col-lg-5 mb-7 mb-md-0" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
+        <!-- Heading -->
+        <div class="mb-5">
+          <h1 class="display-4 mb-3">Tovana Genome Browser</h1>
+          <p class="lead"> this tool allows us to view the genome data</div>
+        <!-- End Heading -->
 
-              <div class="d-grid d-sm-flex gap-3">
-                <a class="btn btn-primary btn-transition" href="#pricing_list">try it</a>
-                <a class="btn btn-link" data-bs-toggle="modal" data-bs-target=".how_it_works_modal">how it works</a>
-              </div>
-            </div>
-
-          <!-- End Row -->
+        <div class="d-grid d-sm-flex gap-3">
+          <a class="btn btn-primary btn-transition" href="#pricing_list">Try It</a>
+          <a class="btn btn-link" data-bs-toggle="modal" data-bs-target=".how_it_works_modal">how it works</a>
         </div>
+      </div>
 
-          <div class="modal fade how_it_works_modal" tabindex="-1" role="dialog" aria-labelledby="how_it_works_modal_id" aria-hidden="true">
+      <div class="col-md-6">
+        <div class="position-relative">
+          <img class="img-fluid rounded-2" src="{% static 'landing_page/tovana_img/GenomeTesting.png' %}" alt="intro_image" style="width: 100%;" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
+          <div class="position-absolute top-0 end-0 w-100 h-100 bg-soft-primary rounded-2 zi-n1 mt-5 me-n5"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Row -->
+  </div>
+
+  <div class="modal fade how_it_works_modal" tabindex="-1" role="dialog" aria-labelledby="how_it_works_modal_id" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -53,9 +60,8 @@
       </div>
     </div>
   </div>
-      </div>
+</div>
 {% endblock %}
-
   <!-- products check list -->
 {% block products_check_list %}
     <div class="container content-space-2 content-space-lg-3">
