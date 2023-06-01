@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-4h81u%p03-vylpy-ck+-ay9%05%byfd_e#dd%k343$x%-tz_h5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.64.15']
 
 # Application definition
 
@@ -111,10 +111,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'gbrowser/site/public/static/',
+STATIC_ROOT = 'tovana-root/site/public/static/',
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'gbrowser/site/public/media/'
+MEDIA_ROOT = 'tovana-root/site/public/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
