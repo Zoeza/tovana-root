@@ -38,25 +38,19 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title h5 text-muted text-center mt-4" id="how_it_works_modal_id">{{ content.how_it_works_sub_title }}</h5>
+          <h5 class="modal-title h5 text-muted text-center mt-4" id="how_it_works_modal_id">Tovana Gbrowser help</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body mt-6">
-          <ul class="step step-timeline-lg">
-            {% for how_it_works_step in how_it_works_steps %}
-            <li class="step-item">
-              <div class="step-content-wrapper">
-                <span class="step-icon step-icon-soft-primary">
-                  <img class="step-avatar-img" src="{% get_media_prefix %}{{ how_it_works_step.image }}" alt="Image Description">
-                </span>
-                <div class="step-content">
-                  <h4>{{ how_it_works_step.title }}</h4>
-                  <p class="step-text">{{ how_it_works_step.content }}</p>
-                </div>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
+          <h2>Moving</h2>
+          Move the view by clicking and dragging in the track area, or by clicking  or  in the navigation bar, or by pressing the left and right arrow keys.
+          Center the view at a point by clicking on either the track scale bar or overview bar, or by shift-clicking in the track area.
+          Zooming
+          Zoom in and out by clicking  or  in the navigation bar, or by pressing the up and down arrow keys while holding down "shift".
+          Select a region and zoom to it ("rubber-band" zoom) by clicking and dragging in the overview or track scale bar, or shift-clicking and dragging in the track area.
+          Showing Tracks
+          Turn a track on by dragging its track label from the "Available Tracks" area into the genome area, or double-clicking it.
+          Turn a track off by dragging its track label from the genome area back into the "Available Tracks" area.
         </div>
       </div>
     </div>
