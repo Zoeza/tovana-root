@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'report_builder',
     'phonenumber_field',
-    'weasyprint',
     'docxtpl',
     'docx2pdf',
     'pandas',
