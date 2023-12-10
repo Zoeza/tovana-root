@@ -1,0 +1,325 @@
+{% extends "en-us/manager/base.html" %}
+{% load static %}
+
+<!-- title -->
+{% block title %}
+<title>
+    TOVANA HEALTH manager | home
+</title>
+{% endblock %}
+
+<!-- header -->
+{% block page_header %}
+<div class="row align-items-end">
+  <div class="col-sm mb-2 mb-sm-0">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-no-gutter">
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+      </ol>
+    </nav>
+
+    <h1 class="page-header-title">Home Page Manager</h1>
+  </div>
+
+  <div class="col-sm-auto">
+    <a class="btn btn-light" href="">
+      <i class="bi-eye-fill me-1"></i> View
+    </a>
+  </div>
+</div>
+{% endblock %}
+
+<!-- sub tab nav -->
+{% block sub_tab_nav %}
+<div class="text-center">
+  <ul class="nav nav-segment nav-pills mb-7" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link {% if tab == 'main_content' %} active {% endif %}" id="main_content_nav" href="#main_content_tab" data-bs-toggle="pill" data-bs-target="#main_content_tab" role="tab" aria-controls="main_content_tab">Main content</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link {% if tab == 'how_it_works' %} active {% endif %}" id="how_it_works_nav" href="#how_it_works_tab" data-bs-toggle="pill" data-bs-target="#how_it_works_tab" role="tab" aria-controls="how_it_works_tab">How it works</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link {% if tab == 'FAQ' %} active {% endif %}" id="FAQ_nav" href="#FAQ_tab" data-bs-toggle="pill" data-bs-target="#FAQ_tab" role="tab" aria-controls="FAQ">FAQ</a>
+    </li>
+  </ul>
+</div>
+{% endblock %}
+
+<!-- sub tab content -->
+{% block sub_tab_content %}
+<div class="tab-content">
+  <div class="tab-pane fade {% if tab == 'main_content' %} show active {% endif %}" id="main_content_tab" role="tabpanel" aria-labelledby="main_content_nav">
+
+  </div>
+
+  <div class="tab-pane fade {% if tab == 'how_it_works' %} show active {% endif %}" id="how_it_works_tab" role="tabpanel" aria-labelledby="how_it_works_nav">
+    <!-- how it works steps -->
+    <div class="row align-items-center mb-4">
+      {% for how_it_works_step in how_it_works_steps %}
+      <form action="{% url 'home-manager' 'delete_how_it_works_step' %}" id="delete_how_it_works_step_form_{{ how_it_works_step.id }}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="how_it_works_step_id" value={{how_it_works_step.id}}>
+      </form>
+      <form action="{% url 'home-manager' 'edit_how_it_works_step' %}" class="js-validate need-validate" novalidate method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="how_it_works_step_id" value={{how_it_works_step.id}}>
+        <div class="row mb-2">
+
+          <div class="col-sm text-center align-self-center">
+            <label class="avatar avatar-xxl avatar-uploader" for="how_it_works_image_step_edit_{{how_it_works_step.id}}" style="height: 100%;width: 100%;">
+              <img id="how_it_works_image_step_{{how_it_works_step.id}}" class="avatar-img" src="{% get_media_prefix %}{{ how_it_works_step.how_it_works_image }}" alt="Image Description" style="width: 20%;" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to choose new image and don't forget to refresh">
+              <input type="file" class="js-file-attach avatar-uploader-input" name="{{ how_it_works_form.how_it_works_image.name }}" id="how_it_works_image_step_edit_{{how_it_works_step.id}}" data-hs-file-attach-options='{
+                                "textTarget": "#how_it_works_image_step_{{how_it_works_step.id}}",
+                                "mode": "image",
+                                "targetAttr": "src",
+                                "allowTypes": [".png", ".jpeg", ".jpg"]
+                                }'>
+            </label>
+          </div>
+          <div class="col-sm text-center">
+            <div class="input-group input-group-borderless mb-2">
+              <input type="text" class="form-control" name="{{ how_it_works_form.how_it_works_title.name }}" value="{{ how_it_works_step.how_it_works_title }}">
+            </div>
+            <div class="input-group input-group-borderless mb-2">
+              <input type="text" class="form-control" name="{{ how_it_works_form.how_it_works_content.name }}" value="{{ how_it_works_step.how_it_works_content }}">
+            </div>
+          </div>
+
+          <div class="col-sm-auto align-self-center">
+            <button class="btn btn-white form-control-lg" form="delete_how_it_works_step_form_{{ how_it_works_step.id }}">
+              <i class="bi bi-trash" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"></i>
+            </button>
+            <button class="btn btn-white form-control-lg" type="submit">
+              <i class="bi bi-arrow-clockwise" data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"></i>
+            </button>
+          </div>
+
+        </div>
+      </form>
+      {% endfor %}
+      <div class="row mt-8">
+        <div class="col-sm mb-2 mb-sm-0">
+          <form action="{% url 'home-manager' 'add_how_it_works_step' %}" id="add_how_it_works_step_form" class="js-validate need-validate" novalidate method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="row mb-2">
+              <div class="col-sm text-center align-self-center">
+                <label class="avatar avatar-xxl avatar-uploader" for="editAvatarUploaderModal_how_it_works_image_step_add" style="height: 100%;width: 100%;">
+                  <img id="editAvatarImgModal_how_it_works_image_step_add" class="avatar-img" src="{% static 'landing_page/tovana_img/img_download.png' %}" alt="Image Description" style="width: 20%;" data-bs-toggle="tooltip" data-bs-placement="top" title="Click to choose new image and don't forget to refresh">
+
+                  <input type="file" class="js-file-attach avatar-uploader-input" name="{{ how_it_works_form.how_it_works_image.name }}" id="editAvatarUploaderModal_how_it_works_image_step_add" data-hs-file-attach-options='{
+                              "textTarget": "#editAvatarImgModal_how_it_works_image_step_add",
+                              "mode": "image",
+                              "targetAttr": "src",
+                              "allowTypes": [".png", ".jpeg", ".jpg"]
+                           }' required>
+                  <span class="invalid-feedback text-center">Please upload an image.</span>
+                </label>
+              </div>
+              <div class="col-sm text-center">
+                <div class="input-group mb-2">
+                  <input type="text" class="form-control" name="{{ how_it_works_form.how_it_works_title.name }}" placeholder="how it works step title" required>
+                  <span class="invalid-feedback text-start">Field required.</span>
+                </div>
+                <div class="input-group mb-2">
+                  <input type="text" class="form-control" name="{{ how_it_works_form.how_it_works_content.name }}" placeholder="how it works step content" required>
+                  <span class="invalid-feedback text-start">Field required.</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-auto align-self-center">
+          <button form="add_how_it_works_step_form" class="btn btn-white form-control-sm">
+            <i class="bi bi-plus-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Add"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end how it works steps -->
+  </div>
+
+  <div class="tab-pane fade {% if tab == 'FAQ' %} show active {% endif %}" id="FAQ_tab" role="tabpanel" aria-labelledby="FAQ_nav">
+    <div class="container content-space-b-2 position-relative">
+      <!-- questions table -->
+      <div class="table-responsive-xxl datatable-custom">
+        <table class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
+          <tbody>
+
+          {% for question_abstract in questions_abstracts %}
+          <!-- delete question abstract form -->
+          <form action="{% url 'home-manager' 'delete_question_abstract' %}" id="delete_question_abstract_form_{{ question_abstract.id }}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="question_abstract_id" value='{{ question_abstract.id }}'>
+          </form>
+          <!-- end delete question abstract form -->
+
+          <!-- questions abstracts -->
+          <tr>
+            <td>
+              <!-- edit question abstract form -->
+              <form action="{% url 'home-manager' 'edit_question_abstract' %}" id="edit_question_abstract_form_{{ question_abstract.id }}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="question_abstract_id" value='{{ question_abstract.id }}'>
+
+                <div class="input-group-borderless">
+                  <input type="text" class="form-control" name="{{ question_abstract_form.question_abstract_content.name }}" value="{{ question_abstract.question_abstract_content }}">
+                </div>
+              </form>
+              <!-- end edit question abstract form -->
+            </td>
+            <td>
+              <button class="btn btn-white btn-icon" form="edit_question_abstract_form_{{ question_abstract.id }}">
+                <i class="bi-arrow-clockwise" data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"></i>
+              </button>
+              <button type="button" class="btn btn-white btn-icon" data-bs-toggle="modal" data-bs-target="#delete_question_abstract_modal_{{ question_abstract.id }}">
+                <i class="bi-trash" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- end questions abstracts -->
+
+          {% for answer_abstract in question_abstract.question_abstract_answer.all %}
+          <!-- delete answer abstract form -->
+          <form action="{% url 'home-manager' 'delete_answer_abstract' %}" id="delete_answer_abstract_form_{{ question_abstract.id }}_{{ answer_abstract.id }}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="answer_abstract_id" value='{{ answer_abstract.id }}'>
+          </form>
+          <!-- end delete answer abstract form -->
+
+          <!-- answers -->
+          <tr class="table-light">
+            <td>
+              <!-- edit answer abstract form -->
+              <form action="{% url 'home-manager' 'edit_answer_abstract' %}" id="edit_answer_abstract_form_{{ question_abstract.id }}_{{ answer_abstract.id }}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="answer_abstract_id" value='{{ answer_abstract.id }}'>
+
+                <div class="input-group input-group-borderless">
+                  {% if answer_abstract.answer_abstract_prefix %}
+                  <input type="text" class="form-control" name="{{ answer_abstract_form.answer_abstract_prefix.name }}" value="{{ answer_abstract.answer_abstract_prefix }}">
+                  {% else %}
+                  <input type="text" class="form-control" name="{{ answer_abstract_form.answer_abstract_prefix.name }}" placeholder="Prefix">
+                  {% endif %}
+
+                  <input type="text" class="form-control" name="{{ answer_abstract_form.answer_abstract_content.name }}" value="{{ answer_abstract.answer_abstract_content }}" style="width: 80%;">
+                </div>
+              </form>
+              <!-- end edit answer abstract form -->
+            </td>
+            <td>
+              <button class="btn btn-white btn-icon" form="edit_answer_abstract_form_{{ question_abstract.id }}_{{ answer_abstract.id }}">
+                <i class="bi-arrow-clockwise" data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"></i>
+              </button>
+              <button type="button" class="btn btn-white btn-icon" data-bs-toggle="modal" data-bs-target="#delete_home_page_answer_modal_{{ home_page_question.id }}_{{ home_page_answer.id }}">
+                <i class="bi-trash" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- end answers -->
+
+          <!-- delete answer abstract modal -->
+          <div id="delete_answer_abstract_modal_{{ question_abstract.id }}_{{ answer_abstract.id }}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                  <p>click yes to delete this answer ({{ answer_abstract.answer_abstract_content }}) ?.</p>
+                </div>
+                <div class="modal-footer" style="align-self: center;">
+                  <button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+                  <button class="btn btn-primary" form="delete_answer_abstract_form_{{ question_abstract.id }}_{{ answer_abstract.id }}">Yes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end delete answer abstract modal -->
+          {% endfor %}
+
+          <!-- add answer abstract -->
+          <tr class="table-light">
+            <td>
+              <!-- add new answer abstract form -->
+              <form action="{% url 'home-manager' 'add_answer_abstract' %}" id="add_answer_abstract_form_{{ question_abstract.id }}" class="js-validate need-validate" novalidate method="post">
+                {% csrf_token %}
+                <input type="hidden" name="question_abstract_id" value='{{ question_abstract.id }}'>
+
+                <div class="input-group input-group-md-vertical">
+                  <input type="text" class="form-control" name="{{ answer_abstract_form.answer_abstract_prefix.name }}" placeholder="Prefix">
+                  <input type="text" class="form-control" name="{{ answer_abstract_form.answer_abstract_content.name }}" placeholder="Add new answer" style="width: 80%;" required>
+                  <span class="invalid-feedback text-center">Answer field is required</span>
+                </div>
+              </form>
+              <!-- end add new answer abstract form -->
+            </td>
+            <td style="vertical-align: baseline;">
+              <button class="btn btn-white btn-icon" form="add_answer_abstract_form_{{ question_abstract.id }}">
+                <i class="bi-plus-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Add"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- end add answer abstract -->
+
+          <!-- delete question abstract modal -->
+          <div id="delete_question_abstract_modal_{{ question_abstract.id }}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                  <p>click yes to delete this question ({{ question_abstract.question_abstract_content }}) ?.</p>
+                </div>
+                <div class="modal-footer" style="align-self: center;">
+                  <button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+                  <button class="btn btn-primary" form="delete_question_abstract_form_{{ question_abstract.id }}">Yes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end delete question abstract modal -->
+
+          <!-- separator -->
+          <tr class="table-dark">
+            <td>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <!-- end separator -->
+          {% endfor %}
+          <!-- add new question -->
+          <tr>
+            <td>
+              <!-- add new question abstract form -->
+              <form action="{% url 'home-manager' 'add_question_abstract' %}" id="add_question_abstract_form" class="js-validate need-validate" novalidate method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                  <input type="text" class="form-control" name="{{ question_abstract_form.question_abstract_content.name }}" placeholder="Add new question" required>
+                  <span class="invalid-feedback text-start">Please this field is required.</span>
+                </div>
+              </form>
+              <!-- end add new question abstract form -->
+            </td>
+            <td style="vertical-align: baseline;">
+              <button class="btn btn-white btn-icon" form="add_question_abstract_form">
+                <i class="bi-plus-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Add"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- end add new question -->
+          </tbody>
+        </table>
+      </div>
+      <!-- end questions table -->
+    </div>
+  </div>
+</div>
+{% endblock %}

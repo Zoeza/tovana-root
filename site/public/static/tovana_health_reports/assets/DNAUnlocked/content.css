@@ -1,0 +1,948 @@
+body {
+    font-family: "Open Sans", "Arial", "Helvetica";
+    font-size: 11pt;
+    text-align: justify;
+}
+
+@font-face {
+  font-family: 'Caveat';
+  src: url({#asset /assets/TovanaHealth/Caveat.woff @encoding=dataURI}) format('woff');
+}
+
+h1 {
+    font-size: 18pt;
+    text-align: center;
+    color: #0168AB;
+    font-style: italic;
+}
+h2 {
+    font-size: 16pt;
+    text-align: center;
+    color: #0168AB;
+    font-style: italic;
+}
+h3 {
+    font-size: 13pt;
+}
+b.negative {
+    color: green !important;
+}
+p {
+    line-height: 1.5em;
+}
+b.positive {
+    color: #900000 !important;
+}
+b.black {
+    color: black !important; 
+}
+p.handwriting {
+    font-family: 'Caveat';
+    font-size: 14pt;
+}
+img.icon {
+    width: 35px;
+    margin-bottom: 15px;
+    margin-left: -50px; 
+    position: absolute;
+    page-break-inside: avoid;
+}
+table.iconLegend img.icon {
+    margin:0px !important;
+    position: inherit !important;
+}
+section.pgxFindings table.result img.icon {
+    margin:0px !important;
+    position: inherit !important;
+}
+img.icon.recommendation {
+    content:url({#asset /assets/TovanaHealth/Icons/IconRecommendations.png @encoding=dataURI});
+}
+img.icon.references {
+    content:url({#asset /assets/TovanaHealth/Icons/IconReferences.png @encoding=dataURI}); 
+}
+img.icon.interpretation {
+    content:url({#asset /assets/TovanaHealth/Icons/IconInterpretation.png @encoding=dataURI});
+}
+img.icon.summary {
+    content:url({#asset /assets/TovanaHealth/Icons/IconSummary.png @encoding=dataURI});
+}
+img.icon.science {
+    content:url({#asset /assets/TovanaHealth/Icons/IconScienceOfDisease.png @encoding=dataURI});
+}
+img.icon.population {
+    content:url({#asset /assets/TovanaHealth/Icons/IconPopulationStudied.png @encoding=dataURI});
+}
+img.icon.toc {
+    content:url({#asset /assets/TovanaHealth/Icons/IconTOC.png @encoding=dataURI});
+    margin:0px !important;
+    position:inherit !important;
+}
+img.lightBulb {
+    content:url({#asset /assets/TovanaHealth/LightBulb.png @encoding=dataURI});
+    width:40px;
+}
+img.section1Icon {
+    content:url({#asset /assets/TovanaHealth/Section1Icon.png @encoding=dataURI});
+}
+img.scaleTriangle {
+    content:url({#asset /assets/TovanaHealth/Icons/ScaleTriangle.png @encoding=dataURI});
+}
+span.withIcon {
+    min-height: 50px;
+    display: block;
+    margin-top: 15px;
+    line-height: 1.5em;
+    page-break-inside: avoid;
+}
+span.withIcon b.heading {
+    color: #0067ac;
+}
+span.withIcon.longDesc {
+    page-break-inside: auto;
+}
+table td {
+    font-size: 11pt;
+}
+table th {
+    text-align: left;
+}
+table.iconLegend {
+    width:100%;
+}
+table.iconLegend td {
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+table.iconLegend td span {
+    vertical-align: top;
+    top: 5px;
+    position: relative;
+    margin-left: 7px;
+}
+table.inheritenceExplainer {
+    width: 100%;
+}
+table.inheritenceExplainer td {
+    vertical-align: top;
+}
+table.inheritenceExplainer img {
+    width: 220px;
+    margin-left: 50px;
+}
+section.disclaimer {
+    border: 3px solid #37b8cf;
+    padding: 15px;
+    margin-top: 60px;
+}
+section.disclaimer p {
+    font-style: italic;
+    line-height: 1.5em;
+    text-align: justify;
+}
+section.sectionHeader {
+    width: 748px;
+    height: 947px;
+    page-break-before: always; 
+    background-position: center center; 
+    background-size: 748px 944px; 
+    background-repeat:no-repeat;
+    text-align: center;
+    page-break-after: always;
+}
+section.sectionHeaderPGX {
+  height: 920px !important;
+   page-break-before: none; 
+   page-break-after: none; 
+}
+section.sectionHeader h1 {
+    color: #0168AB;
+    font-size: 85pt;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center !important;
+}
+section.sectionHeader h2 {
+    font-style: italic;
+    font-size: 26pt;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center !important;
+}
+section.sectionHeader img {
+    margin-top: 60px;
+    width: 600px;
+}
+section.demographics h2 {
+    text-align: left;
+}
+section.findings h2 {
+    text-align: left;
+}
+section div.note {
+    background-color: #ffd200;
+    display: table-row;
+    margin-top: 20px;
+    page-break-inside: avoid;
+}
+section div.note div {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px 10px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.5em;
+    font-size: 15px;
+}
+section div.note div:nth-child(2) {
+    margin-left: 20px;
+}
+section p.geneList {
+    font-size: 12px;
+    font-style: italic;
+    text-align: justify;
+}
+
+section.reportFindings table thead tr:first-child th {
+    background-color: #0093d0;
+    text-align: center;
+    color: white;
+}
+
+section.reportFindings table thead tr th {
+    background-color: #ffd200;
+    font-weight: bold;
+}
+
+section.reportFindings table.singleHead thead tr th {
+    background-color: #ffd200 !important;
+    color: black !important;
+}
+section.reportFindings table {
+    font-size: 12px;
+}
+
+section.reportFindings table tr td:nth-child(1) {
+    border-bottom: 2px solid black;
+    background-color: white !important;
+    text-align: left;
+    box-shadow: 5px 0px 5px #ddd;
+    width: 600px;
+}
+
+section.reportFindings table tr:last-child td:nth-child(1) {
+    box-shadow:5px 5px 5px #ddd !important;
+}
+
+section.reportFindings table td {
+    min-width: 100px;
+    text-align: center;
+    padding: 2px;
+    font-size: 13.5px;
+}
+
+section.reportFindings table th:nth-child(1) {
+    text-align: left;
+}
+
+section.reportFindings table th {
+    min-width: 100px;
+    text-align: center;
+    padding: 3px;
+    font-size: 14px;
+    box-shadow:0px 5px 0px 0px #ddd !important;
+}            
+
+section.reportFindings table tr:nth-child(even) td {
+    background-color: #cad3e3;
+}
+
+section.reportFindings .tableLegend {
+    font-size: 12px;
+    padding: 3px;
+    margin-top: 3px;
+    padding-bottom: 15px;
+    display: block;
+}
+
+section.reportFindings table td b.positive {
+    color: #900000;
+    font-weight: bold;
+    font-size:15px;
+}
+
+section.reportFindingsElaborated h1 {
+    text-align: left;
+    color: black;
+    font-style: normal
+}
+section.reportFindingsElaborated {
+    margin-left: 50px;
+}
+section.reportFindingsElaborated  h2 {
+    padding-top: 5px;
+    text-align: left;
+}
+section.reportFindingsElaborated div.findingInformation {
+    padding-top: 10px;
+}
+section.reportFindingsElaborated p {
+    text-align: justify;
+}
+section.reportFindingsElaborated div.findingInformation p b {
+    color: #0067ac;
+}
+section.reportFindingsElaborated div.findingInformation b.positive {
+    color: #900000;
+    background-color: #fff2cc;
+}
+section.reportFindingsElaborated div.findingInformation table tr {
+    line-height: 23px;
+}
+section.reportFindingsElaborated div.findingInformation table td {
+    font-weight: bold;
+    vertical-align: top;
+}
+section.reportFindingsElaborated div.findingInformation table th {
+    color: #0067ac;
+    vertical-align: top;
+}
+ul.recommendations {
+  padding-left: 2em;
+  list-style-type: none;
+}
+ul.recommendations>li:before {
+  position: absolute;
+  margin-left: -1.3em;
+  content: "\2713";
+}
+ul.recommendations>li {
+  margin-bottom: 0.5em;
+}
+ul.recommendations li {
+  line-height:1.5em;
+}
+table.cancerFindings {
+    page-break-inside: avoid;
+    border: 2px solid #ffd200;
+    border-collapse: separate;
+    padding: 10px 20px;
+}
+table.cancerFindings h2 {
+    font-size: 16px;
+    font-style: normal;
+    margin-bottom: 5px;
+}
+table.cancerFindings tbody tr td:nth-child(2) {
+    line-height: 1.8em;
+    padding-left: 10px;
+}
+table.cancerFindings thead tr:nth-child(2) td {
+    padding-bottom:15px;
+}
+table.cancerFindings td {
+    vertical-align: top;
+}
+section.organsystem ul {
+    list-style-type: none;
+    line-height: 2em; 
+    padding-top: 2em
+}
+section.organsystemFindings {
+    margin:0px;
+    margin-top: 40px;
+    page-break-inside: avoid;
+    border: 2px solid #ffd200;
+    border-collapse: separate;
+    padding: 10px 20px;    
+    padding-left: 60px;
+}
+
+section.organsystemFindings ul {
+    line-height: 2em;
+}
+section.organsystemFindings h1 {
+    color: #0168AB;
+    font-size: 16px;
+    font-style: normal;
+}            
+
+section.organsystemFindings div.findingInformation div.note div {
+   font-size: 13px; 
+   page-break-inside: avoid;
+}
+
+section.additionalRecommendations p {
+    font-weight: bold;
+}
+
+section.additionalRecommendations ol li {
+    line-height: 1.5em;
+    margin-top: 1em;
+}
+
+section.additionalRecommendations div.signature {
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+section.additionalRecommendations div.signature img {
+    display: block;
+    border-bottom: 2px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+section.overview.opener {
+    border-top: 2px solid #ffd200;
+    border-bottom: 2px solid #ffd200;
+    font-weight: bold;
+}
+
+section.methodology p {
+    font-style: italic;
+    text-align: justify;
+}
+
+section.methodology li {
+    text-align: left;
+}
+
+#Overview_OpeningRemarks p {
+    font-style: italic;
+}
+
+#Overview_OpeningRemarks div.box {
+     border: 1px solid #ffd200; 
+     padding: 10px 15px; 
+     border-top-left-radius: 30px 30px; 
+     border-bottom-right-radius: 30px 30px;
+}
+
+#Overview_OpeningRemarks div.box h2 {
+    padding:0px; 
+    margin:0px
+}
+
+#Overview_HowToUse p {
+    font-style: italic;
+}
+
+section.overview table.nccn {
+    border: 0px !important;
+    box-shadow: none !important;
+    border-collapse: collapse;
+}
+
+section.overview table.nccn th {
+    background-color: #ffd200;
+    font-weight: bold;
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 3px 5px;
+    border: 1px solid #ffc000;
+    text-align: center;
+}
+
+section.overview table.nccn tr td {
+    border: 1px solid #ffc000;
+    padding: 2px 5px;
+    margin: 0px;
+    font-size: 10px !important;
+    text-align: center;
+}
+
+section.overview table.nccn td ul {
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+section.overview table.nccn td.text {
+    text-align: left !important;
+    vertical-align: top !important;
+}
+section.overview table.nccn td:nth-last-child(2) {
+    width: 80px;
+}
+section.overview table.nccn td:nth-last-child(3) {
+    width: 70px;
+}
+section.overview p.nccn {
+    font-size: 10px;
+}
+section.overview p.nccn b {
+    color: #0168AB;
+}
+section.overview ul {
+    margin-bottom:0px;
+    margin-top:0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0em;
+    margin-left: 2em;
+}
+
+section.overview ul li {
+    font-size: 10px !important;
+}
+
+section.overview.traits.summary table {
+    width: 100%;
+}
+
+section.overview.traits.summary td {
+    border: 1px solid #444 !important;
+}
+
+section.overview.traits.summary td:first {
+    text-align: left;
+}
+
+section.overview.traits.summary th {
+    border: 1px solid #444;
+}
+
+section.overview.traits h2 {
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+section.overview.traits table {
+    width: 80%;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 5px #ddd;
+}
+section.overview.traits table thead tr:first-child th {
+    background-color: #0093d0;
+    color: white;
+}
+
+section.overview.traits table thead tr th {
+    text-align: center;
+}
+
+section.overview.traits table thead tr th {
+    background-color: #ffd200;
+    font-weight: bold;
+}
+
+section.overview.traits table tr td:nth-child(2) {
+    width:300px;
+}
+
+section.overview.traits table tr td {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 3px 10px;
+}
+
+section.overview.traits table tr td:nth-child(2) {
+    border-left: 2px solid black;
+}
+
+section.overview.traits table tr td a {
+    font-style: underline;
+}
+
+section.overview.traits.substanceuse table td {
+    padding: 3px;
+    margin: 0px;
+    font-size: 11px;
+}
+
+section.overview.traits.substanceuse table th {
+    padding: 3px;
+    margin: 0px;
+    font-size: 12px;
+}
+
+section.findings.traits table.header {
+    width: 100%;
+    display: block;
+}
+
+section.findings.traits table.header td {
+    vertical-align: top;
+    padding: 0px;
+    margin: 0px;
+}
+
+section.findings.traits table.header tr:nth-child(1) td:nth-child(1) {
+    border-bottom: 1px solid #ffd200;
+}
+
+section.findings.traits table.header h1 {
+    font-style: normal;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+section.findings.traits table.header h2 {
+    padding: 0px;
+    margin: 0px;
+}
+
+section.findings.traits table.header img {
+    width: 80px;
+}
+
+section.findings.traits div.sectionOverview {
+    padding-top: 15px;
+}
+
+section.findings.traits div.sectionOverview img {
+    width: 100px;
+    padding-right: 10px;
+}
+
+section.findings.traits table.findingSummary {
+    border-collapse: collapse;
+    margin-top: 10px;
+    width: 100%;
+    box-shadow: 5px 5px 5px #ddd;
+}
+
+section.findings.traits table.findingSummary th {
+    background-color: #ffd200;
+    font-weight: bold;
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 3px 5px;
+    border: 1px solid #ffc000;
+    text-align: center;
+}
+
+section.findings.traits table.findingSummary td {
+    font-size: 13px;
+    white-space: nowrap;
+    border: 1px solid #ffc000;
+    text-align: center;
+}
+
+section.findings.traits table.findingSummary tr.even td {
+    background-color: #fcefc9;
+}
+
+section.findings.traits {
+    page-break-before: always;
+}
+
+section.findings.traits p {
+    margin-bottom: 12px;
+    line-height: 1.5em;
+    margin-top: 0px;
+}
+
+section.findings.traits h2 {
+    color: #0168AB;
+    text-align: left;
+    font-style: normal;
+}
+
+section.findings.traits h3 {
+    color: #0168AB;
+    font-size: 16px;
+}
+
+section.reportFindingsElaborated.traits p {
+    margin-bottom: 20px;
+}
+
+section.reportFindingsElaborated.traits h2 {
+    font-style: normal;
+}
+
+section.reportFindingsElaborated.traits h3 {
+    display: inline-block;
+    color: #0168AB;
+    font-size: 16px;
+    margin: 0px;
+}
+
+section.reportFindingsElaborated.traits table.yourRisk {
+    width: 100%;
+}
+
+section.reportFindingsElaborated.traits table.yourRisk td {
+    vertical-align: top;
+}
+
+section.reportFindingsElaborated.traits table.yourRisk td:nth-child(2) {
+    text-align: right;
+    width: 1%;
+}
+
+section.reportFindingsElaborated.traits table.yourRisk td:nth-child(2) table td {
+    white-space: nowrap;
+}
+
+section.reportFindingsElaborated.traits table {
+    width: 100%;
+}
+
+section.reportFindingsElaborated.traits table td {
+    vertical-align: top;
+}
+
+section.reportFindingsElaborated.traits table.recommendations {
+    page-break-inside: avoid;
+}
+
+section.reportFindingsElaborated.traits table.recommendations table  {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+section.reportFindingsElaborated.traits table.recommendations table th {
+    background-color: #FFE599;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 2px;
+}
+
+section.reportFindingsElaborated.traits table.recommendations table th:nth-child(2) {
+    text-align: center;
+}
+
+section.reportFindingsElaborated.traits table.recommendations table td {
+    border: 1px solid black;
+    font-size: 13px;
+    padding: 2px;
+}
+
+section.reportFindingsElaborated.traits table.recommendations table td:nth-child(2) {
+    text-align: center;
+}
+
+section.reportFindingsElaborated.traits table.recommendations table tfoot td {
+    font-size: 11px;
+    border: none;
+}
+
+table.scale {
+    display: inline;
+    width: 200px !important;
+    box-shadow: none !important;
+    border-collapse: separate !important;
+}
+
+table.scale td {
+    padding: 2px 2px !important;
+    border: 1px solid #0168AB !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    width: 200px !important;
+    font-size: 9pt !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}
+
+table.scale tr.selected td {
+    background-color: #0070c0;
+    color: white;
+    line-height: 18px;
+}
+
+table.scale tr.selected td img {
+    color: #ffc000;
+    float: left;
+    margin-left: -8px;
+    font-size: 20px;
+    width: 16px;
+    height: 18px;
+}
+
+section.TitlePage div {
+    text-align: center;
+}
+section.TitlePage div.Logo {
+    padding: 0px;
+    text-align: left;
+}
+section.TitlePage div.ReportLogo {
+    padding-top: 80px;
+}
+section.TitlePage div.Version {
+    padding: 10px;
+}
+section.TitlePage div.Title {
+    font-size: 28pt;
+    font-weight: bold;
+}
+section.TitlePage div.Subtitle {
+    font-size: 20pt;
+}
+
+section.TitlePage div.LastUpdate {
+    width: 100%;
+    background-color: #0168AB;
+    color: white;
+    padding: 10px 0px;
+    text-align: center;
+    margin-top: 240px;
+}
+
+section.methodology h1 {
+    text-align: left;
+    font-style: normal;
+}
+section.methodology h2 {
+    text-align: left;
+    font-style: normal;
+    font-size: 16px;
+}
+section.methodology ol.references li {
+    font-size: 14px !important;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+section.methodology ol.diseases li {
+    font-size: 12px !important;
+}
+section.pgxFindings {
+    page-break-inside: avoid;
+    margin-bottom: 40px;
+}
+
+section.pgxFindings table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 5px #ddd;
+}
+
+section.pgxFindings table.result tr:nth-child(1) th {
+    font-weight: bold;
+    background-color: #ffd200;
+}
+
+section.pgxFindings table.result th {
+    text-align: center;
+    font-weight: normal;
+    background-color: #fcefc9;
+    white-space: nowrap;
+}
+
+section.pgxFindings table.result thead tr:nth-child(2) th {
+    box-shadow: 0 5px 2px -2px 0px 5px 5px #999;
+}
+
+section.pgxFindings table.result>tbody>tr:nth-child(1)>td {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: center;
+    border: none;
+}
+
+section.pgxFindings table.result tr:nth-child(1)>td:nth-child(4) {
+    text-align: left;
+}
+
+section.pgxFindings table.result tr td:nth-child(1) {
+    width: 200px !important;
+    max-width: 200px !important;
+}
+
+section.pgxFindings table.result tr td {
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 11pt;
+}
+
+section.pgxFindings table.result tbody th {
+    text-align: right;
+    background-color: #0168ab;
+    color: white;
+    font-weight: normal;
+    white-space: nowrap;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+section.pgxFindings table.scale {
+    display: block;
+    width: 200px;
+    margin-right: 30px;
+}
+
+            
+table.pgxRecommendations {
+    box-shadow: none !important;
+}
+
+table.pgxRecommendations td {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+table.pgxRecommendations td.neutral {
+    color: #0070c0;
+    font-weight: bold;
+}
+
+table.pgxRecommendations td.warning b {
+    color: #e5a120;
+}
+
+table.pgxRecommendations td.dosage {
+    color: #7030a0;
+    font-weight: bold;
+}
+
+p.caption {
+    font-size: 10px;
+}
+
+.rating-static {
+  width: 60px;
+  height: 16px;
+  display: inline-block;
+  background: url({#asset /assets/TovanaHealth/stars.png @encoding=dataURI}) 0 0 no-repeat;
+}
+
+.rating-50 { background-position: 0 0; }
+.rating-40 { background-position: -12px 0; } 
+.rating-30 { background-position: -24px 0; }
+.rating-20 { background-position: -36px 0; }
+.rating-10 { background-position: -48px 0; }
+.rating-0 { background-position: -60px 0; }
+.rating-5  { background-position: -48px -16px; }
+.rating-15 { background-position: -36px -16px; }
+.rating-25 { background-position: -24px -16px; }
+.rating-35 { background-position: -12px -16px; }
+.rating-45 { background-position: 0 -16px; }
+
+table.hairLoss {
+    border-collapse: collapse;
+}
+
+table.hairLoss tr td:nth-child(1) {
+    text-align: center;
+}
+
+table.hairLoss tr td:nth-child(2) {
+    padding: 2px 5px;
+}
+
+table.hairLoss tr td {
+    border: 1px solid black;
+    font-size: 12px;
+}
+
+table.hairLoss img {
+    width: 148px;
+}
+
+section.glossary {
+    text-align: justify;
+}

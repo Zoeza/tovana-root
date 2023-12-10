@@ -1,0 +1,484 @@
+{% extends "en-us/manager/base.html" %}
+{% load static %}
+
+<!-- title -->
+{% block title %}
+<title>
+    TOVANA HEALTH manager | Reports
+</title>
+{% endblock %}
+
+<!-- header -->
+{% block page_header %}
+<div class="row align-items-end">
+  <div class="col-sm mb-2 mb-sm-0">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-no-gutter">
+        <li class="breadcrumb-item"><a class="breadcrumb-link" href="{% url 'home-manager' 'main' %}">Home</a></li>
+        <li class="breadcrumb-item" aria-current="page">Reports</li>
+          <li class="breadcrumb-item active" aria-current="page">Nutrition & Fitness Report</li>
+      </ol>
+    </nav>
+
+
+  </div>
+  <div class="col-sm-auto">
+
+
+</div>
+{% endblock %}
+
+<!-- table -->
+{% block table %}
+<div class="card">
+  <!-- Header -->
+  <div class="card-header card-header-content-md-between">
+    <div class="mb-2 mb-md-0">
+      <h1 class="page-header-title">Create Nutrition & Fitness Report</h1>
+    </div>
+  </div>
+  <!-- End Header -->
+
+  <div id="list">
+   <div class="content container-fluid">
+    <!-- Step Form -->
+    <form action="{% url 'report-manager' 'create_nutrition_report' %}"  class="js-step-form"
+          data-hs-step-form-options='{
+            "progressSelector": "#basicStepFormProgress",
+            "stepsSelector": "#basicStepFormContent",
+            "endSelector": "#createProjectFinishBtn"
+          }' method="post">
+      {% csrf_token %}
+      <!-- Step -->
+      <ul id="basicStepFormProgress" class="js-step-progress step step-sm step-icon-sm step-inline step-item-between mb-7">
+        <li class="step-item">
+          <a class="step-content-wrapper" href="javascript:;"
+             data-hs-step-form-next-options='{
+              "targetSelector": "#basicStepDetails"
+            }'>
+            <span class="step-icon step-icon-soft-dark">1</span>
+            <div class="step-content">
+              <span class="step-title">Sample Information</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="step-item">
+          <a class="step-content-wrapper" href="javascript:;"
+             data-hs-step-form-next-options='{
+               "targetSelector": "#basicStepTerms"
+             }'>
+            <span class="step-icon step-icon-soft-dark">2</span>
+            <div class="step-content">
+              <span class="step-title">Nutrition & Diet Genomics</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="step-item">
+          <a class="step-content-wrapper" href="javascript:;"
+             data-hs-step-form-next-options='{
+               "targetSelector": "#basicStepMembers"
+             }'>
+            <span class="step-icon step-icon-soft-dark">3</span>
+            <div class="step-content">
+              <span class="step-title">Fitness Genomics</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="step-item">
+          <a class="step-content-wrapper" href="javascript:;"
+             data-hs-step-form-next-options='{
+               "targetSelector": "#basicStepOtherTraits"
+             }'>
+            <span class="step-icon step-icon-soft-dark">4</span>
+            <div class="step-content">
+              <span class="step-title">Other traits and interesting facts</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <!-- End Step -->
+
+      <!-- Content Step Form -->
+      <div id="basicStepFormContent">
+        <div id="basicStepDetails" class="active">
+          <h4>SAMPLE INFORMATION</h4>
+          <br>
+         <!-- Department -->
+            <div class="mb-6">
+              <div class="input-group input-group-hover-light">
+                <div class="input-group-prepend input-group-text" style="width: 15%;">
+                  Department
+                </div>
+                <select class="form-select text-center" name="department" required>
+                   <option disabled="true" selected>-- Select Department --</option>
+                        {% if departments_list.count %}
+                             {% for department in departments_list %}
+                            <option>{{department}}</option>
+                            {% endfor %}
+                        {% endif %}
+                </select>
+              </div>
+            </div>
+            <!-- end Department -->
+          <!-- Subject -->
+            <div class="mb-6">
+              <div class="input-group input-group-hover-light">
+                <div class="input-group-prepend input-group-text" style="width: 15%;">
+                  Subject
+                </div>
+                <select class="form-select text-center" name="subject">
+                  <option disabled="true" selected>-- Select Subject --</option>
+                        {% if subjects_list.count %}
+                             {% for subject in subjects_list %}
+                            <option>{{subject}}</option>
+                            {% endfor %}
+                        {% endif %}
+                </select>
+              </div>
+            </div>
+          <!-- end Subject -->
+
+
+          <!-- Specimen type -->
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 15%;">Specimen type</span>
+                <input type="text" class="form-control" name="department" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+          <!-- end Specimen type -->
+
+          <!-- Created at -->
+              <div class="form-group mb-4">
+                <div id="projectDeadlineNewProjectFlatpickr" class="js-flatpickr flatpickr-custom input-group"
+                     data-hs-flatpickr-options='{
+                     "appendTo": "#projectDeadlineNewProjectFlatpickr",
+                     "enableTime": true,
+                     "dateFormat": "Y-m-d H:i",
+                     "time_24hr": true,
+                     "minDate": "today",
+                     "wrap": true
+                     }'>
+                  <div class="input-group-prepend input-group-text" style="width: 15%;">
+                    Created at
+                  </div>
+                  <input type="datetime-local" class="flatpickr-custom-form-control form-control" name="created_at" id="projectDeadlineFlatpickrNewProjectLabel" placeholder="select a date or leave empty" data-input>
+                </div>
+              </div>
+          <!-- end Created at -->
+
+          <!-- Footer -->
+          <div class="d-flex align-items-center">
+            <div class="ms-auto">
+              <button type="button" class="btn btn-primary"
+                      data-hs-step-form-next-options='{
+                        "targetSelector": "#basicStepTerms"
+                      }'>
+                Next <i class="bi-chevron-right small"></i>
+              </button>
+            </div>
+          </div>
+          <!-- End Footer -->
+        </div>
+
+        <div id="basicStepTerms" style="display: none;">
+          <h4>CARDIOMETABOLIC HEALTH</h4>
+          <br>
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 20%;">Caffeine</span>
+                <input type="number" class="form-control" name="caffeine_value" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 20%;">T2D Risk</span>
+                <input type="number" class="form-control" name="t2d_risk_value" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;"> Omega3 and Omega6 </span>
+                <input type="number" class="form-control" name=" omega3_and_omega6_value" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+
+               <!-- extracon is ativated-->
+              <div class="form-check mb-4">
+                <input type="checkbox" class="form-check-input indeterminate-checkbox" name="extracond">
+                <label class="form-check-label">Extracond</label>
+              </div>
+              <!-- end extracon is ativated -->
+            </div>
+
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;">Bitter taste Perception</span>
+                <input type="number" class="form-control" name="bitter_taste_perception_value" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <h4>NUTRITIONAL NEEDS & NUTRIENT METABOLISM</h4>
+          <br>
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;">Lactose Intolerance</span>
+                <input type="number" class="form-control" name="lactose_intolerance_value" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 20%;">Vitamin B2</span>
+                <input type="number" class="form-control" name="vitamin_B2_value" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 20%;"> Vitamin B12 </span>
+                <input type="number" class="form-control" name=" vitamin_B12_value" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 20%;">Vitamin C</span>
+                <input type="number" class="form-control" name="vitamin_C_value" placeholder="Put Specimen type" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+
+          </div>
+          <!-- Footer -->
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-ghost-secondary me-2"
+               data-hs-step-form-prev-options='{
+                 "targetSelector": "#basicStepDetails"
+               }'>
+              <i class="bi-chevron-left small"></i> Previous step
+            </button>
+
+            <div class="ms-auto">
+              <button type="button" class="btn btn-primary"
+                      data-hs-step-form-next-options='{
+                        "targetSelector": "#basicStepMembers"
+                      }'>
+                Next <i class="bi-chevron-right small"></i>
+              </button>
+            </div>
+          </div>
+          <!-- End Footer -->
+        </div>
+        <div id="basicStepMembers" style="display: none;">
+          <h4>FITNESS GENOMICS</h4>
+          <br>
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;">Exercise behavior</span>
+                <input type="number" class="form-control" name="exercise_behavior_value" placeholder="" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;">Power and strength</span>
+                <input type="number" class="form-control" name="power_and_strength_value" placeholder="" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;"> Endurance Training </span>
+                <input type="number" class="form-control" name=" endurance_training_value" placeholder="" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;">Pain Sensitivity</span>
+                <input type="number" class="form-control" name="pain_sensitivity_value" placeholder="" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="input-group mb-4">
+                  <span class="input-group-text" style="width: 40%;"> Achilles tendon Injury </span>
+                  <input type="number" class="form-control" name=" achilles_tendon_injury_value " placeholder="" required>
+                  <span class="invalid-feedback text-start">This field is required.</span>
+                </div>
+              </div>
+
+            <div class="col">
+                <div class="input-group mb-4">
+                  <span class="input-group-text" style="width: 50%;">Muscle Fatigue and Cramping</span>
+                  <input type="number" class="form-control" name="muscle_fatigue_and_cramping_value" placeholder="" required>
+                  <span class="invalid-feedback text-start">This field is required.</span>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                <div class="input-group mb-4">
+                  <span class="input-group-text" style="width: 40%;"> Aerobic Capacity </span>
+                  <input type="number" class="form-control" name="aerobic_capacity_value" placeholder="" required>
+                  <span class="invalid-feedback text-start">This field is required.</span>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="input-group mb-4">
+                  <span class="input-group-text" style="width: 50%;">Blood pressure response to exercise</span>
+                  <input type="number" class="form-control" name="blood_pressure_response_to_exercise_value" placeholder="" required>
+                  <span class="invalid-feedback text-start">This field is required.</span>
+                </div>
+              </div>
+            </div>
+             <!-- BMI Response To Exercise -->
+            <div class="input-group mb-4">
+                  <span class="input-group-text" style="width: 20%;"> BMI Response To Exercise</span>
+                  <input type="number" class="form-control" name=" bmi_response_to_exercise_value " placeholder="" required>
+                  <span class="invalid-feedback text-start">This field is required.</span>
+            </div>
+            <!-- end BMI Response To Exercise -->
+
+          <!-- Footer -->
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-ghost-secondary me-2"
+               data-hs-step-form-prev-options='{
+                 "targetSelector": "#basicStepTerms"
+               }'>
+              <i class="bi-chevron-left small"></i> Previous step
+            </button>
+
+            <div class="ms-auto">
+              <button type="button" class="btn btn-primary"
+                      data-hs-step-form-next-options='{
+                        "targetSelector": "#basicStepOtherTraits"
+                      }'>
+                Next <i class="bi-chevron-right small"></i>
+              </button>
+            </div>
+          </div>
+          <!-- End Footer -->
+        </div>
+        <div id="basicStepOtherTraits" style="display: none;">
+          <br>
+          <h4>OTHER TRAITS & INTERESTING FACTS</h4>
+          <br>
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;"> Wet.vs Dry Earwax </span>
+                <input type="number" class="form-control" name=" wet_vs_dry_earwax_value" placeholder="" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="input-group mb-4">
+                <span class="input-group-text" style="width: 40%;">Hair Loss & Baldness </span>
+                <input type="number" class="form-control" name="hair_loss_and_baldness_value" placeholder="" required>
+                <span class="invalid-feedback text-start">This field is required.</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="input-group mb-4">
+                  <span class="input-group-text" style="width: 40%;"> Dental Caries </span>
+                  <input type="number" class="form-control" name=" dental_caries_value " placeholder="" required>
+                  <span class="invalid-feedback text-start">This field is required.</span>
+                </div>
+              </div>
+
+            <div class="col">
+                <div class="input-group mb-4">
+                  <span class="input-group-text" style="width: 40%;">Sleep Depth</span>
+                  <input type="number" class="form-control" name="sleep_depth_value" placeholder="" required>
+                  <span class="invalid-feedback text-start">This field is required.</span>
+                </div>
+              </div>
+          </div>
+
+             <!-- BMI Response To Exercise -->
+            <div class="input-group mb-4">
+                  <span class="input-group-text" style="width: 20%;"> Warrior Vs Worrier</span>
+                  <input type="number" class="form-control" name=" warrior_vs_worrier_value " placeholder="" required>
+                  <span class="invalid-feedback text-start">This field is required.</span>
+            </div>
+            <!-- end BMI Response To Exercise -->
+
+
+
+
+          <!-- Footer -->
+          <div class="d-sm-flex align-items-center">
+            <button type="button" class="btn btn-ghost-secondary mb-3 mb-sm-0 me-2"
+               data-hs-step-form-prev-options='{
+                 "targetSelector": "#basicStepTerms"
+               }'>
+              <i class="bi-chevron-left small"></i> Previous step
+            </button>
+
+            <div class="d-flex justify-content-end ms-auto">
+              <button type="button" class="btn btn-white me-2" data-dismiss="modal" aria-label="Close">Cancel</button>
+              <button id="createProjectFinishBtn" type="submit" class="btn btn-primary">generate report</button>
+            </div>
+          </div>
+          <!-- End Footer -->
+        </div>
+      </div>
+      <!-- End Content Step Form -->
+
+      <!-- Message Body -->
+      <div id="basicStepSuccessMessage" class="js-success-message" style="display:none;">
+        <div class="text-center">
+          <img class="img-fluid mb-3" src="../assets/svg/illustrations/oc-hi-five.svg" alt="Image Description" style="max-width: 15rem;">
+
+          <div class="mb-4">
+
+            <p>generate your report</p>
+          </div>
+
+          <div class="d-flex justify-content-center gap-3">
+            <a class="btn btn-white" href="#">
+              <i class="bi-chevron-left small ms-1"></i> Back to projects
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- End Message Body -->
+    </form>
+    <!-- End Step Form -->
+
+
+
+  </div>
+  </div>
+</div>
+{% endblock %}
