@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'report_builder'
+    'report_builder',
     'phonenumber_field',
     'weasyprint',
     'docxtpl',
