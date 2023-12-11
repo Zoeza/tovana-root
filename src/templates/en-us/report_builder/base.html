@@ -529,7 +529,99 @@
 
         <!-- Content -->
         <div class="navbar-vertical-content">
-          <div id="navbarVerticalMenuPagesMenu">
+          <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
+            <!-- Home -->
+            <div class="nav-item">
+                <a class="nav-link {% if nav_side == 'home' %} active {% endif %}" href="{% url 'report-manager' 'main' %}?init=True" data-placement="left">
+                  {% if nav_side == 'home' %}
+                  <i class="bi-house-door-fill nav-icon"></i>
+                  {% else %}
+                  <i class="bi-house-door nav-icon"></i>
+                  {% endif %}
+                  <span class="nav-link-title">Home</span>
+                </a>
+            </div>
+            <!-- End Home -->
+
+            <span class="dropdown-header mt-4"></span>
+            <small class="bi-three-dots nav-subtitle-replacer"></small>
+            <!-- Collapse -->
+            <div class="navbar-nav nav-compact">
+            </div>
+
+            <!-- Subjects -->
+            <div class="nav-item">
+              <a class="nav-link {% if nav_side == 'subjects' %} active {% endif %}" href="" data-placement="left">
+                {% if nav_side == 'subjects' %}
+                <i class="bi-people-fill nav-icon"></i>
+                {% else %}
+                <i class="bi-people nav-icon"></i>
+                {% endif %}
+                <span class="nav-link-title">Subjects
+                  {% if unverified_users_count %}<span class="badge bg-primary rounded-pill ms-1">{{ unverified_users_count }}</span>{% endif %}
+                </span>
+              </a>
+            </div>
+            <!-- End Users -->
+
+             <!-- Reports -->
+            <div class="nav-item">
+              <a class="nav-link {% if nav_side == 'reports' %} active {% endif %}" href="{% url 'report-manager' 'main' %}?init=True" data-placement="left">
+                {% if nav_side == 'reports' %}
+                <i class="bi-file-break-fill nav-icon"></i>
+                {% else %}
+                <i class="bi-file-break nav-icon"></i>
+                {% endif %}
+                <span class="nav-link-title">Reports</span>
+              </a>
+            </div>
+            <!-- End Reports -->
+
+            <span class="dropdown-header mt-4"></span>
+            <small class="bi-three-dots nav-subtitle-replacer"></small>
+
+            <!-- Terms & Condition -->
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-placement="left">
+                <i class="bi-info-lg nav-icon"></i>
+                <span class="nav-link-title">Terms & Condition </span>
+              </a>
+            </div>
+            <!-- End Terms & Condition -->
+
+            <!-- Policy -->
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-placement="left">
+                <i class="bi-incognito nav-icon"></i>
+                <span class="nav-link-title">Policy </span>
+              </a>
+            </div>
+            <!-- End Policy -->
+
+            <!-- Blog -->
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-placement="left">
+                <i class="bi-pc-display nav-icon"></i>
+                <span class="nav-link-title">Blog </span>
+              </a>
+            </div>
+            <!-- End Blog -->
+
+            <!-- FAQs -->
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-placement="left">
+                <i class="bi-question-square nav-icon"></i>
+                <span class="nav-link-title">FAQs </span>
+              </a>
+            </div>
+            <!-- End FAQs -->
+
+          </div>
+
+        </div>
+        <!-- End Content -->
+
+         <div id="navbarVerticalMenuPagesMenu">
               <!-- Collapse -->
            <div class="nav-item">
                 <a class="nav-link dropdown-toggle " href="#navbarVerticalMenuPagesUsersMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuPagesUsersMenu" aria-expanded="false" aria-controls="navbarVerticalMenuPagesUsersMenu">
@@ -545,7 +637,6 @@
               </div>
          </div>
         </div>
-        <!-- End Content -->
 
         <!-- Footer -->
         <div class="navbar-vertical-footer">
