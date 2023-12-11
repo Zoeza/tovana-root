@@ -35,7 +35,6 @@ def report_manager(request, action):
 
     if action == 'report-builder':
         url = direction + "/report_builder/reports/list.html"
-
         context = {
             'reports_list': reports_list,
             'nav_side': nav_side,
