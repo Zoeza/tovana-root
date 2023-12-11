@@ -27,23 +27,11 @@ def report_manager(request, action):
     if not request.session.get('language', None):
         request.session['language'] = 'en-us'
 
-    try:
-        departments_list = Department.objects.all()
-    except Department.DoesNotExist:
-        raise Http404("No departments")
-
-    try:
-        subjects_list = Subject.objects.all()
-    except Subject.DoesNotExist:
-        raise Http404("No subjects")
-
-    try:
-        reports_list = GeneratedReport.objects.all()
-    except GeneratedReport.DoesNotExist:
-        raise Http404("No subjects")
-
     direction = request.session.get('language')
     nav_side = 'report builder'
+    departments_list = Department.objects.all()
+    subjects_list = Subject.objects.all()
+    reports_list = GeneratedReport.objects.all()
 
     if action == 'report-builder':
         url = direction + "/report_builder/reports/list.html"
