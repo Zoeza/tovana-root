@@ -40,4 +40,4 @@ def report_manager(request, action):
             'reports_list': reports_list,
             'nav_side': nav_side,
         }
-        return render(request, url, context)
+    return render(request, url, context)
