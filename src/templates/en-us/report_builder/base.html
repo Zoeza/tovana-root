@@ -566,8 +566,8 @@
 
              <!-- Reports -->
             <div class="nav-item">
-              <a class="nav-link {% if nav_side == 'report builder' %} active {% endif %}" href="{% url 'report-manager' 'main' %}?init=True" data-placement="left">
-                {% if nav_side == 'reports' %}
+              <a class="nav-link {% if nav_side == 'report builder' %} active {% endif %}" href="{% url 'report-manager' 'report-builder' %}?init=True" data-placement="left">
+                {% if nav_side == 'report builder' %}
                 <i class="bi-file-break-fill nav-icon"></i>
                 {% else %}
                 <i class="bi-file-break nav-icon"></i>

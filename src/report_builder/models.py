@@ -32,3 +32,16 @@ class Department(models.Model):
 
     def __str__(self):
         return self.health_care_provider
+
+
+class GeneratedReport(models.Model):
+    created = models.DateTimeField(auto_now_add=True, null=True)
+    report_name = models.CharField(max_length=255)
+    subject = models.CharField(max_length=255)
+    report = models.FileField(upload_to='reports/', null=True)
+
+    class Meta:
+        verbose_name = "generated_report"
+
+    def __str__(self):
+        return self.report_name
