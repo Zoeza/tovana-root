@@ -14,7 +14,7 @@
   <div class="col-sm mb-2 mb-sm-0">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb breadcrumb-no-gutter">
-        <li class="breadcrumb-item"><a class="breadcrumb-link" href="{% url 'home-manager' 'main' %}">Home</a></li>
+        <li class="breadcrumb-item"><a class="breadcrumb-link" href="{% url 'home-manager' 'report-builder' %}">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">Reports</li>
       </ol>
     </nav>
@@ -23,8 +23,8 @@
   </div>
   <div class="col-sm-auto">
     <!-- create new report button -->
-    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#choose_new_model">
-      Bluid a new report
+    <button class="btn btn-light" href="{% url 'home-manager' 'add-report' %}">
+      Build a new report
     </button>
     <!-- end create new report button -->
 

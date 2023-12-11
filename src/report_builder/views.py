@@ -40,3 +40,13 @@ def report_manager(request, action):
             'nav_side': nav_side,
         }
         return render(request, url, context)
+
+    if action == 'add-report':
+        url = direction + "/report_builder/reports/add_report.html"
+        context = {
+            'reports_list': reports_list,
+            'departments_list': departments_list,
+            'subjects_list': subjects_list,
+            'nav_side': nav_side,
+        }
+        return render(request, url, context)
