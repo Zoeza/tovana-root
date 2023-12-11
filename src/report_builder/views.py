@@ -32,7 +32,6 @@ def report_manager(request, action):
     departments_list = Department.objects.all()
     subjects_list = Subject.objects.all()
     reports_list = GeneratedReport.objects.all()
-    url = direction + "/report_builder/reports/list.html"
 
     if action == 'report-builder':
         url = direction + "/report_builder/reports/list.html"
@@ -40,4 +39,4 @@ def report_manager(request, action):
             'reports_list': reports_list,
             'nav_side': nav_side,
         }
-    return render(request, url, context)
+        return render(request, url, context)
