@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'docxtpl',
     'docx2pdf',
+    'ajax_select',
 ]
 
 MIDDLEWARE = [
