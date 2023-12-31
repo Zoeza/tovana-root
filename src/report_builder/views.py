@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Subject, Template, Department, GeneratedReport
 from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Mm
-from add_ons.function import calculate
+from add_ons import function
 from django.http import HttpResponse, FileResponse
 from django.core.files.base import ContentFile
 import io
@@ -57,6 +57,9 @@ def report_manager(request, action):
         return render(request, url, context)
 
     if action == 'create_nutrition_report':
+        data = function.calculate()
+        caffeine_genotype_table = data.get('caffeine_genotype_table')
+        caffeine_prs = data.get('caffeine_prs')
 
         if request.method == 'POST':
             subject_name = request.POST.get('subject_name', False)
@@ -68,9 +71,6 @@ def report_manager(request, action):
             template = Template.objects.get(template_name='Nutrition_Fitness_Wellness')
             template_path = template.template.path
             report = DocxTemplate(template_path)
-            data = calculate()
-            caffeine_genotype_table = data.get('caffeine_genotype_table')
-            caffeine_prs = data.get('caffeine_prs')
 
             context = {
                 'Case_OwnerDepartment': department.health_care_provider,
