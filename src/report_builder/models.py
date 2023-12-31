@@ -39,6 +39,7 @@ class GeneratedReport(models.Model):
     report_name = models.CharField(max_length=255)
     subject = models.CharField(max_length=255)
     report = models.FileField(upload_to='reports/', null=True)
+    pdf = models.FileField(upload_to='reports/pdf', null=True)
 
     class Meta:
         verbose_name = "generated_report"

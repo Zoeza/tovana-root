@@ -162,6 +162,11 @@
            {% csrf_token %}
            <input type="hidden" name="report_id" value={{report.id}}>
          </form>
+         <form action="{% url 'report-manager' 'view_report' %}" id="view_report_form_{{report.id}}" method="post">
+           {% csrf_token %}
+           <input type="hidden" name="report_id" value={{report.id}}>
+         </form>
+
 
         <tr>
           <td>
@@ -189,6 +194,10 @@
 
             <button  class="btn btn-white form-control-lg"  form="delete_report_form_{{report.id}}">
               <i class="fa fa-trash fa-xl" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"></i>
+            </button>
+
+            <button  class="btn btn-white form-control-lg"  form="view_report_form_{{report.id}}">
+              <i class="fa fa-eye fa-xl" data-bs-toggle="tooltip" data-bs-placement="top" title="view"></i>
             </button>
           </td>
         </tr>

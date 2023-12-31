@@ -1,5 +1,6 @@
 import random, string
 import csv
+from docx2pdf import convert
 
 
 # ------------------------ general ------------------------- #
@@ -36,7 +37,7 @@ def verification(table_genotype):
 def get_prs(risk_allele, strength, genotype):
     genotype_risk_score = []
     for i in range(len(risk_allele)):
-        if genotype[i] == 'N/A':
+        if genotype[i] == 'N/A' or genotype[i] == '..':
             genotype_risk_score.append(0)
         else:
             if risk_allele[i] == genotype[i][0] and risk_allele[i] == genotype[i][1]:
@@ -119,3 +120,8 @@ def calculate():
                'vitamin_c_prs': vitamin_c_prs,
                }
     return context
+
+
+def docx_to_pdf(docx_file):
+    pdf_file = docx_file.replace('.docx', '.pdf')
+    return convert(docx_file, pdf_file)
