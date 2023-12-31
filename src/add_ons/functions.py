@@ -11,7 +11,7 @@ def serial_number_generator(length):
 # /*--Open the CSV file--*/
 def genotype_finder(snps):
     genotype = []
-    with open('/Users/macbook/software-projects/django-projects/pdfgenerator/src/templates/GRC237940363-TV2VG362.csv',
+    with open('/tovana-root/src/templates/GRC237940363-TV2VG362.csv',
               newline='') as csv_file:
         table = []
         reader = csv.reader(csv_file)
