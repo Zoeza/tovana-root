@@ -68,7 +68,7 @@ def report_manager(request, action):
         lactose_intolerance_prs = data.get('lactose_intolerance_prs')
         bitter_taste_perception_genotype_table = data.get('bitter_taste_perception_genotype_table')
         bitter_taste_perception_prs = data.get('bitter_taste_perception_prs')
-        vitamin_b2_genotype_table= data.get('vitamin_b2_genotype_table')
+        vitamin_b2_genotype_table = data.get('vitamin_b2_genotype_table')
         vitamin_b2_prs = data.get('vitamin_b2_prs')
         vitamin_b12_genotype_table = data.get('vitamin_b12_genotype_table')
         vitamin_b12_prs = data.get('vitamin_b12_prs')
@@ -101,7 +101,7 @@ def report_manager(request, action):
                 'omega_3_genotype_table': omega_3_genotype_table,
                 'lactose_intolerance_genotype_table': lactose_intolerance_genotype_table,
                 'bitter_taste_perception_genotype_table': bitter_taste_perception_genotype_table,
-                'vitamin_b2_genotype_table':vitamin_b2_genotype_table,
+                'vitamin_b2_genotype_table': vitamin_b2_genotype_table,
                 'vitamin_b12_genotype_table': vitamin_b12_genotype_table,
                 'vitamin_c_genotype_table': vitamin_c_genotype_table,
             }

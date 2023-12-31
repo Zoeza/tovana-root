@@ -111,7 +111,7 @@ def calculate():
                'lactose_intolerance_prs': lactose_intolerance_prs,
                'bitter_taste_perception_genotype_table': bitter_taste_perception_genotype_table,
                'bitter_taste_perception_prs': bitter_taste_perception_prs,
-               'vitamin_b2_table': vitamin_b2_genotype_table,
+               'vitamin_b2_genotype_table': vitamin_b2_genotype_table,
                'vitamin_b2_prs': vitamin_b2_prs,
                'vitamin_b12_genotype_table': vitamin_b12_genotype_table,
                'vitamin_b12_prs': vitamin_b12_prs,
