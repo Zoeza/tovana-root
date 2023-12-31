@@ -110,12 +110,12 @@ def report_manager(request, action):
             report.save(report_io)
             report_io.seek(0)
             report = ContentFile(report_io.read())
-            pdf_report = functions.docx_to_pdf(report)
 
             nutrition_report = GeneratedReport()
             nutrition_report.report.save(subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness.docx', report)
             nutrition_report.report_name = subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness'
-            nutrition_report.pdf.save(subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness.docx', pdf_report)
+            nutrition_report.pdf.save(subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness.pdf',
+                                      functions.docx_to_pdf(nutrition_report.report.path))
             nutrition_report.subject = subject.name
             nutrition_report.created = created_at
             nutrition_report.save()
@@ -144,5 +144,3 @@ def report_manager(request, action):
                 response = HttpResponse(pdf.read(), content_type='application/pdf')
                 response['Content-Disposition'] = 'inline;filename=output.pdf'
                 return response
-
-
