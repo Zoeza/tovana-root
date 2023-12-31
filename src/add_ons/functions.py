@@ -1,6 +1,7 @@
 import random, string
 import csv
-from docx2pdf import convert
+import aspose.words as aw
+
 import subprocess
 
 # ------------------------ general ------------------------- #
@@ -123,5 +124,7 @@ def calculate():
 
 
 def docx_to_pdf(docx_file):
-    pdf_file = docx_file.replace('.docx', '.pdf')
-    return convert(docx_file, pdf_file)
+    doc = aw.Document("docx_file")
+    return doc.save("out.pdf")
+
+
