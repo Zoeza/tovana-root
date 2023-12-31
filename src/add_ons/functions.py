@@ -1,6 +1,6 @@
 import random, string
 import csv
-from docx2pdf import convert
+import subprocess
 
 
 # ------------------------ general ------------------------- #
@@ -122,6 +122,15 @@ def calculate():
     return context
 
 
-def docx_to_pdf(docx_file):
-    pdf_file = docx_file.replace('.docx', '.pdf')
-    return convert(docx_file, pdf_file)
+def generate_pdf(doc_path, path):
+    subprocess.call(['soffice',
+                     # '--headless',
+                     '--convert-to',
+                     'pdf',
+                     '--outdir',
+                     path,
+                     doc_path])
+    return doc_path
+
+
+
