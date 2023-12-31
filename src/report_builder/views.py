@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Subject, Template, Department, GeneratedReport
-from django.http import Http404
+from docxtpl import DocxTemplate, InlineImage
+from docx.shared import Mm
+from add_ons.function import calculate
+from django.http import HttpResponse, FileResponse
+from django.core.files.base import ContentFile
+import io
 
 
 # Create your views here.
@@ -37,6 +42,7 @@ def report_manager(request, action):
         url = direction + "/report_builder/reports/list.html"
         context = {
             'reports_list': reports_list,
+            'subjects_list': subjects_list,
             'nav_side': nav_side,
         }
         return render(request, url, context)
@@ -44,9 +50,65 @@ def report_manager(request, action):
     if action == 'add-report':
         url = direction + "/report_builder/reports/add_report.html"
         context = {
-            'reports_list': reports_list,
-            'departments_list': departments_list,
             'subjects_list': subjects_list,
+            'departments_list': departments_list,
             'nav_side': nav_side,
         }
         return render(request, url, context)
+
+    if action == 'create_nutrition_report':
+        data = calculate()
+        caffeine_genotype_table = data.get('caffeine_genotype_table')
+        caffeine_prs = data.get('caffeine_prs')
+
+        if request.method == 'POST':
+            subject_name = request.POST.get('subject_name', False)
+            health_care_provider = request.POST.get('health_care_provider', False)
+            specimen_type = request.POST.get('specimen_type', False)
+            created_at = request.POST.get('created_at', False)
+            subject = Subject.objects.get(name=subject_name)
+            department = Department.objects.get(health_care_provider=health_care_provider)
+            template = Template.objects.get(template_name='Nutrition_Fitness_Wellness')
+            template_path = template.template.path
+            report = DocxTemplate(template_path)
+
+            context = {
+                'Case_OwnerDepartment': department.health_care_provider,
+                'logo': InlineImage(report, department.logo.path, width=Mm(50)),
+                'Case_MainSample_SourceName': specimen_type,
+                'Case_patient': subject.subject_id,
+                'Date': created_at,
+                'Patient_Name': subject.name,
+                'Patient_Gender': subject.gender,
+                'Patient_PaternalAncestry': subject.paternal_ancestry,
+                'Patient_MaternalAncestry': subject.maternal_ancestry,
+                'latest_update_date': created_at,
+                'caffeine_genotype_table': caffeine_genotype_table,
+            }
+            report.render(context)
+            report_io = io.BytesIO()
+            report.save(report_io)
+            report_io.seek(0)
+            report = ContentFile(report_io.read())
+
+            nutrition_report = GeneratedReport()
+            nutrition_report.report.save(subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness.docx', report)
+            nutrition_report.report_name = subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness'
+            nutrition_report.subject = subject.name
+            nutrition_report.created = created_at
+            nutrition_report.save()
+
+        return redirect('report-manager', 'report-builder')
+
+    if action == 'delete_report':
+        if request.method == 'POST':
+            report_id = request.POST.get('report_id', False)
+            selected_report = GeneratedReport.objects.all().get(id=report_id)
+            selected_report.delete()
+        return redirect('report-manager', 'report-builder')
+
+    if action == 'download_report':
+        if request.method == 'POST':
+            report_id = request.POST.get('report_id', False)
+            selected_report = GeneratedReport.objects.all().get(id=report_id)
+            return FileResponse(selected_report.report, as_attachment=True)

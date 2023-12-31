@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'docxtpl',
     'docx2pdf',
     'pandas',
+    'vobject',
 
 ]
 

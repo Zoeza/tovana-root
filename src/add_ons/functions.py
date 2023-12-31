@@ -24,10 +24,12 @@ def genotype_finder(snps):
     return genotype
 
 
-def verification(table_genotype):
-    if len(table_genotype) == 11:
-        table_genotype.append('N/A')
-        table_genotype[10], table_genotype[11] = table_genotype[11], table_genotype[10]
+def verification(table_genotype, name):
+    if name == 'caffeine_metabolism':
+        if len(table_genotype) == 11:
+            table_genotype.append('N/A')
+            table_genotype[10], table_genotype[11] = table_genotype[11], table_genotype[10]
+
     return table_genotype
 
 
@@ -45,3 +47,44 @@ def get_prs(risk_allele, strength, genotype):
                 genotype_risk_score.append(0)
     prs = sum(genotype_risk_score) * 100 / (len(genotype) * 2)
     return prs
+
+
+def calculate():
+    caffeine_metabolism_snp = ['rs2472300', 'rs762551', 'rs2472299', 'rs2069526', 'rs12720461', 'rs28399424',
+                               'rs2472304', 'rs2472297', 'rs2470893', 'rs6968554', 'rs10275488', 'rs382140']
+    caffeine_risk_allele = ['A', 'A', 'G', 'G', 'T', 'T', 'A', 'T', 'T', 'A', 'T', 'A']
+    caffeine_strength = [1, 6, 6, 1, 1, 1, 0.5, 1, 0.9, 0.9, 0.6, 0.7]
+
+    caffeine_genotype_table = verification(genotype_finder(caffeine_metabolism_snp), 'caffeine_metabolism')
+    caffeine_prs = get_prs(caffeine_risk_allele, caffeine_strength, caffeine_genotype_table)
+
+    t2d_risk_snp = ['rs12255372']
+    t2d_risk_allele = ['T']
+    t2d_strength = [0.6]
+
+    omega_3_snp = ['rs174538', 'rs3734398', 'rs1799983']
+    omega3_risk_allele = ['A', 'C', 'T']
+    omega_3_strength = [0.9, 0.9, 0.2, 1]
+
+    lactose_intolerance_snp = ['rs4988235', 'rs182549']
+    lactose_intolerance_risk_allele = ['G', 'C']
+    lactose_intolerance_strength = [1, 1]
+
+    bitter_taste_perception_snp = ['rs713598', 'rs1726866', 'rs10246939']
+    bitter_taste_perception_risk_allele = ['G', 'A', 'C']
+    bitter_taste_perception_strength = [0.7, 0.8, 0.8]
+
+    vitamin_b2_snp = ['rs1801133']
+    vitamin_b2_risk_allele = ['A']
+    vitamin_b2_strength = [0.8]
+
+    vitamin_b12_snp = ['rs602662', 'rs492602', 'rs3760775', 'rs1801222']
+    vitamin_b12_risk_allele = ['G', 'A', 'G', 'A']
+    vitamin_b12_strength = [0.8, 0.7, 0.8, 0.7]
+
+    vitamin_c_snp = ['rs33972313']
+    vitamin_c_risk_allele = ['T']
+    vitamin_c_strength = [0.5]
+    context = {'caffeine_genotype_table': caffeine_genotype_table,
+               'caffeine_prs': caffeine_prs, }
+    return context
