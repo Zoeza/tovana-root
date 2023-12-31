@@ -74,7 +74,6 @@ def report_manager(request, action):
 
             context = {
                 'Case_OwnerDepartment': department.health_care_provider,
-                'logo': InlineImage(report, department.logo.path, width=Mm(50)),
                 'Case_MainSample_SourceName': specimen_type,
                 'Case_patient': subject.subject_id,
                 'Date': created_at,
