@@ -124,7 +124,7 @@ def calculate():
 
 
 def docx_to_pdf(doc_path):
-    doc = aw.Document(doc_path)
+    doc = aw.Document("doc_path")
     return doc.save("out.pdf")
 
 
