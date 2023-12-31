@@ -39,9 +39,6 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'docxtpl',
     'docx2pdf',
-    'pandas',
-    'vobject',
-
 ]
 
 MIDDLEWARE = [
