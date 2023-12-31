@@ -123,8 +123,8 @@ def calculate():
     return context
 
 
-def docx_to_pdf(docx_file):
-    doc = aw.Document(docx_file)
+def docx_to_pdf(doc_path):
+    doc = aw.Document(doc_path)
     return doc.save("out.pdf")
 
 
