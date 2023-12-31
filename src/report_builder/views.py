@@ -144,4 +144,6 @@ def report_manager(request, action):
             f = open(pdf_file)
             data = f.read()
             f.close()
-            return HttpResponse(data, content_type="application/pdf")
+            response = HttpResponse(data, content_type='application/pdf')
+            response['Content-Disposition'] = 'filename="home_page.pdf"'
+            return response
