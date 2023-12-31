@@ -25,11 +25,10 @@ def genotype_finder(snps):
     return genotype
 
 
-def verification(table_genotype, name):
-    if name == 'caffeine_metabolism':
-        if len(table_genotype) == 11:
-            table_genotype.append('N/A')
-            table_genotype[10], table_genotype[11] = table_genotype[11], table_genotype[10]
+def verification(table_genotype):
+    if len(table_genotype) == 11:
+        table_genotype.append('N/A')
+        table_genotype[10], table_genotype[11] = table_genotype[11], table_genotype[10]
 
     return table_genotype
 
@@ -56,36 +55,67 @@ def calculate():
     caffeine_risk_allele = ['A', 'A', 'G', 'G', 'T', 'T', 'A', 'T', 'T', 'A', 'T', 'A']
     caffeine_strength = [1, 6, 6, 1, 1, 1, 0.5, 1, 0.9, 0.9, 0.6, 0.7]
 
-    caffeine_genotype_table = verification(genotype_finder(caffeine_metabolism_snp), 'caffeine_metabolism')
+    caffeine_genotype_table = verification(genotype_finder(caffeine_metabolism_snp))
     caffeine_prs = get_prs(caffeine_risk_allele, caffeine_strength, caffeine_genotype_table)
 
     t2d_risk_snp = ['rs12255372']
     t2d_risk_allele = ['T']
     t2d_strength = [0.6]
+    t2d_genotype_table = verification(genotype_finder(t2d_risk_snp))
+    t2d_prs = get_prs(t2d_risk_allele, t2d_strength, t2d_genotype_table)
 
     omega_3_snp = ['rs174538', 'rs3734398', 'rs1799983']
     omega3_risk_allele = ['A', 'C', 'T']
     omega_3_strength = [0.9, 0.9, 0.2, 1]
+    omega_3_genotype_table = genotype_finder(omega_3_snp)
+    omega_3_prs = get_prs(omega3_risk_allele, omega_3_strength, omega_3_genotype_table)
 
     lactose_intolerance_snp = ['rs4988235', 'rs182549']
     lactose_intolerance_risk_allele = ['G', 'C']
     lactose_intolerance_strength = [1, 1]
+    lactose_intolerance_genotype_table = genotype_finder(lactose_intolerance_snp)
+    lactose_intolerance_prs = get_prs(lactose_intolerance_risk_allele, lactose_intolerance_strength,
+                                      lactose_intolerance_genotype_table)
 
     bitter_taste_perception_snp = ['rs713598', 'rs1726866', 'rs10246939']
     bitter_taste_perception_risk_allele = ['G', 'A', 'C']
     bitter_taste_perception_strength = [0.7, 0.8, 0.8]
+    bitter_taste_perception_genotype_table = genotype_finder(bitter_taste_perception_snp)
+    bitter_taste_perception_prs = get_prs(bitter_taste_perception_risk_allele, bitter_taste_perception_strength,
+                                          bitter_taste_perception_genotype_table)
 
     vitamin_b2_snp = ['rs1801133']
     vitamin_b2_risk_allele = ['A']
     vitamin_b2_strength = [0.8]
+    vitamin_b2_genotype_table = genotype_finder(vitamin_b2_snp)
+    vitamin_b2_prs = get_prs(vitamin_b2_risk_allele, vitamin_b2_strength, vitamin_b2_genotype_table)
 
     vitamin_b12_snp = ['rs602662', 'rs492602', 'rs3760775', 'rs1801222']
     vitamin_b12_risk_allele = ['G', 'A', 'G', 'A']
     vitamin_b12_strength = [0.8, 0.7, 0.8, 0.7]
+    vitamin_b12_genotype_table = genotype_finder(vitamin_b12_snp)
+    vitamin_b12_prs = get_prs(vitamin_b12_risk_allele, vitamin_b12_strength, vitamin_b12_genotype_table)
 
     vitamin_c_snp = ['rs33972313']
     vitamin_c_risk_allele = ['T']
     vitamin_c_strength = [0.5]
+    vitamin_c_genotype_table = genotype_finder(vitamin_c_snp)
+    vitamin_c_prs = get_prs(vitamin_c_risk_allele, vitamin_c_strength, vitamin_c_genotype_table)
     context = {'caffeine_genotype_table': caffeine_genotype_table,
-               'caffeine_prs': caffeine_prs, }
+               'caffeine_prs': caffeine_prs,
+               't2d_genotype_table': t2d_genotype_table,
+               't2d_prs': t2d_prs,
+               ' omega_3_genotype_table': omega_3_genotype_table,
+               ' omega_3_prs': omega_3_prs,
+               'lactose_intolerance_genotype_table': lactose_intolerance_genotype_table,
+               'lactose_intolerance_prs': lactose_intolerance_prs,
+               'bitter_taste_perception_genotype_table': bitter_taste_perception_genotype_table,
+               'bitter_taste_perception_prs': bitter_taste_perception_prs,
+               'vitamin_b2_table':vitamin_b2_genotype_table,
+               'vitamin_b2_prs':vitamin_b2_prs,
+               'vitamin_b12_genotype_table': vitamin_b12_genotype_table,
+               'vitamin_b12_prs': vitamin_b12_prs,
+               'vitamin_c_genotype_table': vitamin_c_genotype_table,
+               'vitamin_c_prs': vitamin_c_prs,
+               }
     return context
