@@ -141,9 +141,6 @@ def report_manager(request, action):
             pdf_path = "/tovana-root/src/templates/test.pdf"
             functions.docx_to_pdf(doc_path, pdf_path)
             pdf_file = "/tovana-root/src/templates/test.pdf"
-            f = open(pdf_file)
-            data = f.read()
-            f.close()
-            response = HttpResponse(data, content_type='application/pdf')
-            response['Content-Disposition'] = 'filename="home_page.pdf"'
-            return response
+            return FileResponse(pdf_file, as_attachment=True)
+
+            
