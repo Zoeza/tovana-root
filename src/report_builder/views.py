@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Subject, Template, Department, GeneratedReport
 from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Mm
-from add_ons import function
+from add_ons import functions
 from django.http import HttpResponse, FileResponse
 from django.core.files.base import ContentFile
 import io
@@ -57,7 +57,7 @@ def report_manager(request, action):
         return render(request, url, context)
 
     if action == 'create_nutrition_report':
-        data = function.calculate()
+        data = functions.calculate()
         caffeine_genotype_table = data.get('caffeine_genotype_table')
         caffeine_prs = data.get('caffeine_prs')
 
