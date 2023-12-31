@@ -99,7 +99,7 @@ def report_manager(request, action):
                 'caffeine_genotype_table': caffeine_genotype_table,
                 't2d_genotype_table': t2d_genotype_table,
                 'omega_3_genotype_table': omega_3_genotype_table,
-                ' lactose_intolerance_genotype_table': lactose_intolerance_genotype_table,
+                'lactose_intolerance_genotype_table': lactose_intolerance_genotype_table,
                 'bitter_taste_perception_genotype_table': bitter_taste_perception_genotype_table,
                 'vitamin_b2_genotype_table':vitamin_b2_genotype_table,
                 'vitamin_b12_genotype_table': vitamin_b12_genotype_table,
