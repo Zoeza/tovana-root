@@ -137,8 +137,7 @@ def report_manager(request, action):
         if request.method == 'POST':
             report_id = request.POST.get('report_id', False)
             selected_report = GeneratedReport.objects.all().get(id=report_id)
-            pdf_report = selected_report.pdf
-            with open(pdf_report, 'rb') as pdf:
-                response = HttpResponse(pdf.read(), content_type='application/pdf')
-                response['Content-Disposition'] = 'inline;filename=output.pdf'
-                return response
+            doc_path = selected_report.report.path
+            pdf_path = "/tovana-root/src/templates/test.pdf"
+            functions.docx_to_pdf(doc_path, pdf_path)
+            

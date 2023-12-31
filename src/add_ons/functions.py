@@ -123,8 +123,8 @@ def calculate():
     return context
 
 
-def docx_to_pdf(doc_path):
-    doc = aw.Document("doc_path")
-    return doc.save("out.pdf")
+def docx_to_pdf(docx_file_path, output_pdf_path):
+    return subprocess.run(['unoconv', '-f', 'pdf', '-o', output_pdf_path, docx_file_path])
+
 
 
