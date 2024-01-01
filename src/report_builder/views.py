@@ -120,16 +120,20 @@ def report_manager(request, action):
             nutrition_report.subject = subject.name
             nutrition_report.created = created_at
             nutrition_report.save()
-            doc_path = '"' + nutrition_report.report.path + '"'
-            path = "/tovana-root/site/public/media/reports/"
-            subprocess.call(['/usr/bin/soffice',
-                             '--headless',
-                             '--convert-to',
-                             'pdf',
-                             '--outdir',
-                             path,
-                             doc_path])
-            return redirect('report-manager', 'report-builder')
+            request.session['doc_path'] = '"' + nutrition_report.report.path + '"'
+
+            return redirect('report-manager', 'convert_report')
+    if action == 'convert_report':
+        doc_path = request.session.get('doc_path')
+        
+        subprocess.call(['/usr/bin/soffice',
+                         '--headless',
+                         '--convert-to',
+                         'pdf',
+                         '--outdir',
+                         "/tovana-root/site/public/media/reports/",
+                         doc_path])
+        return redirect('report-manager', 'report-builder')
 
     if action == 'delete_report':
         if request.method == 'POST':
