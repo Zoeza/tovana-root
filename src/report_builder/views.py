@@ -135,6 +135,9 @@ def report_manager(request, action):
 
     if action == 'view_report':
         if request.method == 'POST':
-            report_id = request.POST.get('report_id', False)
-            return redirect('home-manager', 'main')
+            pdf_file_path = 'tovana-root/src/templates/nutrition_report.pdf'
+            with open(pdf_file_path, 'rb') as pdf_file:
+                # Use FileResponse to serve the PDF file as an attachment
+                return FileResponse(pdf_file, as_attachment=True)
+
 
