@@ -4,7 +4,9 @@ from msoffice2pdf import convert
 import os
 import subprocess
 from subprocess import run, PIPE
-#import pypandoc
+
+
+# import pypandoc
 
 
 # ------------------------ general ------------------------- #
@@ -106,6 +108,109 @@ def calculate():
     vitamin_c_strength = [0.5]
     vitamin_c_genotype_table = genotype_finder(vitamin_c_snp)
     vitamin_c_prs = get_prs(vitamin_c_risk_allele, vitamin_c_strength, vitamin_c_genotype_table)
+
+    exercise_behavior_snp = ['rs12405556', 'rs10252228']
+    exercise_behavior_risk_allele = ['T', 'G']
+    exercise_behavior_strength = [0.8, 0.7, 0.8, 0.7]
+    exercise_behavior_genotype_table = genotype_finder(exercise_behavior_snp)
+    exercise_behavior_prs = get_prs(exercise_behavior_risk_allele, exercise_behavior_strength,
+                                    exercise_behavior_genotype_table)
+
+    power_and_strength_snp = ['rs1815739', 'rs11549465', 'rs2854464', 'rs699', 'rs17602729', 'rs1799983', 'rs660339']
+    power_and_strength_risk_allele = ['C', 'C', 'A', 'G', 'G', 'G', 'G']
+    power_and_strength_strength = [0.5, 0.6, 0.4, 0.5, 0.4, 0.2, 0.2]
+    power_and_strength_genotype_table = genotype_finder(power_and_strength_snp)
+    power_and_strength_prs = get_prs(power_and_strength_risk_allele, power_and_strength_strength,
+                                     power_and_strength_genotype_table)
+
+    endurance_Training_snp = ['rs4994', 'rs1042713', 'rs1695', 'rs1572312', 'rs7144481', 'rs7191721', 'rs8192678',
+                              'rs660339', 'rs2267668', 'rs1053049', 'rs558129', 'rs1815739']
+    endurance_Training_risk_allele = ['G', 'A', 'G', 'G', 'C', 'G', 'C', 'A', 'A', 'T', 'G', 'T']
+    endurance_Training_strength = [0.2, 0.4, 0.2, 0.5, 0.6, 0.5, 0.3, 0.3, 0.3, 0.3, 0.4, 0.5]
+    endurance_Training_genotype_table = genotype_finder(endurance_Training_snp)
+    endurance_Training_prs = get_prs(endurance_Training_risk_allele, endurance_Training_strength,
+                                     endurance_Training_genotype_table)
+
+    pain_sensitivity_snp = ['rs4680']
+    pain_sensitivity_risk_allele = ['A']
+    pain_sensitivity_strength = [0.4]
+    pain_sensitivity_genotype_table = genotype_finder(pain_sensitivity_snp)
+    pain_sensitivity_prs = get_prs(pain_sensitivity_risk_allele, pain_sensitivity_strength,
+                                   pain_sensitivity_genotype_table)
+
+    achilles_tendon_injury_snp = ['rs679620', 'rs3753841', 'rs1676486', 'rs1799907', 'rs13321', 'rs2104772']
+    achilles_tendon_injury_risk_allele = ['C', 'A', 'G', 'T', 'C', 'A']
+    achilles_tendon_injury_strength = [0.55, 0.4, 0.4, 0.4, 0.4, 0.4]
+    achilles_tendon_injury_genotype_table = genotype_finder(achilles_tendon_injury_snp)
+    achilles_tendon_injury_prs = get_prs(achilles_tendon_injury_risk_allele, achilles_tendon_injury_strength,
+                                         achilles_tendon_injury_genotype_table)
+
+    muscle_fatigue_and_cramping_snp = ['rs17602729']
+    muscle_fatigue_and_cramping_risk_allele = ['A']
+    muscle_fatigue_and_cramping_strength = [0.4]
+    muscle_fatigue_and_cramping_genotype_table = genotype_finder(muscle_fatigue_and_cramping_snp)
+    muscle_fatigue_and_cramping_prs = get_prs(muscle_fatigue_and_cramping_risk_allele,
+                                              muscle_fatigue_and_cramping_strength,
+                                              muscle_fatigue_and_cramping_genotype_table)
+
+    aerobic_capacity_snp = ['rs8192678', 'rs1572312', 'rs7144481', 'rs7191721', 'rs1695']
+    aerobic_capacity_risk_allele = ['C', 'G', 'C', 'G', 'G']
+    aerobic_capacity_strength = [0.3, 0.2, 0.3, 0.5, 0.2]
+    aerobic_capacity_genotype_table = genotype_finder(aerobic_capacity_snp)
+    aerobic_capacity_prs = get_prs(aerobic_capacity_risk_allele, aerobic_capacity_strength,
+                                   aerobic_capacity_genotype_table)
+
+    response_to_exercise_snp = ['rs8050136']
+    response_to_exercise_risk_allele = ['A']
+    response_to_exercise_strength = [1]
+    response_to_exercise_genotype_table = genotype_finder(response_to_exercise_snp)
+    response_to_exercise_prs = get_prs(response_to_exercise_risk_allele, response_to_exercise_strength,
+                                       response_to_exercise_genotype_table)
+
+    blood_pressure_snp = ['rs5370', 'rs2070699', 'rs2242446']
+    blood_pressure_risk_allele = ['T', 'C', 'C']
+    blood_pressure_strength = [0.9, 0.5, 0.2]
+    blood_pressure_genotype_table = genotype_finder(blood_pressure_snp)
+    blood_pressure_prs = get_prs(blood_pressure_risk_allele,
+                                 blood_pressure_strength,
+                                 blood_pressure_genotype_table)
+
+    wet_vs_dry_earwax_snp = ['rs17822931']
+    wet_vs_dry_earwax_risk_allele = ['T']
+    wet_vs_dry_earwax_strength = [0.8]
+    wet_vs_dry_earwax_genotype_table = genotype_finder(wet_vs_dry_earwax_snp)
+    wet_vs_dry_earwax_prs = get_prs(wet_vs_dry_earwax_risk_allele,
+                                    wet_vs_dry_earwax_strength,
+                                    wet_vs_dry_earwax_genotype_table)
+
+    hair_loss_and_baldness_snp = ['rs1385699', 'rs2180439']
+    hair_loss_and_baldness_risk_allele = ['T', 'C']
+    hair_loss_and_baldness_strength = [0.8, 0.85]
+    hair_loss_and_baldness_genotype_table = genotype_finder(hair_loss_and_baldness_snp)
+    hair_loss_and_baldness_prs = get_prs(hair_loss_and_baldness_risk_allele,
+                                         hair_loss_and_baldness_strength,
+                                         hair_loss_and_baldness_genotype_table)
+
+    sleep_depth_snp = ['rs73598374']
+    sleep_depth_risk_allele = ['A']
+    sleep_depth_strength = [0.8]
+    sleep_depth_genotype_table = genotype_finder(sleep_depth_snp)
+    sleep_depth_prs = get_prs(sleep_depth_risk_allele,
+                              sleep_depth_strength, sleep_depth_genotype_table)
+
+    warrior_vs_worrier_snp = ['rs4680']
+    warrior_vs_worrier_risk_allele = ['A']
+    warrior_vs_worrier_strength = [0.8]
+    warrior_vs_worrier_genotype_table = genotype_finder(warrior_vs_worrier_snp)
+    warrior_vs_worrier_prs = get_prs(warrior_vs_worrier_risk_allele,
+                                     warrior_vs_worrier_strength, warrior_vs_worrier_genotype_table)
+
+    dental_caries_snp = ['rs3896439']
+    dental_caries_risk_allele = ['A']
+    dental_caries_strength = [0.3]
+    dental_caries_genotype_table = genotype_finder(dental_caries_snp)
+    dental_caries_prs = get_prs(dental_caries_risk_allele,
+                                dental_caries_strength, dental_caries_genotype_table)
     context = {'caffeine_genotype_table': caffeine_genotype_table,
                'caffeine_prs': caffeine_prs,
                't2d_genotype_table': t2d_genotype_table,
@@ -122,6 +227,34 @@ def calculate():
                'vitamin_b12_prs': vitamin_b12_prs,
                'vitamin_c_genotype_table': vitamin_c_genotype_table,
                'vitamin_c_prs': vitamin_c_prs,
+               'exercise_behavior_genotype_table': exercise_behavior_genotype_table,
+               'exercise_behavior_prs': exercise_behavior_prs,
+               'power_and_strength_genotype_table': power_and_strength_genotype_table,
+               'power_and_strength_prs': power_and_strength_prs,
+               'endurance_Training_genotype_table': endurance_Training_genotype_table,
+               'endurance_Training_prs': endurance_Training_prs,
+               'pain_sensitivity_genotype_table': pain_sensitivity_genotype_table,
+               'pain_sensitivity_prs': pain_sensitivity_prs,
+               'achilles_tendon_injury_genotype_table': achilles_tendon_injury_genotype_table,
+               'achilles_tendon_injury_prs': achilles_tendon_injury_prs,
+               'muscle_fatigue_and_cramping_genotype_table': muscle_fatigue_and_cramping_genotype_table,
+               'muscle_fatigue_and_cramping_prs': muscle_fatigue_and_cramping_prs,
+               'aerobic_capacity_genotype_table': aerobic_capacity_genotype_table,
+               'aerobic_capacity_prs': aerobic_capacity_prs,
+               'response_to_exercise_genotype_table': response_to_exercise_genotype_table,
+               'response_to_exercise_prs': response_to_exercise_prs,
+               'blood_pressure_genotype_table': blood_pressure_genotype_table,
+               'blood_pressure_prs': blood_pressure_prs,
+               'wet_vs_dry_earwax_genotype_table': wet_vs_dry_earwax_genotype_table,
+               'wet_vs_dry_earwax_prs': wet_vs_dry_earwax_prs,
+               'hair_loss_and_baldness_genotype_table': hair_loss_and_baldness_genotype_table,
+               'hair_loss_and_baldness_prs': hair_loss_and_baldness_prs,
+               'sleep_depth_genotype_table': sleep_depth_genotype_table,
+               'sleep_depth_prs': sleep_depth_prs,
+               'warrior_vs_worrier_genotype_table': warrior_vs_worrier_genotype_table,
+               'warrior_vs_worrier_prs': warrior_vs_worrier_prs,
+               'dental_caries_genotype_table': dental_caries_genotype_table,
+               'dental_caries_prs': dental_caries_prs,
                }
     return context
 
