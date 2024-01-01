@@ -1,6 +1,6 @@
 import random, string
 import csv
-import subprocess
+from msoffice2pdf import convert
 
 from subprocess import run, PIPE
 
@@ -125,11 +125,4 @@ def calculate():
 
 
 def docx_to_pdf(doc_path, path):
-    subprocess.call(['soffice',
-                     # '--headless',
-                     '--convert-to',
-                     'pdf',
-                     '--outdir',
-                     path,
-                     doc_path])
-    return doc_path
+    return convert(source=doc_path, output_dir=path, soft=0)
