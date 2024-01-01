@@ -126,6 +126,6 @@ def calculate():
 
 
 def docx_to_pdf(docx_path):
-    output = subprocess.check_output(['libreoffice', '--convert-to', 'pdf', docx_path])
+    output = subprocess.run(['libreoffice', '--convert-to', 'pdf', docx_path])
 
     return output
