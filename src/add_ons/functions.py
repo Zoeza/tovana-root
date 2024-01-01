@@ -1,5 +1,6 @@
 import random, string
 import csv
+import subprocess
 
 from subprocess import run, PIPE
 
@@ -123,7 +124,12 @@ def calculate():
     return context
 
 
-def docx_to_pdf(docx_path):
-    pdf_path = docx_path.replace('.docx', '.pdf')
-    run(['unoconv', '-f', 'pdf', '-o', 'output_directory', docx_path])
-    return pdf_path
+def docx_to_pdf(doc_path, path):
+    subprocess.call(['soffice',
+                     # '--headless',
+                     '--convert-to',
+                     'pdf',
+                     '--outdir',
+                     path,
+                     doc_path])
+    return doc_path
