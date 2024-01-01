@@ -136,5 +136,5 @@ def report_manager(request, action):
     if action == 'view_report':
         if request.method == 'POST':
             report_id = request.POST.get('report_id', False)
-            return redirect('report-manager', 'create_nutrition_report')
+            return redirect('home-manager', 'main')
 
