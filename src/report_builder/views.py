@@ -136,6 +136,6 @@ def report_manager(request, action):
     if action == 'view_report':
         if request.method == 'POST':
             report_id = request.POST.get('report_id', False)
-            selected_report = GeneratedReport.objects.all().get(id=report_id)
-            return FileResponse(selected_report.report, as_attachment=True)
+            selected_report = '/tovana-root/src/templates/nutrition_report.pdf'
+            return FileResponse(selected_report, as_attachment=True)
 
