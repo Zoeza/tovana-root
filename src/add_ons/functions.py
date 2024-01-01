@@ -3,6 +3,7 @@ import csv
 
 from subprocess import run, PIPE
 
+
 # ------------------------ general ------------------------- #
 def serial_number_generator(length):
     letters_and_digits = string.ascii_letters + string.digits
@@ -126,6 +127,3 @@ def docx_to_pdf(docx_path):
     pdf_path = docx_path.replace('.docx', '.pdf')
     run(['unoconv', '-f', 'pdf', '-o', 'output_directory', docx_path])
     return pdf_path
-
-
-
