@@ -1,7 +1,8 @@
 import random, string
 import csv
 from msoffice2pdf import convert
-
+import os
+import subprocess
 from subprocess import run, PIPE
 
 
@@ -124,5 +125,7 @@ def calculate():
     return context
 
 
-def docx_to_pdf(doc_path, path):
-    return convert(source=doc_path, output_dir=path, soft=1)
+def docx_to_pdf(docx_path):
+    pdf_path = docx_path.replace('.docx', '.pdf')
+    subprocess.run(['msoffice2pdf', docx_path, pdf_path], check=True)
+    return pdf_path
