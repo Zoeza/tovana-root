@@ -116,31 +116,30 @@ def calculate():
     exercise_behavior_prs = get_prs(exercise_behavior_risk_allele, exercise_behavior_strength,
                                     exercise_behavior_genotype_table)
 
-    power_and_strength_snp = ['rs1815739', 'rs11549465', 'rs2854464', 'rs699', 'rs17602729', 'rs1799983', 'rs660339']
-    power_and_strength_risk_allele = ['C', 'C', 'A', 'G', 'G', 'G', 'G']
-    power_and_strength_strength = [0.5, 0.6, 0.4, 0.5, 0.4, 0.2, 0.2]
+    power_and_strength_snp = ['rs1815739', 'rs11549465', 'rs2854464', 'rs17602729', 'rs1799983', 'rs660339']
+    power_and_strength_risk_allele = ['C', 'C', 'A', 'G', 'G', 'G']
+    power_and_strength_strength = [0.5, 0.6, 0.4, 0.4, 0.2, 0.2]
     power_and_strength_genotype_table = genotype_finder(power_and_strength_snp)
     power_and_strength_prs = get_prs(power_and_strength_risk_allele, power_and_strength_strength,
                                      power_and_strength_genotype_table)
 
-    endurance_Training_snp = ['rs4994', 'rs1042713', 'rs1695', 'rs1572312', 'rs7144481', 'rs7191721', 'rs8192678',
+    endurance_training_snp = ['rs4994', 'rs1042713', 'rs1572312', 'rs7191721', 'rs8192678',
                               'rs660339', 'rs2267668', 'rs1053049', 'rs558129', 'rs1815739']
-    endurance_Training_risk_allele = ['G', 'A', 'G', 'G', 'C', 'G', 'C', 'A', 'A', 'T', 'G', 'T']
-    endurance_Training_strength = [0.2, 0.4, 0.2, 0.5, 0.6, 0.5, 0.3, 0.3, 0.3, 0.3, 0.4, 0.5]
-    endurance_Training_genotype_table = genotype_finder(endurance_Training_snp)
-    endurance_Training_prs = get_prs(endurance_Training_risk_allele, endurance_Training_strength,
-                                     endurance_Training_genotype_table)
+    endurance_training_risk_allele = ['G', 'A', 'G', 'G', 'C', 'A', 'A', 'T', 'G', 'T']
+    endurance_training_strength = [0.2, 0.4, 0.5, 0.5, 0.3, 0.3, 0.3, 0.3, 0.4, 0.5]
+    endurance_training_genotype_table = genotype_finder(endurance_training_snp)
+    endurance_training_prs = get_prs(endurance_training_risk_allele, endurance_training_strength,
+                                     endurance_training_genotype_table)
 
     pain_sensitivity_snp = ['rs4680']
     pain_sensitivity_risk_allele = ['A']
     pain_sensitivity_strength = [0.4]
-    pain_sensitivity_genotype_table = genotype_finder(pain_sensitivity_snp)
-    pain_sensitivity_prs = get_prs(pain_sensitivity_risk_allele, pain_sensitivity_strength,
-                                   pain_sensitivity_genotype_table)
+    pain_sensitivity_genotype_table = ['N/A']
+    pain_sensitivity_prs = 0
 
-    achilles_tendon_injury_snp = ['rs679620', 'rs3753841', 'rs1676486', 'rs1799907', 'rs13321', 'rs2104772']
-    achilles_tendon_injury_risk_allele = ['C', 'A', 'G', 'T', 'C', 'A']
-    achilles_tendon_injury_strength = [0.55, 0.4, 0.4, 0.4, 0.4, 0.4]
+    achilles_tendon_injury_snp = ['rs679620', 'rs3753841', 'rs1676486']
+    achilles_tendon_injury_risk_allele = ['C', 'A', 'G']
+    achilles_tendon_injury_strength = [0.55, 0.4, 0.4]
     achilles_tendon_injury_genotype_table = genotype_finder(achilles_tendon_injury_snp)
     achilles_tendon_injury_prs = get_prs(achilles_tendon_injury_risk_allele, achilles_tendon_injury_strength,
                                          achilles_tendon_injury_genotype_table)
@@ -153,9 +152,9 @@ def calculate():
                                               muscle_fatigue_and_cramping_strength,
                                               muscle_fatigue_and_cramping_genotype_table)
 
-    aerobic_capacity_snp = ['rs8192678', 'rs1572312', 'rs7144481', 'rs7191721', 'rs1695']
-    aerobic_capacity_risk_allele = ['C', 'G', 'C', 'G', 'G']
-    aerobic_capacity_strength = [0.3, 0.2, 0.3, 0.5, 0.2]
+    aerobic_capacity_snp = ['rs8192678', 'rs1572312', 'rs7191721']
+    aerobic_capacity_risk_allele = ['C', 'G', 'G']
+    aerobic_capacity_strength = [0.3, 0.2, 0.5]
     aerobic_capacity_genotype_table = genotype_finder(aerobic_capacity_snp)
     aerobic_capacity_prs = get_prs(aerobic_capacity_risk_allele, aerobic_capacity_strength,
                                    aerobic_capacity_genotype_table)
@@ -167,9 +166,9 @@ def calculate():
     response_to_exercise_prs = get_prs(response_to_exercise_risk_allele, response_to_exercise_strength,
                                        response_to_exercise_genotype_table)
 
-    blood_pressure_snp = ['rs5370', 'rs2070699', 'rs2242446']
-    blood_pressure_risk_allele = ['T', 'C', 'C']
-    blood_pressure_strength = [0.9, 0.5, 0.2]
+    blood_pressure_snp = ['rs2242446']
+    blood_pressure_risk_allele = ['C']
+    blood_pressure_strength = [0.2]
     blood_pressure_genotype_table = genotype_finder(blood_pressure_snp)
     blood_pressure_prs = get_prs(blood_pressure_risk_allele,
                                  blood_pressure_strength,
@@ -231,8 +230,8 @@ def calculate():
                'exercise_behavior_prs': exercise_behavior_prs,
                'power_and_strength_genotype_table': power_and_strength_genotype_table,
                'power_and_strength_prs': power_and_strength_prs,
-               'endurance_Training_genotype_table': endurance_Training_genotype_table,
-               'endurance_Training_prs': endurance_Training_prs,
+               'endurance_training_genotype_table': endurance_training_genotype_table,
+               'endurance_training_prs': endurance_training_prs,
                'pain_sensitivity_genotype_table': pain_sensitivity_genotype_table,
                'pain_sensitivity_prs': pain_sensitivity_prs,
                'achilles_tendon_injury_genotype_table': achilles_tendon_injury_genotype_table,
