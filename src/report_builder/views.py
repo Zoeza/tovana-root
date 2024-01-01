@@ -116,11 +116,11 @@ def report_manager(request, action):
             nutrition_report = GeneratedReport()
             nutrition_report.report.save(subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness.docx', report)
             nutrition_report.report_name = subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness'
-            functions.docx_to_pdf('"' + nutrition_report.report.path + '"', "/tovana-root/site/public/media/")
-
             nutrition_report.subject = subject.name
             nutrition_report.created = created_at
             nutrition_report.save()
+            functions.docx_to_pdf('"' + nutrition_report.report.path + '"', "/tovana-root/site/public/media/")
+
 
         return redirect('report-manager', 'report-builder')
 
