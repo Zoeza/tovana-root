@@ -82,7 +82,7 @@ def report_manager(request, action):
         power_and_strength_genotype_table = data.get('power_and_strength_genotype_table')
         power_and_strength_prs = data.get('power_and_strength_prs')
         endurance_training_genotype_table = data.get('endurance_training_genotype_table')
-        endurance_Training_prs = data.get('endurance_Training_prs')
+        endurance_training_prs = data.get('endurance_training_prs')
         pain_sensitivity_genotype_table = data.get('pain_sensitivity_genotype_table')
         pain_sensitivity_prs = data.get('pain_sensitivity_prs')
         achilles_tendon_injury_genotype_table = data.get('achilles_tendon_injury_genotype_table')
