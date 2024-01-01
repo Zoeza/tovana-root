@@ -133,12 +133,4 @@ def report_manager(request, action):
             selected_report = GeneratedReport.objects.all().get(id=report_id)
             return FileResponse(selected_report.report, as_attachment=True)
 
-    if action == 'view_report':
-        if request.method == 'POST':
-            pdf_file_path = '/tovana-root/src/templates/test.pdf'
-            with open(pdf_file_path, 'rb') as pdf_file:
-                # Use FileResponse to serve the PDF file
-                response = FileResponse(pdf_file, content_type='application/pdf')
-                response['Content-Disposition'] = 'inline;filename=file.pdf'
-                return response
-
+    
