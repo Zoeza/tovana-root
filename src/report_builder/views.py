@@ -122,8 +122,7 @@ def report_manager(request, action):
             nutrition_report.save()
             doc_path = '"' + nutrition_report.report.path + '"'
             path = "/tovana-root/site/public/media/reports/"
-            subprocess.call(['/usr/bin/soffice',
-                             # '--headless',
+            subprocess.run(['/usr/bin/soffice',
                              '--convert-to',
                              'pdf',
                              '--outdir',
