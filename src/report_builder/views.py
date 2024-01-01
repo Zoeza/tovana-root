@@ -125,15 +125,15 @@ def report_manager(request, action):
             return redirect('report-manager', 'convert_report')
     if action == 'convert_report':
         doc_path = request.session.get('doc_path')
-        
-        subprocess.call(['/usr/bin/soffice',
-                         '--headless',
-                         '--convert-to',
-                         'pdf',
-                         '--outdir',
-                         "/tovana-root/site/public/media/reports/",
-                         doc_path])
-        return redirect('report-manager', 'report-builder')
+
+        if subprocess.call(['/usr/bin/soffice',
+                            '--headless',
+                            '--convert-to',
+                            'pdf',
+                            '--outdir',
+                            "/tovana-root/site/public/media/reports/",
+                            doc_path]):
+            return redirect('report-manager', 'report-builder')
 
     if action == 'delete_report':
         if request.method == 'POST':

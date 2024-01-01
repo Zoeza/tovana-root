@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'report_builder',
     'phonenumber_field',
     'docxtpl',
-    'docx2pdf',
-    'ajax_select',
+    'pandoc',
 ]
 
 MIDDLEWARE = [
