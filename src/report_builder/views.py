@@ -140,7 +140,7 @@ def report_manager(request, action):
     if action == 'view_report':
         if request.method == 'POST':
             pdf_file_path = 'tovana-root/src/templates/nutrition_report.pdf'
-            return FileResponse(open('pdf_file_path', 'rb'), content_type='application/pdf')
+            return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
 
 
 
