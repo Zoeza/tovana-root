@@ -7,8 +7,6 @@ from docx.shared import Mm
 from add_ons import functions
 from django.http import HttpResponse, FileResponse
 from django.core.files.base import ContentFile
-from wsgiref.util import FileWrapper
-
 import io
 
 
@@ -139,7 +137,9 @@ def report_manager(request, action):
 
     if action == 'view_report':
         if request.method == 'POST':
-            pdf_file_path = 'tovana-root/src/templates/nutrition_report.pdf'
+            report_id = request.POST.get('report_id', False)
+            selected_report = GeneratedReport.objects.all().get(id=report_id)
+            pdf_file_path = functions.docx_to_pdf(selected_report.path)
             return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
 
 

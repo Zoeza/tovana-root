@@ -1,8 +1,7 @@
 import random, string
 import csv
-import aspose.words as aw
 
-import subprocess
+from subprocess import run, PIPE
 
 # ------------------------ general ------------------------- #
 def serial_number_generator(length):
@@ -123,8 +122,10 @@ def calculate():
     return context
 
 
-def docx_to_pdf(docx_file_path, output_pdf_path):
-    return subprocess.run(['unoconv', '-f', 'pdf', '-o', output_pdf_path, docx_file_path])
+def docx_to_pdf(docx_path):
+    pdf_path = docx_path.replace('.docx', '.pdf')
+    run(['unoconv', '-f', 'pdf', '-o', 'output_directory', docx_path])
+    return pdf_path
 
 
 
