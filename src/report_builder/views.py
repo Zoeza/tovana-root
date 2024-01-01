@@ -121,7 +121,6 @@ def report_manager(request, action):
             nutrition_report.save()
             functions.docx_to_pdf('"' + nutrition_report.report.path + '"', "/tovana-root/site/public/media/")
 
-
         return redirect('report-manager', 'report-builder')
 
     if action == 'delete_report':
