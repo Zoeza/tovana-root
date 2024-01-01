@@ -141,5 +141,5 @@ def report_manager(request, action):
                 # Use FileResponse to serve the PDF file as an attachment
                 response = FileResponse(pdf_file, content_type='application/pdf')
                 response['Content-Disposition'] = 'attachment; filename="your_file.pdf"'
-                return response
+            return response
 
