@@ -139,7 +139,6 @@ def report_manager(request, action):
         if request.method == 'POST':
             report_id = request.POST.get('report_id', False)
             selected_report = GeneratedReport.objects.all().get(id=report_id)
-            pdf_file_path = functions.docx_to_pdf(selected_report.report.path,
-                                                  "/tovana-root/site/public/media/reports/")
-            ## pdf_file_path = "/tovana-root/site/public/media/reports/RJ85CBCAJP_Nutrition_Fitness_Wellness.pdf"
+            functions.docx_to_pdf(selected_report.report.path, "/tovana-root/site/public/media/reports/")
+            pdf_file_path = "/tovana-root/site/public/media/reports/" + selected_report.report_name + ".pdf"
             return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')

@@ -35,6 +35,7 @@ class Department(models.Model):
 
 
 class GeneratedReport(models.Model):
+    objects = None
     created = models.DateTimeField(auto_now_add=True, null=True)
     report_name = models.CharField(max_length=255)
     subject = models.CharField(max_length=255)
