@@ -134,5 +134,3 @@ def docx_to_pdf(doc_path,path):
                      path,
                      doc_path])
     return doc_path
-
-    return output
