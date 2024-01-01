@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render, redirect
 from .models import Subject, Template, Department, GeneratedReport
 from docxtpl import DocxTemplate, InlineImage
@@ -5,6 +7,8 @@ from docx.shared import Mm
 from add_ons import functions
 from django.http import HttpResponse, FileResponse
 from django.core.files.base import ContentFile
+from wsgiref.util import FileWrapper
+
 import io
 
 
@@ -136,8 +140,9 @@ def report_manager(request, action):
     if action == 'view_report':
         if request.method == 'POST':
             pdf_file_path = 'tovana-root/src/templates/nutrition_report.pdf'
-            with open(pdf_file_path, 'rb') as pdf_file:
-                # Use FileResponse to serve the PDF file as an attachment
-                return FileResponse(pdf_file, as_attachment=True)
+            wrapper = FileWrapper(open(pdf_file_path, 'rb'))
+            response = HttpResponse(wrapper, content_type='application/force-download')
+            response['Content-Disposition'] = 'inline; filename=' + os.path.basename(pdf_file_path)
+            return response
 
 
