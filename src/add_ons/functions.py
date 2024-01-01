@@ -125,4 +125,4 @@ def calculate():
 
 
 def docx_to_pdf(doc_path, path):
-    return convert(source=doc_path, output_dir=path, soft=0)
+    return convert(source=doc_path, output_dir=path, soft=1)
