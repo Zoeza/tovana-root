@@ -130,7 +130,7 @@ def report_manager(request, action):
                                '--convert-to',
                                'pdf',
                                '--outdir',
-                               "/tovana-root/site/public/media/reports/",
+                               "/tovana-root/src/templates/",
                                doc_path])
         if ret:
             return FileResponse(str(ret))
