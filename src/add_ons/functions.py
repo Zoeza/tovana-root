@@ -4,7 +4,7 @@ from msoffice2pdf import convert
 import os
 import subprocess
 from subprocess import run, PIPE
-import pypandoc
+#import pypandoc
 
 
 # ------------------------ general ------------------------- #
