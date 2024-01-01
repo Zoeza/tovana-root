@@ -116,6 +116,8 @@ def report_manager(request, action):
             nutrition_report = GeneratedReport()
             nutrition_report.report.save(subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness.docx', report)
             nutrition_report.report_name = subject.subject_id + ' ' + 'Nutrition_Fitness_Wellness'
+            functions.docx_to_pdf('"' + nutrition_report.report.path + '"', "/tovana-root/site/public/media/reports/")
+
             nutrition_report.subject = subject.name
             nutrition_report.created = created_at
             nutrition_report.save()
@@ -139,7 +141,6 @@ def report_manager(request, action):
         if request.method == 'POST':
             report_id = request.POST.get('report_id', False)
             selected_report = GeneratedReport.objects.all().get(id=report_id)
-            functions.docx_to_pdf('"' + selected_report.report.path + '"', "/tovana-root/site/public/media/reports/")
-           ## pdf_file_path = "/tovana-root/site/public/media/reports/" + selected_report.report_name + ".pdf"
+            ## pdf_file_path = "/tovana-root/site/public/media/reports/" + selected_report.report_name + ".pdf"
             ##return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
-            return FileResponse( '"' + selected_report.report.path + '"')
+            return FileResponse('"' + selected_report.report.path + '"')
