@@ -125,7 +125,14 @@ def calculate():
     return context
 
 
-def docx_to_pdf(docx_path):
-    output = subprocess.run(['libreoffice', '--convert-to', 'pdf', docx_path])
+def docx_to_pdf(doc_path,path):
+    subprocess.call(['/usr/bin/soffice',
+                     # '--headless',
+                     '--convert-to',
+                     'pdf',
+                     '--outdir',
+                     path,
+                     doc_path])
+    return doc_path
 
     return output
