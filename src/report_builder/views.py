@@ -133,7 +133,7 @@ def report_manager(request, action):
                                "/tovana-root/site/public/media/reports/",
                                doc_path])
         if ret:
-            return FileResponse(ret)
+            return FileResponse(str(ret))
         else:
             return redirect('report-manager', 'report-builder')
 
