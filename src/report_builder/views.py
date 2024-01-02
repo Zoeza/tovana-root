@@ -278,6 +278,7 @@ def report_manager(request, action):
                 'dental_caries_genotype_table': dental_caries_genotype_table,
             }
             report.render(context)
+            report.save("/tovana-root/src/templates/generated_doc.docx")
             report_io = io.BytesIO()
             report.save(report_io)
             report_io.seek(0)
@@ -289,6 +290,7 @@ def report_manager(request, action):
             nutrition_report.subject = subject.name
             nutrition_report.created = created_at
             nutrition_report.save()
+
             request.session['doc_path'] = '"' + nutrition_report.report.path + '"'
 
         return redirect('report-manager', 'report-builder')

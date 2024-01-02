@@ -7,9 +7,9 @@ from .models import CaffeineMetabolism, LactoseIntolerance, Omega3andOmega6Level
 
 def get_caffeine_metabolism(value):
     CaffeineMetabolism_list = CaffeineMetabolism.objects.all()
-    for caffeine_metabolismn in CaffeineMetabolism_list:
-        if caffeine_metabolismn.from_value <= value <= caffeine_metabolismn.to_value:
-            return caffeine_metabolismn
+    for caffeine_metabolism in CaffeineMetabolism_list:
+        if caffeine_metabolism.from_value <= value <= caffeine_metabolism.to_value:
+            return caffeine_metabolism
 
 
 def get_t2d_risk(value):
