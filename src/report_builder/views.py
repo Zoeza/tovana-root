@@ -52,14 +52,21 @@ def report_manager(request, action):
         }
         return render(request, url, context)
 
-    if action == 'add-report':
-        url = direction + "/report_builder/reports/add_report.html"
-        context = {
-            'subjects_list': subjects_list,
-            'departments_list': departments_list,
-            'nav_side': nav_side,
-        }
-        return render(request, url, context)
+    if action == 'choose_report':
+        if request.method == 'POST':
+            if request.POST.get('report_name') == 'Nutrition_Fitness_Wellness':
+                url = direction + "/manager/reports/add_report.html"
+
+                context = {
+                    'subjects_list': subjects_list,
+                    'departments_list': departments_list,
+                    'nav_side': nav_side,
+
+                }
+                return render(request, url, context)
+            else:
+                redirect('home-manager', 'main')
+        redirect('report-manager', 'report-builder')
 
     if action == 'create_nutrition_report':
         data = functions.calculate()
