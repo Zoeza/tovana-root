@@ -45,14 +45,10 @@ def get_omega3_and_omega6_levels(value):
 
 
 def get_lactose_intolerance(value):
-    if 70 < value <= 100:
-        return LactoseIntolerance.objects.get(interpretation='High risk')
-    if 45 < value <= 70:
-        return LactoseIntolerance.objects.get(interpretation='Intermediate risk')
-    if 30 < value <= 45:
-        return LactoseIntolerance.objects.get(interpretation='Low Intermediate risk')
-    if 0 < value <= 30:
-        return LactoseIntolerance.objects.get(interpretation='Low risk')
+    LactoseIntolerance_list = LactoseIntolerance.objects.all()
+    for lactose_intolerance in LactoseIntolerance_list:
+        if lactose_intolerance.from_value < value <= lactose_intolerance.to_value:
+            return lactose_intolerance
 
 
 def get_vitamin_B2(value):
