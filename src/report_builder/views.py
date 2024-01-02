@@ -55,7 +55,7 @@ def report_manager(request, action):
     if action == 'choose_report':
         if request.method == 'POST':
             if request.POST.get('report_name') == 'Nutrition_Fitness_Wellness':
-                url = direction + "/reports/reports/add_report.html"
+                url = direction + "/report_builder/reports/add_report.html"
 
                 context = {
                     'subjects_list': subjects_list,
