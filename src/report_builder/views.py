@@ -108,32 +108,6 @@ def report_manager(request, action):
         dental_caries_genotype_table = data.get('dental_caries_genotype_table')
         dental_caries_prs = data.get('dental_caries_prs')
 
-        caffeine_metabolism = report_actions.get_caffeine_metabolism(int(caffeine_prs))
-        t2d_risk = report_actions.get_t2d_risk(int(t2d_prs))
-        omega3_and_omega6_level = report_actions.get_omega3_and_omega6_levels(int(omega_3_prs))
-        bitter_taste_perception = report_actions.get_bitter_taste_perception(int(bitter_taste_perception_prs))
-        lactose_intolerance = report_actions.get_lactose_intolerance(int(lactose_intolerance_prs))
-        vitamin_B2 = report_actions.get_vitamin_B2(int(vitamin_b2_prs))
-        vitamin_B12 = report_actions.get_vitamin_B12(int(vitamin_b12_prs))
-        vitamin_C = report_actions.get_vitamin_C(int(vitamin_c_prs))
-        exercise_behavior = report_actions.get_exercise_behavior(int(exercise_behavior_prs))
-        power_and_strength = report_actions.get_power_and_strength(int(power_and_strength_prs))
-        endurance_training = report_actions.get_endurance_training(int(endurance_training_prs))
-        pain_sensitivity = report_actions.get_pain_sensitivity(int(pain_sensitivity_prs))
-        achilles_tendon_injury = report_actions.get_achilles_tendon_injury(int(achilles_tendon_injury_prs))
-        muscle_fatigue_and_cramping = report_actions.get_muscle_fatigue_and_cramping(
-            int(muscle_fatigue_and_cramping_prs))
-        aerobic_capacity = report_actions.get_aerobic_capacity(int(aerobic_capacity_prs))
-        blood_pressure_response_to_exercise = report_actions.get_blood_pressure_response_to_exercise(
-            int(blood_pressure_prs))
-        bmi_response_to_exercise = report_actions.get_bmi_response_to_exercise(int(response_to_exercise_prs))
-
-        wet_vs_dry_earwax = report_actions.get_wet_vs_dry_earwax(int(wet_vs_dry_earwax_prs))
-        hair_loss_and_baldness = report_actions.get_hair_loss_and_baldness(int(hair_loss_and_baldness_prs))
-        dental_caries = report_actions.get_dental_caries(int(dental_caries_prs))
-        sleep_depth = report_actions.get_sleep_depth(int(sleep_depth_prs))
-        warrior_vs_worrier = report_actions.get_warrior_vs_worrier(int(warrior_vs_worrier_prs))
-
         if request.method == 'POST':
             subject_name = request.POST.get('subject_name', False)
             health_care_provider = request.POST.get('health_care_provider', False)
@@ -144,6 +118,31 @@ def report_manager(request, action):
             template = Template.objects.get(template_name='Nutrition_Fitness_Wellness')
             template_path = template.template.path
             report = DocxTemplate(template_path)
+            caffeine_metabolism = report_actions.get_caffeine_metabolism(caffeine_prs)
+            t2d_risk = report_actions.get_t2d_risk(t2d_prs)
+            omega3_and_omega6_level = report_actions.get_omega3_and_omega6_levels(omega_3_prs)
+            bitter_taste_perception = report_actions.get_bitter_taste_perception(bitter_taste_perception_prs)
+            lactose_intolerance = report_actions.get_lactose_intolerance(lactose_intolerance_prs)
+            vitamin_B2 = report_actions.get_vitamin_B2(vitamin_b2_prs)
+            vitamin_B12 = report_actions.get_vitamin_B12(vitamin_b12_prs)
+            vitamin_C = report_actions.get_vitamin_C(vitamin_c_prs)
+            exercise_behavior = report_actions.get_exercise_behavior(exercise_behavior_prs)
+            power_and_strength = report_actions.get_power_and_strength(power_and_strength_prs)
+            endurance_training = report_actions.get_endurance_training(endurance_training_prs)
+            pain_sensitivity = report_actions.get_pain_sensitivity(pain_sensitivity_prs)
+            achilles_tendon_injury = report_actions.get_achilles_tendon_injury(achilles_tendon_injury_prs)
+            muscle_fatigue_and_cramping = report_actions.get_muscle_fatigue_and_cramping(
+                muscle_fatigue_and_cramping_prs)
+            aerobic_capacity = report_actions.get_aerobic_capacity(aerobic_capacity_prs)
+            blood_pressure_response_to_exercise = report_actions.get_blood_pressure_response_to_exercise(
+                blood_pressure_prs)
+            bmi_response_to_exercise = report_actions.get_bmi_response_to_exercise(response_to_exercise_prs)
+
+            wet_vs_dry_earwax = report_actions.get_wet_vs_dry_earwax(wet_vs_dry_earwax_prs)
+            hair_loss_and_baldness = report_actions.get_hair_loss_and_baldness(hair_loss_and_baldness_prs)
+            dental_caries = report_actions.get_dental_caries(dental_caries_prs)
+            sleep_depth = report_actions.get_sleep_depth(sleep_depth_prs)
+            warrior_vs_worrier = report_actions.get_warrior_vs_worrier(warrior_vs_worrier_prs)
 
             context = {
                 'caffeine_metabolism_recommendation': caffeine_metabolism.recommendation,
