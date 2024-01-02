@@ -258,7 +258,6 @@ def report_manager(request, action):
             nutrition_report.save()
 
             request.session['doc_path'] = nutrition_report.report.path
-            return redirect('report-manager', 'convert_report')
 
         return redirect('report-manager', 'report-builder')
     if action == 'convert_report':
