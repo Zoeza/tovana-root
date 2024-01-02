@@ -1,12 +1,6 @@
 import random, string
 import csv
-from msoffice2pdf import convert
-import os
 import subprocess
-from subprocess import run, PIPE
-
-
-# import pypandoc
 
 
 # ------------------------ general ------------------------- #
