@@ -326,5 +326,5 @@ def report_manager(request, action):
             report_id = request.POST.get('report_id', False)
             selected_report = GeneratedReport.objects.all().get(id=report_id)
             ## pdf_file_path = "/tovana-root/site/public/media/reports/" + selected_report.report_name + ".pdf"
-            ##return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
-            return FileResponse('"' + selected_report.report.path + '"')
+            pdf_file_path = "/tovana-root/src/templates/generated_doc.pdf"
+            return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
