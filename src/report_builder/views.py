@@ -80,7 +80,7 @@ def report_manager(request, action):
             created_at = request.POST.get('created_at', False)
             department = Department.objects.get(health_care_provider=health_care_provider)
             caffeine_metabolism = report_actions.get_caffeine_metabolism(data.get('caffeine_prs'))
-            t2d_risk = report_actions.get_t2d_risk(data.get('t2d_prs '))
+            t2d_risk = report_actions.get_t2d_risk(data.get('t2d_prs'))
             omega3_and_omega6_level = report_actions.get_omega3_and_omega6_levels(data.get('omega_3_prs'))
             bitter_taste_perception = report_actions.get_bitter_taste_perception(
                 data.get('bitter_taste_perception_prs'))
@@ -258,7 +258,7 @@ def report_manager(request, action):
             nutrition_report.save()
 
             request.session['doc_path'] = nutrition_report.report.path
-           # return redirect('report-manager', 'convert_report')
+            return redirect('report-manager', 'convert_report')
 
         return redirect('report-manager', 'report-builder')
     if action == 'convert_report':
