@@ -5,6 +5,8 @@ from .models import Subject, Template, Department, GeneratedReport
 from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Mm
 from add_ons import functions
+from . import report_actions
+
 import subprocess
 from django.http import HttpResponse, FileResponse
 from django.core.files.base import ContentFile
@@ -106,6 +108,32 @@ def report_manager(request, action):
         dental_caries_genotype_table = data.get('dental_caries_genotype_table')
         dental_caries_prs = data.get('dental_caries_prs')
 
+        caffeine_metabolism = report_actions.get_caffeine_metabolism(int(caffeine_prs))
+        t2d_risk = report_actions.get_t2d_risk(int(t2d_prs))
+        omega3_and_omega6_level = report_actions.get_omega3_and_omega6_levels(int(omega_3_prs))
+        bitter_taste_perception = report_actions.get_bitter_taste_perception(int(bitter_taste_perception_prs))
+        lactose_intolerance = report_actions.get_lactose_intolerance(int(lactose_intolerance_prs))
+        vitamin_B2 = report_actions.get_vitamin_B2(int(vitamin_b2_prs))
+        vitamin_B12 = report_actions.get_vitamin_B12(int(vitamin_b12_prs))
+        vitamin_C = report_actions.get_vitamin_C(int(vitamin_c_prs))
+        exercise_behavior = report_actions.get_exercise_behavior(int(exercise_behavior_prs))
+        power_and_strength = report_actions.get_power_and_strength(int(power_and_strength_prs))
+        endurance_training = report_actions.get_endurance_training(int(endurance_training_prs))
+        pain_sensitivity = report_actions.get_pain_sensitivity(int(pain_sensitivity_prs))
+        achilles_tendon_injury = report_actions.get_achilles_tendon_injury(int(achilles_tendon_injury_prs))
+        muscle_fatigue_and_cramping = report_actions.get_muscle_fatigue_and_cramping(
+            int(muscle_fatigue_and_cramping_prs))
+        aerobic_capacity = report_actions.get_aerobic_capacity(int(aerobic_capacity_prs))
+        blood_pressure_response_to_exercise = report_actions.get_blood_pressure_response_to_exercise(
+            int(blood_pressure_prs))
+        bmi_response_to_exercise = report_actions.get_bmi_response_to_exercise(int(response_to_exercise_prs))
+
+        wet_vs_dry_earwax = report_actions.get_wet_vs_dry_earwax(int(wet_vs_dry_earwax_prs))
+        hair_loss_and_baldness = report_actions.get_hair_loss_and_baldness(int(hair_loss_and_baldness_prs))
+        dental_caries = report_actions.get_dental_caries(int(dental_caries_prs))
+        sleep_depth = report_actions.get_sleep_depth(int(sleep_depth_prs))
+        warrior_vs_worrier = report_actions.get_warrior_vs_worrier(int(warrior_vs_worrier_prs))
+
         if request.method == 'POST':
             subject_name = request.POST.get('subject_name', False)
             health_care_provider = request.POST.get('health_care_provider', False)
@@ -118,6 +146,106 @@ def report_manager(request, action):
             report = DocxTemplate(template_path)
 
             context = {
+                'caffeine_metabolism_recommendation': caffeine_metabolism.recommendation,
+                'caffeine_metabolism_result': caffeine_metabolism.result,
+                'caffeine_metabolism_interpretation': caffeine_metabolism.interpretation,
+                'caffeine_metabolism_image': InlineImage(report, caffeine_metabolism.image.path,
+                                                         width=Mm(30)),
+
+                't2d_risk_interpretation': t2d_risk.interpretation,
+                't2d_risk_image': InlineImage(report, t2d_risk.image.path,
+                                              width=Mm(30)),
+                'omega3_and_omega6_level_interpretation': omega3_and_omega6_level.interpretation,
+                'omega3_and_omega6_level_result': omega3_and_omega6_level.result,
+                'omega3_and_omega6_level_recommendation': omega3_and_omega6_level.recommendation,
+                'omega3_and_omega6_level_image': InlineImage(report, omega3_and_omega6_level.image.path,
+                                                             width=Mm(30)),
+                'lactose_intolerance_interpretation': lactose_intolerance.interpretation,
+                'lactose_intolerance_recommendation': lactose_intolerance.recommendation,
+                'lactose_intolerance_image': InlineImage(report, lactose_intolerance.image.path,
+                                                         width=Mm(30)),
+                'bitter_taste_perception_result': bitter_taste_perception.result,
+                'bitter_taste_perception_interpretation': bitter_taste_perception.interpretation,
+                'bitter_taste_perception_recommendation': bitter_taste_perception.recommendation,
+                'bitter_taste_perception_image': InlineImage(report, bitter_taste_perception.image.path,
+                                                             width=Mm(30)),
+                'vitamin_B2_result': vitamin_B2.result,
+                'vitamin_B2_interpretation': vitamin_B2.interpretation,
+                'vitamin_B2_recommendation': vitamin_B2.recommendation,
+                'vitamin_B2_image': InlineImage(report, vitamin_B2.image.path,
+                                                width=Mm(30)),
+                'vitamin_B12_result': vitamin_B12.result,
+                'vitamin_B12_interpretation': vitamin_B12.interpretation,
+                'vitamin_B12_recommendation': vitamin_B12.recommendation,
+                'vitamin_B12_image': InlineImage(report, vitamin_B12.image.path,
+                                                 width=Mm(30)),
+
+                'vitamin_C_result': vitamin_C.result,
+                'vitamin_C_interpretation': vitamin_C.interpretation,
+                'vitamin_C_recommendation': vitamin_C.recommendation,
+                'vitamin_C_image': InlineImage(report, vitamin_C.image.path,
+                                               width=Mm(30)),
+
+                'exercise_behavior_interpretation': exercise_behavior.interpretation,
+                'exercise_behavior_result': exercise_behavior.result,
+
+                'power_and_strength_result': power_and_strength.result,
+                'power_and_strength_interpretation': power_and_strength.interpretation,
+                'power_and_strength_recommendation': power_and_strength.recommendation,
+                'power_and_strength_image': InlineImage(report, power_and_strength.image.path, width=Mm(30)),
+                'endurance_training_result': endurance_training.result,
+                'endurance_training_interpretation': endurance_training.interpretation,
+                'endurance_training_recommendation': endurance_training.recommendation,
+                'endurance_training_image': InlineImage(report, endurance_training.image.path,
+                                                        width=Mm(30)),
+                'pain_sensitivity_result': pain_sensitivity.result,
+                'pain_sensitivity_interpretation': pain_sensitivity.interpretation,
+                'pain_sensitivity_recommendation': pain_sensitivity.recommendation,
+                'pain_sensitivity_image': InlineImage(report, pain_sensitivity.image.path,
+                                                      width=Mm(30)),
+                'achilles_tendon_injury_result': achilles_tendon_injury.result,
+                'achilles_tendon_injury_interpretation': achilles_tendon_injury.interpretation,
+                'achilles_tendon_injury_recommendation': achilles_tendon_injury.recommendation,
+                'achilles_tendon_injury_image': InlineImage(report, achilles_tendon_injury.image.path,
+                                                            width=Mm(30)),
+
+                'muscle_fatigue_and_cramping_result': muscle_fatigue_and_cramping.result,
+                'muscle_fatigue_and_cramping_interpretation': muscle_fatigue_and_cramping.interpretation,
+                'muscle_fatigue_and_cramping_recommendation': muscle_fatigue_and_cramping.recommendation,
+                'muscle_fatigue_and_cramping_image': InlineImage(report, muscle_fatigue_and_cramping.image.path,
+                                                                 width=Mm(30)),
+                'aerobic_capacity_result': aerobic_capacity.result,
+                'aerobic_capacity_interpretation': aerobic_capacity.interpretation,
+                'aerobic_capacity_recommendation': aerobic_capacity.recommendation,
+                'aerobic_capacity_image': InlineImage(report, aerobic_capacity.image.path,
+                                                      width=Mm(30)),
+
+                'blood_pressure_response_to_exercise_result': blood_pressure_response_to_exercise.result,
+                'blood_pressure_response_to_exercise_interpretation': blood_pressure_response_to_exercise.interpretation,
+                'blood_pressure_response_to_exercise_recommendation': blood_pressure_response_to_exercise.recommendation,
+                'blood_pressure_response_to_exercise_image': InlineImage(report,
+                                                                         blood_pressure_response_to_exercise.image.path,
+                                                                         width=Mm(30)),
+                'bmi_response_to_exercise_result': bmi_response_to_exercise.result,
+                'bmi_response_to_exercise_interpretation': bmi_response_to_exercise.interpretation,
+                'bmi_response_to_exercise_recommendation': bmi_response_to_exercise.recommendation,
+
+                'wet_vs_dry_earwax_result': wet_vs_dry_earwax.result,
+                'wet_vs_dry_earwax_interpretation': wet_vs_dry_earwax.interpretation,
+
+                'hair_loss_and_baldness_result': hair_loss_and_baldness.result,
+                'hair_loss_and_baldness_interpretation': hair_loss_and_baldness.interpretation,
+
+                'sleep_depth_result': sleep_depth.result,
+                'sleep_depth_interpretation': sleep_depth.interpretation,
+
+                'dental_caries_result': dental_caries.result,
+                'dental_caries_interpretation': dental_caries.interpretation,
+                'dental_caries_recommendation': dental_caries.recommendation,
+
+                'warrior_vs_worrier_result': warrior_vs_worrier.result,
+                'warrior_vs_worrier_interpretation': warrior_vs_worrier.interpretation,
+                'warrior_vs_worrier_recommendation': warrior_vs_worrier.recommendation,
                 'Case_OwnerDepartment': department.health_care_provider,
                 'Case_MainSample_SourceName': specimen_type,
                 'Case_patient': subject.subject_id,
@@ -143,9 +271,7 @@ def report_manager(request, action):
                 'muscle_fatigue_and_cramping_genotype_table': muscle_fatigue_and_cramping_genotype_table,
                 'aerobic_capacity_genotype_table': aerobic_capacity_genotype_table,
                 'response_to_exercise_genotype_table': response_to_exercise_genotype_table,
-                'response_to_exercise_prs': response_to_exercise_prs,
                 'blood_pressure_genotype_table': blood_pressure_genotype_table,
-                'blood_pressure_prs': blood_pressure_prs,
                 'wet_vs_dry_earwax_genotype_table': wet_vs_dry_earwax_genotype_table,
                 'hair_loss_and_baldness_genotype_table': hair_loss_and_baldness_genotype_table,
                 'sleep_depth_genotype_table': sleep_depth_genotype_table,
