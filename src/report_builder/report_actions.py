@@ -6,35 +6,24 @@ from .models import CaffeineMetabolism, LactoseIntolerance, Omega3andOmega6Level
 
 
 def get_caffeine_metabolism(value):
-    if 80 <= value < 100:
-        return CaffeineMetabolism.objects.get(interpretation='Ultrarapid metabolizer')
-    if 60 <= value <= 80:
-        return CaffeineMetabolism.objects.get(interpretation='Rapid metabolizer')
-    if 40 <= value <= 60:
-        return CaffeineMetabolism.objects.get(interpretation='Normal metabolizer')
-    if 20 <= value <= 40:
-        return CaffeineMetabolism.objects.get(interpretation='Intermediate metabolizer')
-    if 0 <= value <= 20:
-        return CaffeineMetabolism.objects.get(interpretation='Poor metabolizer')
+    CaffeineMetabolism_list = CaffeineMetabolism.objects.all()
+    for caffeine_metabolismn in CaffeineMetabolism_list:
+        if caffeine_metabolismn.from_value <= value <= caffeine_metabolismn.to_value:
+            return caffeine_metabolismn
 
 
 def get_t2d_risk(value):
-    if 70 <= value <= 100:
-        return WholeGrainsFiberBenefits.objects.get(interpretation='Increased risk')
-    if 45 <= value <= 70:
-        return WholeGrainsFiberBenefits.objects.get(interpretation='Moderately increased risk')
-    if 0 <= value <= 45:
-        return WholeGrainsFiberBenefits.objects.get(interpretation='Decreased risk')
+    WholeGrainsFiberBenefits_list = WholeGrainsFiberBenefits.objects.all()
+    for WholeGrainsFiberBenefit in WholeGrainsFiberBenefits_list:
+        if WholeGrainsFiberBenefit.from_value <= value <= WholeGrainsFiberBenefit.to_value:
+            return WholeGrainsFiberBenefit
 
 
 def get_bitter_taste_perception(value):
-    if 70 < value <= 100:
-        return BitterTastePerception.objects.get(interpretation='Bitterness Non-Taster (High Risk or More Likely)')
-    if 30 <= value <= 70:
-        return BitterTastePerception.objects.get(interpretation='Bitterness Non-Taster (Low Intermediate Risk or Less '
-                                                                'Likely)')
-    if 0 <= value <= 30:
-        return BitterTastePerception.objects.get(interpretation='Bitterness Non-Taster (Low Risk or Less Likely)')
+    BitterTastePerception_list = BitterTastePerception.objects.all()
+    for Bitter_taste_perception in BitterTastePerception_list:
+        if Bitter_taste_perception.from_value <= value <= Bitter_taste_perception.to_value:
+            return Bitter_taste_perception
 
 
 def get_omega3_and_omega6_levels(value):
@@ -52,34 +41,24 @@ def get_lactose_intolerance(value):
 
 
 def get_vitamin_B2(value):
-    if 70 <= value <= 100:
-        return VitaminB2.objects.get(interpretation='High Risk of Deficiency')
-    if 30 <= value <= 70:
-        return VitaminB2.objects.get(interpretation='Intermediate Risk of Deficiency')
-    if 0 <= value <= 30:
-        return VitaminB2.objects.get(interpretation='Low Risk of Deficiency')
+    VitaminB2_list = VitaminB2.objects.all()
+    for Vitamin_b2 in VitaminB2_list:
+        if Vitamin_b2.from_value <= value <= Vitamin_b2.to_value:
+            return Vitamin_b2
 
 
 def get_vitamin_B12(value):
-    if 70 <= value <= 100:
-        return VitaminB12.objects.get(interpretation='High Risk of Deficiency')
-    if 55 <= value <= 70:
-        return VitaminB12.objects.get(interpretation='High Intermediate Risk of Deficiency')
-    if 45 <= value <= 55:
-        return VitaminB12.objects.get(interpretation='Intermediate Risk of Deficiency')
-    if 30 <= value <= 45:
-        return VitaminB12.objects.get(interpretation='Low Intermediate Risk of Deficiency')
-    if 0 <= value <= 30:
-        return VitaminB12.objects.get(interpretation='Low Risk of Deficiency')
+    VitaminB12_list = VitaminB12.objects.all()
+    for Vitamin_b12 in VitaminB12_list:
+        if Vitamin_b12.from_value <= value <= Vitamin_b12.to_value:
+            return Vitamin_b12
 
 
 def get_vitamin_C(value):
-    if 70 <= value <= 100:
-        return VitaminC.objects.get(interpretation='High Risk of Deficiency')
-    if 30 <= value <= 70:
-        return VitaminC.objects.get(interpretation='Intermediate Risk of Deficiency')
-    if 0 <= value <= 30:
-        return VitaminC.objects.get(interpretation='Low Risk of Deficiency')
+    VitaminC_list = VitaminC.objects.all()
+    for Vitamin_c in VitaminC_list:
+        if Vitamin_c.from_value <= value <= Vitamin_c.to_value:
+            return Vitamin_c
 
 
 # ---------------------- Fitness Genomics --------------------------- #
