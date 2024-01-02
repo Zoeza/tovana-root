@@ -73,7 +73,8 @@ def report_manager(request, action):
         if request.method == 'POST':
             subject_name = request.POST.get('subject_name', False)
             subject = Subject.objects.all().get(name=subject_name)
-            csv_path = '"' + subject.csv_file.path + '"'
+            csv_path = subject.csv_file.path
+
             data = functions.calculate(csv_path)
             caffeine_genotype_table = data.get('caffeine_genotype_table')
             caffeine_prs = data.get('caffeine_prs')
