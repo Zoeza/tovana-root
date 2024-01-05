@@ -296,12 +296,12 @@ def report_manager(request, action):
             selected_report = GeneratedReport.objects.all().get(id=report_id)
             url = "/tovana-root/src/templates/sample.docx"
             doc_file = open(url, "rb")
-            html_file = open("output_file.html", 'wb')
+            html_file = open('output_file.html', 'wb')
             result = mammoth.convert_to_html(doc_file)
             html_file.write(result.value.encode('utf8'))
             doc_file.close()
             html_file.close()
-            return render(request, "output_file.html", {})
+            return FileResponse("good")
 
             # url = "RJ85CBCAJP_Nutrition_Fitness_Wellness.html"
             # rendered_string = render_to_string(url, {})
