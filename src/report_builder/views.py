@@ -264,16 +264,17 @@ def report_manager(request, action):
             nutrition_report.save()
 
             request.session['doc_path'] = nutrition_report.report.path
+            return redirect('report-manager', 'convert-report')
 
         return redirect('report-manager', 'report-builder')
-    if action == 'convert_report':
+    if action == 'convert-report':
         doc_path = request.session.get('doc_path')
         ret = subprocess.call(['/usr/bin/soffice',
                                # '--headless',
                                '--convert-to',
                                'pdf',
                                '--outdir',
-                               '/tovana-root/site/public/media/reports/',
+                               '/tovana-root/src/templates/',
                                doc_path])
         if ret:
             return FileResponse(str(ret))
