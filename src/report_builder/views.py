@@ -302,7 +302,11 @@ def report_manager(request, action):
             html_file.write(result.value.encode('utf8'))
             doc_file.close()
             html_file.close()
-            return FileResponse(open('/tovana-root/src/templates/output.html', 'rb'), content_type='application/pdf')
+            rendered_string = render_to_string('/tovana-root/src/templates/output.html', {})
+            pdf_file = HTML(string=rendered_string).write_pdf()
+            response = HttpResponse(pdf_file, content_type='application/pdf')
+            response['Content-Disposition'] = 'filename="home_page.pdf"'
+            return response
 
             # url = "RJ85CBCAJP_Nutrition_Fitness_Wellness.html"
             # rendered_string = render_to_string(url, {})
