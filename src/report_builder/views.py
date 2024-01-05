@@ -6,6 +6,7 @@ from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Mm
 from add_ons import functions
 from . import report_actions
+import mammoth
 
 import subprocess
 from django.http import HttpResponse, FileResponse
@@ -72,9 +73,11 @@ def report_manager(request, action):
             subject = Subject.objects.all().get(name=subject_name)
             csv_path = subject.csv_file.path
             # /*--Find Genotypes and calculate PRS for each trait bases on patient's csv file--*/
+
             data = functions.calculate(csv_path)
 
             # /*--Preparing data for a report--*/
+
             health_care_provider = request.POST.get('health_care_provider', False)
             specimen_type = request.POST.get('specimen_type', False)
             created_at = request.POST.get('created_at', False)
@@ -288,5 +291,7 @@ def report_manager(request, action):
         if request.method == 'POST':
             report_id = request.POST.get('report_id', False)
             selected_report = GeneratedReport.objects.all().get(id=report_id)
-            pdf_file_path = "/tovana-root/src/templates/generated_doc.pdf"
-            return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
+            url = "RJ85CBCAJP_Nutrition_Fitness_Wellness.html"
+            ##pdf_file_path = "/tovana-root/src/templates/generated_doc.pdf"
+            ##return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
+            return render(request, url, {})
