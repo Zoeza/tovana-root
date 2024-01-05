@@ -6,6 +6,11 @@ from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Mm
 from add_ons import functions
 from . import report_actions
+from weasyprint import HTML
+from django.template.loader import render_to_string, get_template
+
+
+
 import mammoth
 
 import subprocess
@@ -292,6 +297,10 @@ def report_manager(request, action):
             report_id = request.POST.get('report_id', False)
             selected_report = GeneratedReport.objects.all().get(id=report_id)
             url = "RJ85CBCAJP_Nutrition_Fitness_Wellness.html"
-            ##pdf_file_path = "/tovana-root/src/templates/generated_doc.pdf"
-            ##return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
-            return render(request, url, {})
+            rendered_string = render_to_string(url, {})
+            pdf_file = HTML(string=rendered_string).write_pdf()
+            response = HttpResponse(pdf_file, content_type='application/pdf')
+            response['Content-Disposition'] = 'filename="home_page.pdf"'
+            return response
+            ## pdf_file_path = "/tovana-root/src/templates/generated_doc.pdf"
+            ## return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')

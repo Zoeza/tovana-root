@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'docxtpl',
     'pandoc',
     'mammoth',
+    'weasyprint',
 ]
 
 MIDDLEWARE = [
