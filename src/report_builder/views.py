@@ -295,18 +295,18 @@ def report_manager(request, action):
         if request.method == 'POST':
             report_id = request.POST.get('report_id', False)
             selected_report = GeneratedReport.objects.all().get(id=report_id)
-            url = "/tovana-root/src/templates/demo.docx"
-            doc_file = open(url, "rb")
-            html_file = open('/tovana-root/src/templates/output.html', 'wb')
-            result = mammoth.convert_to_html(doc_file)
-            html_file.write(result.value.encode('utf8'))
-            doc_file.close()
-            html_file.close()
-            rendered_string = render_to_string('/tovana-root/src/templates/output.html', {})
-            pdf_file = HTML(string=rendered_string).write_pdf()
-            response = HttpResponse(pdf_file, content_type='application/pdf')
-            response['Content-Disposition'] = 'filename="home_page.pdf"'
-            return response
+            # url = "/tovana-root/src/templates/demo.docx"
+            # doc_file = open(url, "rb")
+            # html_file = open('/tovana-root/src/templates/output.html', 'wb')
+            # result = mammoth.convert_to_html(doc_file)
+            # html_file.write(result.value.encode('utf8'))
+            # doc_file.close()
+            # html_file.close()
+            # rendered_string = render_to_string('/tovana-root/src/templates/output.html', {})
+            # pdf_file = HTML(string=rendered_string).write_pdf()
+            # response = HttpResponse(pdf_file, content_type='application/pdf')
+            # response['Content-Disposition'] = 'filename="home_page.pdf"'
+            # return response
 
             # url = "RJ85CBCAJP_Nutrition_Fitness_Wellness.html"
             # rendered_string = render_to_string(url, {})
@@ -314,5 +314,5 @@ def report_manager(request, action):
             # response = HttpResponse(pdf_file, content_type='application/pdf')
             # response['Content-Disposition'] = 'filename="home_page.pdf"'
             # return response
-            ## pdf_file_path = "/tovana-root/src/templates/generated_doc.pdf"
-            ## return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
+            pdf_file_path = "/tovana-root/src/templates/RJ85CBCAJP_Nutrition_Fitness_Wellness..pdf"
+            return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
