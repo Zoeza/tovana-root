@@ -314,5 +314,5 @@ def report_manager(request, action):
             # response = HttpResponse(pdf_file, content_type='application/pdf')
             # response['Content-Disposition'] = 'filename="home_page.pdf"'
             # return response
-            pdf_file_path = "/tovana-root/src/templates/RJ85CBCAJP_Nutrition_Fitness_Wellness..pdf"
+            pdf_file_path = "/tovana-root/src/templates/RJ85CBCAJP_Nutrition_Fitness_Wellness.pdf"
             return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
