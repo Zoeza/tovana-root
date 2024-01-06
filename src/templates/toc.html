@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
   <style>
-     
 
  .toc h1 {
         text-align: center;
@@ -27,42 +26,37 @@
     }
 
     .toc span {
-        float: right;
+       display: inline-block;
+        background: #fff;
+        position: relative;
+        bottom: -4px;
     }
 
     .toc li {
+        div {padding:10px;}
+    #toc {
         list-style: none;
-        margin-bottom: 1em;
+        margin-bottom: 20px;
     }
-
-    .toc ul {
-        font-size: 14px;
-        font-family: 'Open Sans';
+    #toc li {
+        background: url(http://5thirtyone.com/sandbox/share/toc/dot.gif) repeat-x bottom left;
+        overflow: hidden;
+        padding-bottom: 2px;
     }
-
-    .toc ul ul {
-        font-size: 14px;
+    #toc a,
+    #toc span {
+        display: inline-block;
+        background: #fff;
+        position: relative;
+        bottom: -4px;
     }
-
-    .toc ul {
-        padding-left: 0em;
+    #toc a {
+        float: right;
+        padding: 0 0 3px 2px;
     }
-
-    .toc ul ul {
-        padding-left: 1em;
-    }
-
-    .toc a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .toc .no-border {
-        border-bottom: 1px solid white;
-    }
-
-    .toc .hidden {
-        visibility: hidden;
+    #toc span {
+        float: left;
+        padding: 0 2px 3px 0;
     }
 }
 </style>
@@ -73,6 +67,13 @@
 
     <h1 >Table of contents</h1>
     <h2 >(You may click on the section/link of interest below to skip to that section)</h2>
+       <ul id="toc">
+           <li><span>Introduction</span> <a href="#"> 1</a></li>
+            <li><span>Sun breaks</span> <a href="#"> 2</a></li>
+            <li><span>Lost and confused</span> <a href="#">3</a></li>
+            <li><span>The pot of gold</span> <a href="#">4</a></li>
+            <li><span>Nom nom nom</span> <a href="#">5</a></li>
+       </ul>
 
 
 </div>
