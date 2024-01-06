@@ -3,121 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Table of Contents with Pagination</title>
+    <title>Your A4 HTML Document</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         main {
-            padding: 20px;
-        }
-
-        .toc {
-            margin-bottom: 20px;
-        }
-
-        .toc ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .toc li {
-            margin-bottom: 5px;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        .pagination {
-            margin-top: 20px;
-        }
-
-        .pagination a {
-            text-decoration: none;
-            padding: 8px 16px;
-            margin: 0 4px;
-            background-color: #f1f1f1;
-            color: #333;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .pagination a:hover {
-            background-color: #ddd;
-        }
-
-        .pagination .active {
-            background-color: #4CAF50;
-            color: white;
-            border: 1px solid #4CAF50;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
 <main>
-    <!-- Table of Contents -->
-    <div class="toc">
-        <h2>Table of Contents</h2>
-        <ul>
-            <li><a href="#section1">Section 1</a></li>
-            <li><a href="#section2">Section 2</a></li>
-            <li><a href="#section3">Section 3</a></li>
-        </ul>
-    </div>
-
-    <!-- Page Content -->
-    <div id="section1" class="page active">
-        <h2>Section 1</h2>
-        <p>This is the content of Section 1.</p>
-    </div>
-
-    <div id="section2" class="page">
-        <h2>Section 2</h2>
-        <p>This is the content of Section 2.</p>
-    </div>
-
-    <div id="section3" class="page">
-        <h2>Section 3</h2>
-        <p>This is the content of Section 3.</p>
-    </div>
-
-    <!-- Pagination -->
-    <div class="pagination">
-        <a href="#" onclick="showPage(1)" class="active">1</a>
-        <a href="#" onclick="showPage(2)">2</a>
-        <a href="#" onclick="showPage(3)">3</a>
-    </div>
+    <h1>Your A4 HTML Document</h1>
+    <p>This is the content of your A4-sized HTML document.</p>
 </main>
-
-<script>
-    function showPage(pageNumber) {
-        // Hide all pages
-        const pages = document.querySelectorAll('.page');
-        pages.forEach(page => page.classList.remove('active'));
-
-        // Show the selected page
-        const selectedPage = document.getElementById(`section${pageNumber}`);
-        if (selectedPage) {
-            selectedPage.classList.add('active');
-        }
-
-        // Update active state in pagination links
-        const paginationLinks = document.querySelectorAll('.pagination a');
-        paginationLinks.forEach(link => link.classList.remove('active'));
-        paginationLinks[pageNumber - 1].classList.add('active');
-    }
-</script>
 
 </body>
 </html>
