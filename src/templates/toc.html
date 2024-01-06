@@ -59,13 +59,75 @@
         ". . . . . . . . . . . . . . . . . . . . . . . "
         ". . . . . . . . . . . . . . . . . . . . . . . ";
     text-align: right;
+
+ .toc h1 {
+        text-align: center;
+        font-size: 22px;
+        font-family: 'Open Sans';
+        text-transform: uppercase;
+        font-style: normal;
+        color: #0168AB;
+    }
+
+    .toc h2 {
+        text-align: center;
+        font-style: italic;
+        font-size: 16px;
+        color: black;
+    }
+
+    .toc div {
+        border-bottom: 1px dashed rgb(200, 200, 200);
+    }
+
+    .toc span {
+        float: right;
+    }
+
+    .toc li {
+        list-style: none;
+        margin-bottom: 1em;
+    }
+
+    .toc ul {
+        font-size: 14px;
+        font-family: 'Open Sans';
+    }
+
+    .toc ul ul {
+        font-size: 14px;
+    }
+
+    .toc ul {
+        padding-left: 0em;
+    }
+
+    .toc ul ul {
+        padding-left: 1em;
+    }
+
+    .toc a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .toc .no-border {
+        border-bottom: 1px solid white;
+    }
+
+    .toc .hidden {
+        visibility: hidden;
+    }
 }
 </style>
 
 </head>
 <body>
-<!-- role=list necessary because WebKit removes list semantic when list-style-type: none -->
-<ol class="toc-list" role="list">
+<div class="toc">
+
+    <h1 >Table of contents</h1>
+    <h2 >(You may click on the section/link of interest below to skip to that section)</h2>
+    <ol class="toc-list" role="list">
 
     <li>
         <a href="#Introduction">
@@ -376,6 +438,8 @@
         </ol>
     </li>
 </ol>
+
+</div>
 
 </body>
 </html>
