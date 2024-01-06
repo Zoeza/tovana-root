@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .toc h1 {
+        text-align: center;
+        font-size: 22px;
+        font-family: 'Open Sans';
+        text-transform: uppercase;
+        font-style: normal;
+        color: #0168AB;
+    }
+
+    .toc h2 {
+        text-align: center;
+        font-style: italic;
+        font-size: 16px;
+        color: black;
+    }
+
+    .toc div {
+        border-bottom: 1px dashed rgb(200, 200, 200);
+    }
+
+    .toc span {
+        float: right;
+    }
+
+    .toc li {
+        list-style: none;
+        margin-bottom: 1em;
+    }
+
+    .toc ul {
+        font-size: 14px;
+        font-family: 'Open Sans';
+    }
+
+    .toc ul ul {
+        font-size: 14px;
+    }
+
+    .toc ul {
+        padding-left: 0em;
+    }
+
+    .toc ul ul {
+        padding-left: 1em;
+    }
+
+    .toc a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .toc .no-border {
+        border-bottom: 1px solid white;
+    }
+
+    .toc .hidden {
+        visibility: hidden;
+    }
+
+     .dashed-line {
+            border-top: 2px dashed #000; /* 2px is the width, change it as needed */
+            width: 100%;
+            margin: 20px 0; /* Add margin as needed */
+        }
+</style>
+
+</head>
+<body>
+<div class="toc">
+    <h1 class="hidden">Table of contents</h1>
+    <h2 class="hidden">(You may click on the section/link of interest below to skip to that section)</h2>
+    <ul>
+        {{#level $resource.TovanaDataTables.aduoNutritionReportSections.sections null}}
+        <li>
+            <div class="no-border">
+                <a class="hidden" href="#{{id}}" data-pdf-outline data-pdf-outline-parent="{{parent}}">
+                </a>
+                <span>/span>
+            </div>
+        </li>
+        {{/level}}
+    </ul>
+</div>
+</body>
+</html>
