@@ -308,7 +308,7 @@ def report_manager(request, action):
             # response['Content-Disposition'] = 'filename="home_page.pdf"'
             # return response
 
-            url = "test.html"
+            url = "header.html"
             #rendered_string = render_to_string(url, {})
             #pdf_file = HTML(string=rendered_string).write_pdf()
             #response = HttpResponse(pdf_file, content_type='application/pdf')
