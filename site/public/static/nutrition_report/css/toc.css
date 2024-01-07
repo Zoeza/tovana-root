@@ -34,7 +34,6 @@
     li a:first-child {
         padding-right: 0.33em;
         background: white
-        line-height: 5;
     }
      span {
         float: right;
