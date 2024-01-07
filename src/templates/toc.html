@@ -4,31 +4,63 @@
     <meta charset="UTF-8">
     <title>Title</title>
   <style>
+ .toc h1 {
+        text-align: center;
+        font-size: 22px;
+        font-family: 'Open Sans';
+        text-transform: uppercase;
+        font-style: normal;
+        color: #0168AB;
+    }
 
-  div {padding:10px;}
-    #toc {
-        list-style: none;
-        margin-bottom: 20px;
+    .toc h2 {
+        text-align: center;
+        font-style: italic;
+        font-size: 16px;
+        color: black;
     }
-    #toc li {
-        background: url(http://5thirtyone.com/sandbox/share/toc/dot.gif) repeat-x bottom left;
-        overflow: hidden;
-        padding-bottom: 2px;
+
+    .toc div {
+        border-bottom: 1px dashed rgb(200, 200, 200);
     }
-    #toc a,
-    #toc span {
-        display: inline-block;
-        background: #fff;
-        position: relative;
-        bottom: -4px;
-    }
-    #toc a {
+
+    .toc span {
         float: right;
-        padding: 0 0 3px 2px;
     }
-    #toc span {
-        float: left;
-        padding: 0 2px 3px 0;
+
+    .toc li {
+        list-style: none;
+        margin-bottom: 1em;
+    }
+
+    .toc ul {
+        font-size: 14px;
+        font-family: 'Open Sans';
+    }
+
+    .toc ul ul {
+        font-size: 14px;
+    }
+
+    .toc ul {
+        padding-left: 0em;
+    }
+
+    .toc ul ul {
+        padding-left: 1em;
+    }
+
+    .toc a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .toc .no-border {
+        border-bottom: 1px solid white;
+    }
+
+    .toc .hidden {
+        visibility: hidden;
     }
 </style>
 
