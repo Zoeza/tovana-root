@@ -1,0 +1,45 @@
+ <style type="text/css">
+            @page {
+              size: A4;
+              margin:0 cm;
+
+             }
+
+            body {
+            margin: 0;
+            padding: 0;
+             }
+            div.footer {
+                margin: 0px;
+                padding: 0px;
+            }
+
+
+
+            table tr:first-child td {
+                font-weight: bold;
+            }
+            table tr td {
+                padding: 4px 15px;
+                text-align: left;
+                border: none;
+                font-size: 12px;
+                font-style: italic;
+            }
+            table.tableHeader tr:first-child td {
+                background-color: #0093d0;
+                color: white;
+                font-weight: bold;
+            }
+
+
+            table.tableHeader tr td {
+                padding: 4px 15px;
+                background-color: #ffd200;
+                text-align: left;
+                border: none;
+                font-size: 9px;
+                font-style: italic;
+                white-space: nowrap;
+            }
+        </style>

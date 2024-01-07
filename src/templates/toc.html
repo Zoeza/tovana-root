@@ -1,107 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-  <style>
- .toc h1 {
-        text-align: center;
-        font-size: 22px;
-        font-family: 'Open Sans';
-        text-transform: uppercase;
-        font-style: normal;
-        color: #0168AB;
-    }
 
-    .toc h2 {
-        text-align: center;
-        font-style: italic;
-        font-size: 16px;
-        color: black;
-    }
+{% extends "header.html" %}
+{% load static %}
 
-    .toc div {
-        border-bottom: 1px dashed rgb(200, 200, 200);
-    }
-
-   ul
-{
-    list-style: none;
-    padding: 0;
-    overflow-x: hidden;
-}
-.outer {
-    width: 95%;
-}
-.inner
-{
-    padding-left: 20px;
-}
-li:not(.nested):before {
-    float: left;
-    width: 0;
-    white-space: nowrap;
-    content:". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "
-
-}
-li a:first-child {
-    padding-right: 0.33em;
-    background: white
-}
- span {
-    float: right;
-     text-decoration: none;
-     color: black;
-}
-a {
-    float: left;
-     text-decoration: none;
-     color: black;
-}
-    }
-</style>
-
-</head>
-<body>
-<div class="toc">
-    <h1 >Table of contents</h1>
-    <h2 class="toc" >(You may click on the section/link of interest below to skip to that section)</h2>
+    {% block content %}
+    <div class="toc">
+        <h1 >Table of contents</h1>
+        <h2 class="toc" >(You may click on the section/link of interest below to skip to that section)</h2>
     </div>
-<ul class="outer">
-    <li> <h3><a href="#">INTRODUCTION</a></h3><span>2</span></li>
-    <br>
-    <br>
-     <li class="nested">
-          <ul class="inner">
-              <li> <h4><a href="#">Opening remarks, How to use this guide</a></h4><span>2</span></li>
-                <br>
-                <br>
-              <li> <h4><a href="#">Disclaimer</a></h4><span>4</span></li>
-                <br>
-                <br>
-          </ul>
-     </li>
-    <li> <h3><a href="#">SECTION 1: Nutrition & Diet Genomics</a></h3><span>6</span></li>
-    <br>
-    <br>
+    <ul class="outer">
+        <li> <h3><a href="#">INTRODUCTION</a></h3><span>2</span></li>
+        <br>
+        <br>
+         <li class="nested">
+              <ul class="inner">
+                  <li> <h4><a href="#">Opening remarks, How to use this guide</a></h4><span>2</span></li>
+                    <br>
+                    <br>
+                  <li> <h4><a href="#">Disclaimer</a></h4><span>4</span></li>
+                    <br>
+                    <br>
+              </ul>
+         </li>
+        <li> <h3><a href="#">SECTION 1: Nutrition & Diet Genomics</a></h3><span>6</span></li>
+        <br>
+        <br>
 
-     <li> <h3><a href="#">SECTION 2: Fitness Genomics</a></h3><span>26</span></li>
-    <br>
-    <br>
+         <li> <h3><a href="#">SECTION 2: Fitness Genomics</a></h3><span>26</span></li>
+        <br>
+        <br>
 
-     <li> <h3><a href="#">SECTION 3: Other traits and interesting facts</a></h3><span>47</span></li>
-    <br>
-    <br>
+         <li> <h3><a href="#">SECTION 3: Other traits and interesting facts</a></h3><span>47</span></li>
+        <br>
+        <br>
 
-     <li> <h3><a href="#">Glossary of key terms</a></h3><span>57</span></li>
-    <br>
-    <br>
+         <li> <h3><a href="#">Glossary of key terms</a></h3><span>57</span></li>
+        <br>
+        <br>
 
-    <li> <h3><a href="#">TEST METHODOLOGY, LIMITATIONS, CONDITIONS/TRAITS LIST & REFERENCES</a></h3><span>60</span></li>
-    <br>
-    <br>
+        <li> <h3><a href="#">TEST METHODOLOGY, LIMITATIONS, CONDITIONS/TRAITS LIST & REFERENCES</a></h3><span>60</span></li>
+        <br>
+        <br>
 
-</ul>
+    </ul>
 
-</body>
-</html>
+    {% endblock %}
+
+
