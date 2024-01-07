@@ -1,6 +1,8 @@
 {% extends "header.html" %}
 {% load static %}
-    
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'nutrition_report/css/toc.css' %}">
+    {% endblock %}
 
     {% block content %}
         <div class="toc">
