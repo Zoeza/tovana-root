@@ -309,12 +309,12 @@ def report_manager(request, action):
             # return response
 
             url = "toc.html"
-            #rendered_string = render_to_string(url, {})
-            #pdf_file = HTML(string=rendered_string).write_pdf()
-            #response = HttpResponse(pdf_file, content_type='application/pdf')
-            #response['Content-Disposition'] = 'filename="home_page.pdf"'
-            #return response
-            return render(request, url, {})
+            rendered_string = render_to_string(url, {})
+            pdf_file = HTML(string=rendered_string).write_pdf()
+            response = HttpResponse(pdf_file, content_type='application/pdf')
+            response['Content-Disposition'] = 'filename="home_page.pdf"'
+            return response
+            # return render(request, url, {})
 
             # pdf_file_path = "/tovana-root/src/templates/RJ85CBCAJP_Nutrition_Fitness_Wellness.pdf"
-            #return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
+            # return FileResponse(open(pdf_file_path, 'rb'), content_type='application/pdf')
