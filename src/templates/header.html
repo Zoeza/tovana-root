@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
          <link rel="stylesheet" href="{% static 'nutrition_report/css/header.css' %}">
-         <link rel="stylesheet" href="{% static 'nutrition_report/css/toc.css' %}">
+         {% block css %} {% endblock %}
     </head>
 
     <body style="-webkit-print-color-adjust:exact;font-family:'Segoe UI';font-size: 12px;">
