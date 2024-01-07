@@ -4,24 +4,42 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="{% static 'nutrition_report/css/header.css' %}">
-         {% block css %} {% endblock %}
+         <link rel="stylesheet" href="{% static 'nutrition_report/css/header.css' %}">
+         <link rel="stylesheet" href="{% static 'nutrition_report/css/toc.css' %}">
     </head>
-    <body style="-webkit-print-color-adjust:exact;font-family:'Segoe UI';font-size: 12px;">
 
+    <body style="-webkit-print-color-adjust:exact;font-family:'Segoe UI';font-size: 12px;">
+        <table cellpadding="0" cellspacing="0" width="100%" class="tableHeader" style="-webkit-print-color-adjust:exact;">
+
+            <tbody>
+            <tr>
+                <td>Name:</td>
+                <td>Sex: </td>
+                <td>DOB: </td>
+                <td>Sample ID: </td>
+                <td>Report</td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td colspan="3" style="text-align:center"><b>- CONFIDENTIAL REPORT -</b></td>
+                <td>DNA UNLOCKED V2.0.0</td>
+            </tr>
+            </tbody>
+        </table>
             {% block content %} {% endblock %}
         <div class="footer" style="width: 100%; margin-top: 540px">
+
             <table cellpadding="0" cellspacing="0" width="100%">
                 <tbody>
-                    <tr>
-                        <td style="-webkit-print-color-adjust:exact; font-size: 8px; background-color: #0093D0; font-style: italic; color: white;">See Disclaimer(s) on page 6 of this report. Copyright 2017- © TOVANA HEALTH. All Rights Reserved. </td>
-                        <td style="-webkit-print-color-adjust:exact; font-size: 10px; background-color: #0093D0; font-style: italic; color: white; text-align: right">
-                            <div style="position: absolute; margin-top: 4px"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="-webkit-print-color-adjust:exact; font-size: 8px; background-color: #0067ac; font-style: italic; color: white;" colspan="2">Protected Health Information · Medical Laboratory Director: Gidon Akler, M.D., FACMG · CLIA ID# 45D2148712 · http://www.tovanahealth.com</td>
-                    </tr>
+                <tr>
+                    <td style="-webkit-print-color-adjust:exact; font-size: 8px; background-color: #0093D0; font-style: italic; color: white;">See Disclaimer(s) on page 6 of this report. Copyright 2017- © TOVANA HEALTH. All Rights Reserved. </td>
+                    <td style="-webkit-print-color-adjust:exact; font-size: 10px; background-color: #0093D0; font-style: italic; color: white; text-align: right">
+                        <div style="position: absolute; margin-top: 4px"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="-webkit-print-color-adjust:exact; font-size: 8px; background-color: #0067ac; font-style: italic; color: white;" colspan="2">Protected Health Information · Medical Laboratory Director: Gidon Akler, M.D., FACMG · CLIA ID# 45D2148712 · http://www.tovanahealth.com</td>
+                </tr>
                 </tbody>
             </table>
         </div>
