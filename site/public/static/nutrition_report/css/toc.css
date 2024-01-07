@@ -1,5 +1,5 @@
 <style="text/css">
- .toc h1 {
+    .toc h1 {
         text-align: center;
         font-size: 22px;
         font-family: 'Open Sans';
@@ -19,7 +19,7 @@
         border-bottom: 1px dashed rgb(200, 200, 200);
     }
 
-       ul
+     ul
     {
         list-style: none;
         padding: 0;
