@@ -1,13 +1,13 @@
  <style type="text/css">
             @page {
               size: A4;
-              margin:0.5 cm;
+              margin:0 cm;
 
              }
 
             body {
-            margin: 0.5;
-            padding: 0.5;
+            margin: 2.5;
+            padding: 2.5;
              }
             div.footer {
                 margin: 0px;
