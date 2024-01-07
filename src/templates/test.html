@@ -1,16 +1,9 @@
-
-<!DOCTYPE html>
+{% extends "header.html" %}
 {% load static %}
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="{% static 'tovana_health_reports/assets/DNAUnlocked/content.css' %}" rel="stylesheet" type="text/css">
-</head>
 
-<body>
-<section class="overview" id="Overview_OpeningRemarks" style="border: none">
+    {% block content %}
+      <section class="overview" id="Overview_OpeningRemarks" style="border: none">
             <h1>DNA UNLOCKED<sup>&reg;</sup> Personalized Nutrition & Fitness Genome Report</h1>
             <h2>INTRODUCTION</h2>
             <p><b>Congratulations! You have now taken an important step to take control of your health.</b></p>
@@ -124,6 +117,6 @@
             {{else}}
             None specified.
         </section>
+    {% endblock %}
 
-</body>
-</html>
+
