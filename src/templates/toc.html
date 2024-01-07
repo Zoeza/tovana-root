@@ -24,46 +24,34 @@
         border-bottom: 1px dashed rgb(200, 200, 200);
     }
 
-    .toc span {
-        float: right;
-    }
-
-    .toc li {
-        list-style: none;
-        margin-bottom: 1em;
-         white-space: nowrap;
-            content:". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "
-        }
-
-    .toc ul {
-        font-size: 14px;
-        font-family: 'Open Sans';
-
-    }
-
-    .toc ul ul {
-        font-size: 14px;
-    }
-
-    .toc ul {
-        padding-left: 0em;
-    }
-
-    .toc ul ul {
-        padding-left: 1em;
-    }
-
-    .toc a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .toc .no-border {
-        border-bottom: 1px solid white;
-    }
-
-    .toc .hidden {
-        visibility: hidden;
+   ul
+{
+    list-style: none;
+    padding: 0;
+    overflow-x: hidden;
+}
+.outer {
+    width: 70%;
+}
+.inner
+{
+    padding-left: 20px;
+}
+li:not(.nested):before {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    content:". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "
+}
+li a:first-child {
+    padding-right: 0.33em;
+    background: white
+}
+a + span {
+    float: right;
+    padding-left: 0.33em;
+    background: white
+}
     }
 </style>
 
@@ -72,13 +60,18 @@
 <div class="toc">
     <h1 >Table of contents</h1>
     <h2 >(You may click on the section/link of interest below to skip to that section)</h2>
-       <ul>
-           <li>Introduction <span> <a href="#"> 1</a></span></li>
-           <li>Sun breaks <span><a href="#"> 2</a></span></li>
-            <li>Lost and confused <span><a href="#">3</a></span></li>
-            <li>The pot of gold <span><a href="#">4</a></span></li>
-            <li>Nom nom nom <span><a href="#">5</a></span></li>
-       </ul>
+       <ul class="outer">
+    <li><a href="#">Introduction</a><span>1</span></li>
+    <li class="nested">
+        <ul class="inner">
+            <li><a href="#">Header 1</a><span>2</span>
+            </li>
+            <li><a href="#">Header 2</a><span>2</span>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">Header 2</a><span>3</span></li>
+</ul>
 
 
 </div>
