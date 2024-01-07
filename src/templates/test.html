@@ -1,43 +1,129 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your A4 HTML Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        @page {
-            size: A4;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        main {
-            text-align: center;
-        }
-    </style>
+    <title>Title</title>
+    <link href="{% static 'tovana_health_reports/assets/DNAUnlocked/content.css' %}" rel="stylesheet" type="text/css">
 </head>
-<body>
 
-<main>
-    <h1>Your A4 HTML Document</h1>
-    <p>This is the content of your A4-sized HTML document.</p>
-</main>
+<body>
+<section class="overview" id="Overview_OpeningRemarks" style="border: none">
+            <h1>DNA UNLOCKED<sup>&reg;</sup> Personalized Nutrition & Fitness Genome Report</h1>
+            <h2>INTRODUCTION</h2>
+            <p><b>Congratulations! You have now taken an important step to take control of your health.</b></p>
+            <p>
+                With the <b>DNA UNLOCKED<sup>&reg;</sup> Personalized Nutrition & Fitness Genome Report</b>
+                we have analyzed and interpreted vital parts of your genome to give you insights about your
+                nutrition and fitness traits. With this knowledge you and your healthcare providers,
+                dieticians/nutritionists or fitness trainers could personalize your diet or fitness routine.
+            </p>
+            <p class="handwriting">Explore your results in good health!</p>
+            <h2>HOW TO USE THIS GUIDE</h2>
+            <p>
+                You have the control of using this guide to learn about whatever aspect of your Nutrition & Fitness genome that you wish. You can read the entire guide or skip to the sections that you are most interested in to gain valuable insights about your Nutrition & Fitness traits. Each section will display the relevant data in an easy to understand format with your result, an interpretation, summary and recommendation when indicated.
+            </p>
+            <p>
+                The conditions or traits in this report are often multigenic or multifactorial, so your predisposition likelihood or relative risk
+                (relative to the average risk in the population) will be given to you and you may be classified as (low risk, intermediate risk, or high risk)
+                which will be indicated by a "risk meter" as shown below.
+            </p>
+            <p>
+                For certain diseases or traits that are multigenic or multifactorial your predisposition likelihood or relative
+                risk percent (relative to the average risk in the population) will be given to you and you may be classified as
+                (low risk, intermediate risk, or high risk) which will be indicated by a "risk meter" as shown below.
+            </p>
+            <p style="text-align: center; vertical-align: middle;">
+                <img src="{#asset /assets/TovanaHealth/RiskMeter/RiskIntermediate.png @encoding=dataURI}" style="height: 120px; margin-right: 40px"/>
+                <img src="{#asset /assets/TovanaHealth/Strength/StrengthIntermediate.png @encoding=dataURI}" style="height: 120px;"/>
+            </p>
+            <p>
+                In addition, for these multigenic or multifactorial diseases or traits, the scientific strength of each polymorphism or
+                variant analyzed is indicated using a 5 star rating system  and
+                is factored in to the genetic risk score. The scientific strength is based on 4 factors of evidence that
+                contribute to the strength. <b>1.</b> The size of the research study (i.e. how many people enrolled in the study) <b>2.</b>
+                the power of the association (power with genome wide significance of 5 x 10<sup>-8</sup> and less) <b>3.</b> the effect size
+                (i e size of the odds ratio) <b>4.</b> and whether the results were replicated.
+            </p>
+        </section>
+        <section class="overview" id="Overview_HowToUse" style="page-break-before: always">
+            <h2>HOW TO USE THIS GUIDE</h2>
+            <p>For traits that are affected by metabolism possible results may include poor metabolizer, intermediate metabolizer, normal metabolizer, rapid metabolizer, or ultra-rapid metabolizer as shown below. When possible, an interpretation and recommendations given, as well as, dosage / side effect warning.</p>
+            <div style="text-align: center"></div>
+            <p>Icons are used throughout the report/guide in order to make things clear and to easily navigate through the information. These icons include:</p>
+            <table class="iconLegend">
+                <tr>
+                    <td><img class="icon summary"  /><span>Your results</span></td>
+                    <td><img class="icon science"  /><span>The Science</span></td>
+                </tr>
+                <tr>
+                    <td><img class="icon recommendation" /><span>Recommendations</span></td>
+                    <td><img class="icon population" /><span>Populations studied</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><img class="icon toc" /><span>Table of Contents link (click icon to be taken back to the report Table of Contents)</span></td>
+                </tr>
+            </table>
+        </section>
+        <section class="disclaimer" style="page-break-before: always" id="Overview_Disclaimer">
+            <h2>DISCLAIMER</h2>
+            <p>This report can be used by the individual being tested to gain insights about his or her DNA makeup and how it is related to his or her wellness traits (not considered clinical in nature). It is highly recommended to review these results with a qualified health care professional, nutritionist and/or fitness trainer. This test was developed, and its performance characteristics determined by the testing laboratory. It has not been cleared or approved by the U.S. Food and Drug Administration (FDA) or any other regulatory agency. The laboratory and its partners are regulated under CLIA as qualified to perform high-complexity testing. Although actionable insights may be gained from this test/report, this test/report is to be regarded as investigational or for research only, and it does not take the place of recommendations set by your healthcare provider, nutritionist or fitness trainer. </p>
+            <p>Although this test is a comprehensive test that genotypes and analyzes many parts of your genome (approximately 730,000 data points using microarray technology that tests coding and  intergenic or non-coding regions of your genome) this test does have limitations. Also, please keep in mind that the analysis and interpretation were performed at the best of our abilities using the current up-to-date scientific knowledge, but as the scientific knowledge changes there may be changes to your report/results and the way it should be interpreted. We will make every effort to notify you of such changes in the future as science catches up, but there are no guarantees and you may use this report/guide today at your own risk. We will not be held liable for any errors presented in this report (due to limitations of the technology or for any other reason) or actions you or your healthcare provider, nutritionist or fitness trainer may decide to take based on the results of this report/guide. For more information about the limitations of this test see the "Limitations section" at the end of this report/guide.</p>
+            <p style="text-align: center; padding: 0px 30px">If you have any questions about this report/guide or wish to speak to a representative,<br/> please email us at <a href="mailto:contact@aduo.io">contact@aduo.io</a>.</p>
+        </section>
+        <section class="demographics" id="Overview_MedicalHistory" style="page-break-before: always; padding: 20px">
+            <h2>SAMPLE INFORMATION</h2>
+            <table>
+                <tr>
+                    <th>Healthcare Provider:</th>
+                    <td>{{Case.OwnerDepartment}}</td>
+                </tr>
+                <tr>
+                    <th>Specimen Type:</th>
+                    <td>{{Case.MainSample.SourceName}}</td>
+                </tr>
+                <tr>
+                    <th>Sample ID:</th>
+                    <td>{{Case.Patient}}</td>
+                </tr>
+                <tr>
+                    <th>Collection Date:</th>
+                </tr>
+                <tr>
+                    <th>Report Date:</th>
+                </tr>
+            </table>
+            <h2>DEMOGRAPHICS</h2>
+            <table>
+                <tr>
+                    <th>Name:</th>
+                    <td>{{Patient.Name}}</td>
+                </tr>
+                <tr>
+                    <th>DOB:</th>
+                </tr>
+                <tr>
+                    <th>Sex:</th>
+                    <td>{{Patient.Gender}}</td>
+                </tr>
+                <tr>
+                    <th>Paternal Ancestry:</th>
+                    <td>{{Patient.PaternalAncestry}}</td>
+                </tr>
+                <tr>
+                    <th>Maternal Ancestry:</th>
+                    <td>{{Patient.MaternalAncestry}}</td>
+                </tr>
+            </table>
+            <h2>MEDICAL AND SURGICAL HISTORY SUMMARY</h2>
+            <img style="float:right; width:100px; margin-left: 15px; margin-top:10px" src="{#asset /assets/TovanaHealth/Icons/IconFamilyHistory.png @encoding=dataURI}" />
+            <h2>FAMILY HISTORY</h2>
+            {{Patient.FamilyHistory}}
+            {{else}}
+            None specified.
+        </section>
 
 </body>
 </html>
