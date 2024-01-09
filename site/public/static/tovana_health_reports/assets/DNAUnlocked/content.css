@@ -56,13 +56,13 @@ section.pgxFindings table.result img.icon {
     position: inherit !important;
 }
 img.icon.recommendation {
-   background:url(../../tovana_health_reports/assets/Icons/IconRecommendations.png/content.png);
+   background:url(/tovana-root/site/public/static/tovana_health_reports/assets/Icons/IconRecommendations.png/content.png);
 }
 img.icon.references {
-    content:url(../../tovana_health_reports/assets/Icons/IconReferences.png/content.png);
+    content:url(/tovana-root/site/public/static/tovana_health_reports/assets/Icons/IconReferences.png);
 }
 img.icon.interpretation {
-    content:url(../../tovana_health_reports/assets/Icons/IconInterpretation.png/content.png);
+    content:url(/tovana-root/site/public/static/tovana_health_reports/assets/Icons/IconInterpretation.png/content.png);
 }
 img.icon.summary {
     content:url(../../tovana_health_reports/assets/Icons/IconSummary.png/content.png);
