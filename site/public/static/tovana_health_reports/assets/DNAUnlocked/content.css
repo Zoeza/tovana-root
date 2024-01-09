@@ -56,7 +56,7 @@ section.pgxFindings table.result img.icon {
     position: inherit !important;
 }
 img.icon.recommendation {
-    content:url(../../tovana_health_reports/assets/Icons/IconRecommendations.png/content.png);
+   background:url(../../tovana_health_reports/assets/Icons/IconRecommendations.png/content.png);
 }
 img.icon.references {
     content:url(../../tovana_health_reports/assets/Icons/IconReferences.png/content.png);
