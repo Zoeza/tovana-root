@@ -56,19 +56,19 @@ section.pgxFindings table.result img.icon {
     position: inherit !important;
 }
 img.icon.recommendation {
-    content:url({#asset /assets/TovanaHealth/Icons/IconRecommendations.png @encoding=dataURI});
+    content:url(../../tovana_health_reports/assets/Icons/IconRecommendations.png/content.png);
 }
 img.icon.references {
-    content:url({#asset /assets/TovanaHealth/Icons/IconReferences.png @encoding=dataURI}); 
+    content:url(../../tovana_health_reports/assets/Icons/IconReferences.png/content.png);
 }
 img.icon.interpretation {
-    content:url({#asset /assets/TovanaHealth/Icons/IconInterpretation.png @encoding=dataURI});
+    content:url(../../tovana_health_reports/assets/Icons/IconInterpretation.png/content.png);
 }
 img.icon.summary {
-    content:url({#asset /assets/TovanaHealth/Icons/IconSummary.png @encoding=dataURI});
+    content:url(../../tovana_health_reports/assets/Icons/IconSummary.png/content.png);
 }
 img.icon.science {
-    content:url({#asset /assets/TovanaHealth/Icons/IconScienceOfDisease.png @encoding=dataURI});
+    content:url(../../tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png);
 }
 img.icon.population {
     content:url({#asset /assets/TovanaHealth/Icons/IconPopulationStudied.png @encoding=dataURI});
