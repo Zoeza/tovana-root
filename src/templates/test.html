@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<section class="overview" id="Overview_OpeningRemarks" style="border: none">
+        <section class="overview" id="Overview_OpeningRemarks" style="border: none">
             <h1>DNA UNLOCKED<sup>&reg;</sup> Personalized Nutrition & Fitness Genome Report</h1>
             <h2>INTRODUCTION</h2>
             <p><b>Congratulations! You have now taken an important step to take control of your health.</b></p>
@@ -124,6 +124,38 @@
             {{Patient.FamilyHistory}}
             {{else}}
             None specified.
+        </section>
+        <section class="overview traits" style="border: none">
+            <div style="text-align: center; width: 100%">
+                <h2>Your results at a glance</h2>
+                <p style="font-style: italic; font-weight:bold">Click on a trait link to be taken to the detailed trait results.</p>
+
+                {{#each this}}
+                {{#ifIn @key "CARDIOMETABOLIC HEALTH" "FOOD REACTIONS & TASTE PERCEPTION" "NUTRITIONAL NEEDS & NUTRIENT METABOLISM"}}
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">{{@key}}</th>
+                        </tr>
+                        <tr>
+                            <th width="50%">Trait</th>
+                            <th width="50%">Your Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each this}}
+                        <tr>
+                            <td><a href="#{{cleanId @../key}}_{{cleanId @key}}">{{@key}}</a></td>
+                            <td style="text-align: center">
+                                {{#if interpretation.interpretation}}<b>{{interpretation.interpretation}}</b>{{else}}N/A{{/if}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{/ifIn}}
+                {{/each}}
+            </div>
         </section>
 
 </body>
