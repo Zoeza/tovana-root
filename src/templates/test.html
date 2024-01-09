@@ -205,9 +205,64 @@
                         </tr>
                     </tbody>
                 </table>
-
-
             </div>
+        </section>
+        <section class="findings traits" style="page-break-before: always" >
+
+                <table class="header">
+                    <tr>
+                        <td><h1>CARDIOMETABOLIC HEALTH</h1></td>
+                        <td rowspan="2" width="1%"><img src="{ /assets/TovanaHealth/Traits/}" /></td>
+                    </tr>
+                    <tr>
+                        <td><h2>Caffeine Metabolism</h2></td>
+                    </tr>
+                </table>
+
+                <h2>{{@key}}</h2>
+
+
+            <div class="sectionOverview">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">
+                            <img src="{#asset /assets/TovanaHealth/Traits/Trait{{cleanId @key}}.png @encoding=dataURI}" />
+                        </td>
+                        <td style="text-align:justify">
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <table class="findingSummary">
+                <thead>
+                    <tr>
+                        <th>Gene analyzed</th>
+                        <th>SNPs/Loci analyzed</th>
+                        <th style="white-space: wrap">Risk or<br/>effect variant</th>
+                        <th style="white-space: wrap">Risk or<br/>effect genotypes</th>
+                        <th>Your results</th>
+                        <th style="white-space: wrap">Scientific Strength/<br/>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr {{#isOdd @index}}class="even"></tr>
+                        <td rowspan="{{this.length}}"><i>{{@key}}</i></td>
+
+                        <tr>
+                        <td>{{rsID}}</td>
+                        <td>{{riskAllele}}</td>
+                        <td></td>
+                        <td>{variant.Genotype}}<b>{{variant.Genotype}}</b>N/A</td>
+                        <td>{{{stars stars}}}</td>
+                        </tr>
+
+                    {{/each}}
+                </tbody>
+            </table>
+          <p class="caption">N/A = Data Not Available</p>
+
         </section>
 
 </body>
