@@ -130,12 +130,10 @@
                 <h2>Your results at a glance</h2>
                 <p style="font-style: italic; font-weight:bold">Click on a trait link to be taken to the detailed trait results.</p>
 
-                {{#each this}}
-                {{#ifIn @key "CARDIOMETABOLIC HEALTH" "FOOD REACTIONS & TASTE PERCEPTION" "NUTRITIONAL NEEDS & NUTRIENT METABOLISM"}}
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="2">{{@key}}</th>
+                            <th colspan="2"></th>
                         </tr>
                         <tr>
                             <th width="50%">Trait</th>
@@ -143,18 +141,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each this}}
                         <tr>
-                            <td><a href="#{{cleanId @../key}}_{{cleanId @key}}">{{@key}}</a></td>
+                            <td><a href=""></a></td>
                             <td style="text-align: center">
-                                {{#if interpretation.interpretation}}<b>{{interpretation.interpretation}}</b>{{else}}N/A{{/if}}
+                                <b></b>{
                             </td>
                         </tr>
-                        {{/each}}
                     </tbody>
                 </table>
-                {{/ifIn}}
-                {{/each}}
             </div>
         </section>
 
