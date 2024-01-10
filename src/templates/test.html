@@ -393,7 +393,7 @@
                         </td>
 
                         <td style="width: 200px">
-                            {{{metabolizerTable interpretation.interpretation}}}
+                            {{{ interpretation.interpretation}}
                         </td>
 
                     </tr>
@@ -403,8 +403,8 @@
             <span class="withIcon longDesc">
                 <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}" />
                 <b class="heading">Recommendations:</b>
-                <p>{{{breakLinesUnsafe interpretation.recommendations}}}</p>
-                {{ interpretation.recommendationItems}}<p>{{{interpretation.recommendationItems}}}</p>
+                <p>{{breakLinesUnsafe interpretation.recommendations}}</p>
+                {{ interpretation.recommendationItems}}<p>{{interpretation.recommendationItems}}</p>
                 {{ content.generalRecommendations}}
                     {{ content.generalRecommendations}}
             </span>
