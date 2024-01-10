@@ -379,5 +379,46 @@
             <p class="caption">N/A = Data Not Available</p>
         </section>
 
+         <section class="reportFindingsElaborated traits" style="margin-top: 30px">
+            <span class="withIcon">
+                <img class="icon " src="{% static 'tovana_health_reports/assets/Icons/IconSummary.png/content.png' %}" style="float: left; margin-left: -50px" />
+                <table class="yourRisk">
+                    <tr>
+                        <td>
+                            <b class="heading">Your Risk:</b><br /><p>{{interpretation.result}}</p>
+                        </td>
+
+                        <td style="width: 200px">
+                            <img style="width: 150px" src="{#asset /assets/TovanaHealth/RiskMeter/Risk{{interpretation.riskMeter}}.png @encoding=dataURI}" />
+                        </td>
+
+                        <td style="width: 200px">
+                            {{{metabolizerTable interpretation.interpretation}}}
+                        </td>
+
+                    </tr>
+                </table>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}" />
+                <b class="heading">Recommendations:</b>
+                <p>{{{breakLinesUnsafe interpretation.recommendations}}}</p>
+                {{ interpretation.recommendationItems}}<p>{{{interpretation.recommendationItems}}}</p>
+                {{ content.generalRecommendations}}
+                    {{ content.generalRecommendations}}
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
+                {{insertScienceHeading content.science}}
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
+                <b class="heading">Populations studied:</b> {{content.populations}}
+            </span>
+        </section>
+
 </body>
 </html>
