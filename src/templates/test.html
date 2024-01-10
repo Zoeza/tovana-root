@@ -403,7 +403,7 @@
             <span class="withIcon longDesc">
                 <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}" />
                 <b class="heading">Recommendations:</b>
-                <p>{{breakLinesUnsafe interpretation.recommendations}}</p>
+                <p>{{ interpretation.recommendations}}</p>
                 {{ interpretation.recommendationItems}}<p>{{interpretation.recommendationItems}}</p>
                 {{ content.generalRecommendations}}
                     {{ content.generalRecommendations}}
@@ -411,7 +411,7 @@
 
             <span class="withIcon longDesc">
                 <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
-                {{insertScienceHeading content.science}}
+                {{ content.science}}
             </span>
 
             <span class="withIcon longDesc">
