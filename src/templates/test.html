@@ -207,6 +207,9 @@
                 </table>
             </div>
         </section>
+
+        <!-- CARDIOMETABOLIC HEALTH - Caffeine Metabolism section  -->
+
         <section class="findings traits" style="page-break-before: always"  id="cardiometabolic_health_caffeine_metabolism">
                 <table class="header">
                     <tr>
@@ -482,8 +485,8 @@
                 <b class="heading">Populations studied:</b> Emirati, Egyptian, Turkish, Japanese, Korean, Chinese, European, African, Ethiopian, Costa Rican
             </span>
         </section>
-        <!-- T2D Risk / Whole Grains & Fiber Benefits section  -->
 
+        <!-- T2D Risk / Whole Grains & Fiber Benefits section  -->
         <section class="findings traits" id="cardiometabolic_t2d_risk" style="margin-top: 30px" >
 
             <h2>T2D Risk / Whole Grains & Fiber Benefits</h2>
@@ -601,8 +604,8 @@
                 <b class="heading">Populations studied:</b> European, Mexican
             </span>
         </section>
-        <!-- Omega-3 and Omega-6 Levels section -->
 
+        <!-- Omega-3 and Omega-6 Levels section -->
         <section class="findings traits" id="omega_3_and_Omega_6" style="margin-top: 30px" >
 
             <h2>Omega-3 and Omega-6 Levels</h2>
@@ -706,7 +709,6 @@
                     </tr>
                 </table>
             </span>
-
             <span class="withIcon longDesc">
                 <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}"/>
                 <b class="heading">Recommendations:</b>
@@ -782,7 +784,7 @@
                     </tr>
                     </table>
             </span>
-             <span class="withIcon longDesc">
+            <span class="withIcon longDesc">
                 <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
                 <b class="heading">Science:</b>
                 <p>
@@ -808,10 +810,191 @@
                 </p>
 
             </span>
-
             <span class="withIcon longDesc">
                 <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
                 <b class="heading">Populations studied:</b> European, Singaporean Chinese, African, Hispanic
+            </span>
+        </section>
+
+         <!-- FOOD REACTIONS & TASTE PERCEPTION - Lactose Intolerance section -->
+
+        <section class="findings traits" style="page-break-before: always"  id="food_reaction_and_taste_perception_lactose_intolerance">
+                <table class="header">
+                    <tr>
+                        <td><h1>FOOD REACTIONS & TASTE PERCEPTION</h1></td>
+                        <td rowspan="2" width="1%"><img src="{% static 'tovana_health_reports/assets/Traits/TraitFOOD_REACTIONS_TASTE_PERCEPTION.jpg/content.jpg'%}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h2>Lactose Intolerance</h2></td>
+                    </tr>
+                </table>
+
+
+
+            <div class="sectionOverview">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">
+                            <img src="{% static 'tovana_health_reports/assets/Traits/TraitCaffeine_Metabolism.png/content.png'%}"/>
+                        </td>
+                        <td style="text-align:justify">
+                            <p>People with lactose intolerance are unable to fully digest the lactose sugar in milk and milk containing dairy products.
+                                Lactose intolerance is usually caused by the deficiency of lactase, a digestive enzyme produced in the small intestine that the body needs to digest lactose.
+                                People with true lactose intolerance may develop signs and symptoms including: diarrhea, nausea or vomiting, abdominal cramps, bloating and gas.
+                                In the most common form of lactose intolerance, known as primary lactose intolerance, the body produces enough lactase in childhood needed to digest milk for nutrition,
+                                but the production of lactase drops sharply by adulthood. This form of lactose intolerance was shown to be genetically determined and is most common in people of African,
+                                Asian, Hispanic and American Indian descent. It is believed that anevolutionary advantage in certain European populations evolved to allow for persistence of Lactase
+                                (i.e. the ability to digest lactose persists into adulthood) to obtain additional nutrition from milk and dairy foods.
+                                This ability is sometimes seen in non-European populations as well depending on the individuals genotype.
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <table class="findingSummary">
+                <thead>
+                    <tr>
+                        <th>Gene analyzed</th>
+                        <th>SNPs/Loci analyzed</th>
+                        <th style="white-space: wrap">Risk or<br/>effect variant</th>
+                        <th style="white-space: wrap">Risk or<br/>effect genotypes</th>
+                        <th>Your results</th>
+                        <th style="white-space: wrap">Scientific Strength/<br/>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3"><i>MCM6</i></td>
+                        <tr>
+                            <td>rs4988235</td>
+                            <td>G  </td>
+                            <td>CC</td>
+                            <td><b>..</b></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>rs182549</td>
+                            <td>C  </td>
+                            <td>GG</td>
+                            <td><b>CC</b></td>
+                            <td></td>
+                        </tr>
+
+
+                    </tr>
+
+
+
+
+                </tbody>
+            </table>
+            <p class="caption">N/A = Data Not Available</p>
+        </section>
+        <section class="reportFindingsElaborated traits" style="page-break-before: always">
+            <span class="withIcon">
+                <img class="icon " src="{% static 'tovana_health_reports/assets/Icons/IconSummary.png/content.png' %}" style="float: left; margin-left: -50px" />
+                <table class="yourRisk">
+                    <tr>
+                        <td>
+                            <b class="heading">Your Risk:</b><br /><p>{{interpretation.result}}</p>
+                        </td>
+
+                        <td style="width: 200px">
+                            <img style="width: 150px" src="{/assets/TovanaHealth/RiskMeter/Risk{{interpretation.riskMeter}}.png " />
+                        </td>
+
+                        <td style="width: 200px">
+                            {{ interpretation.interpretation}}
+                        </td>
+
+                    </tr>
+                </table>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}"/>
+                <b class="heading">Recommendations:</b>
+                <p> Caffeine can have many benefits, but also some negative effects if too much is consumed,
+                    so consuming the right amount of caffeine is the key to getting the benefits.
+                    The general recommendations are to consume a moderate amount of caffeine (up to 400 mg of caffeine per day)
+                    which is about 1-2 cups of coffee a day. Prior to exercise/sports activity current guidelines recommend
+                    ingestion of 3-9 mg/kg approximately 60 min prior to exercise. Due to the lack of
+                    genotype data you should follow the general recommendations for coffee consumption:</p>
+
+                <ul class="recommendations">
+                    <li>You may consume between 1-2 cups of coffee per day.</li>
+                    <li>Avoid drinking coffee or caffeine at night-time so that it does not affect your sleep.</li>
+                    <li>If you ever feel negative effects of caffeine, such as dehydration, shakiness, anxiety,
+                        or elevated heart rate/blood pressure, notify your doctor and adjust your caffeine intake.</li>
+                </ul>
+            </span>
+             <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
+                <b class="heading">Science:</b>
+                <p>
+                    Caffeine is primarily metabolized in the liver, almost exclusively by cytochrome P450 enzymes,
+                    into araxanthine, theophylline,and theobromine.
+                    There is inter-individual variability in the metabolism of caffeine and its effects,
+                    based on genetic variations in these enzymes. One of these enzymes, the CYP1A2 (or cytochrome P450 1A2) enzyme,
+                    has been extensively studied, and was shown to be responsible for up to 95% of all caffeine metabolism.
+                    For individuals that are carriers of the slow metabolizer genotype,
+                    research has shown that there is greater risk of non-fatal myocardial infarction (heart attack),
+                    so coffee consumption should be limited to no more than 1 cup per day.
+                </p>
+                <p>,
+                    There are multiple haplotypes (i.e. genotype combinations) for the <i>CYP1A2</i> gene,
+                    and each haplotype may be more prevalent in one population compared to the others.
+                    Multiple studies have shown that individuals of the *1F haplotype, i.e. carriers of the rs762551
+                    AA genotype, are rapid metabolizers of caffeine. As a result, these individuals can degrade caffeine and clear caffeine metabolites
+                    faster from the blood and would require more caffeine per day to respond and have the same effects of caffeine intake as slow
+                    metabolizers. In fact, it was shown that individuals who are fast metabolizers tend to drink more cups of coffee per day.
+                    The *1F haplotype is also considered a CYP1A2 enzyme inducer of other drugs (i.e. causes increased metabolism of other
+                    drugs/medications a person may be taking and result in reduced biologic activity of the drug).
+
+                </p>
+                 <p>
+                    <b>Caffeine Metabolizer Status</b>: In general, individuals who are homozygous or heterozygous for the *1F genotype are
+                    considered <b>ultra-rapid or rapid metabolizers</b> respectively, those that are homozygous for the *1A genotype are <b>normal metabolizers</b>
+                    those that are heterozygous for the ancestral *1A genotype are considered <b>intermediate metabolizers</b>, and those that are homozygous
+                    for all other genotypes are considered <b>slow metabolizers</b>.
+                 </p>
+                 <p>
+                    In general, Europeans have an increased carrier rate of the rapid metabolizer *1F haplotype, whereas among the
+                    Emirati Arab population, it has been shown that most of the population are carriers of the ancestral normal
+                    metabolizer *1A haplotype. Arabs in this region are very rarely slow metabolizers of caffeine.
+                 </p>
+                 <p>
+                    Another intergenic region <b>between the <i>CYP1A1</i> and <i>CYP1A2</i> genes</b> was found to be associated with caffeine consumption.
+                    The <b>rs2472297 T allele and rs2470893 T allele</b> were both found to increase caffeine consumption by a nominal amount
+                    per day. This effect may be due to greater clearance of caffeine due to higher CYP1A1 or CYP1A2 enzymatic activity.
+                 </p>
+
+                 <p>
+                    Significant evidence of association was also found at the intergenic SNP <b>rs382140</b> near the <b><i>NRCAM</i> gene</b>, a gene which is
+                    expressed in the brain and implicated in vulnerability to addiction. The <b>risk A allele</b> was associated with more coffee
+                    consumption in the large study of European ancestry individuals.
+                 </p>
+
+                 <p>
+                    The <b><i>AHR</i> gene</b> codes for a transcription factor that helps regulate xenobiotic chemical metabolizing enzyme genes such as the
+                    <i>CYP1A1</i> gene. Among the risk alleles that were discovered in the <i>AHR</i> gene is the <b>A allele</b> of the <b>rs6968554 SNP</b> and the
+                    <b>T allele</b> of the <b>rs10275488 SNP</b>.
+                 </p>
+
+                 <p>
+                    It should be noted that medications/drugs, epigenetic, and environmental factors, such as smoking (which induces caffeine clearance),
+                    can affect CYP1A2 enzymatic activity as well. In addition, polymorphisms in the <i>CYP1A2</i> and other genes not detected in this assay
+                    may also affect an individual's caffeine metabolism.
+                 </p>
+
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
+                <b class="heading">Populations studied:</b> Emirati, Egyptian, Turkish, Japanese, Korean, Chinese, European, African, Ethiopian, Costa Rican
             </span>
         </section>
 
