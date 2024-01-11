@@ -513,7 +513,6 @@
                     </tr>
                 </table>
             </div>
-
             <table class="findingSummary">
                 <thead>
                     <tr>
@@ -527,108 +526,88 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td rowspan="8"><i>CYP1A2</i></td>
+                        <td rowspan="2"><i>TCF7L2</i></td>
                         <tr>
-                            <td>rs2472300</td>
-                            <td>A</td>
-                            <td>AA, GA</td>
-                            <td><b>GG</b></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>rs762551</td>
-                            <td>A</td>
-                            <td>AA, CA</td>
-                            <td><b>AA</b></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>rs2472299</td>
-                            <td>G</td>
-                            <td>GG, GA</td>
-                            <td><b>GG</b></td>
-                            <td></td>
-                       </tr>
-                        <tr>
-                            <td>rs2069526</td>
-                            <td>G</td>
-                            <td>GG, GT</td>
-                            <td><b>TT</b></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>rs12720461</td>
-                            <td>T</td>
-                            <td>TT, TC  </td>
-                            <td><b>CC</b> </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>rs28399424</td>
-                            <td>T </td>
-                            <td>GG, GT</td>
-                            <td><b>CC</b></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>rs2472304</td>
-                            <td>A  </td>
-                            <td>AA, AG</td>
-                            <td><b>GA</b></td>
-                            <td></td>
-                        </tr>
-                    </tr>
-
-                    <tr class="even">
-                        <td rowspan="3"><i>CYP1A1-CYP1A2</i></td>
-                        <tr class="even">
-                            <td>rs2472297</td>
-                            <td>T</td>
-                            <td>TT, TC</td>
-                            <td><b>CC</b></td>
-                            <td></td>
-                        </tr>
-                        <tr class="even">
-                            <td>rs2470893</td>
+                            <td>rs12255372</td>
                             <td>T  </td>
-                            <td>TT, TC</td>
-                            <td><b>CC</b></td>
+                            <td>TT, TG</td>
+                            <td><b>GT</b></td>
                             <td></td>
                         </tr>
                     </tr>
 
-                    <tr>
-                        <td rowspan="3"><i>AHR</i></td>
-                        <tr>
-                            <td>rs6968554</td>
-                            <td>A  </td>
-                            <td>AA, AG</td>
-                            <td><b>AG</b></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>rs10275488</td>
-                            <td>T  </td>
-                            <td>TT, TC</td>
-                            <td><b>N/A </b></td>
-                            <td></td>
-                        </tr>
-                    </tr>
-                    <tr class="even">
-                        <td rowspan="2"><i>NRCAM</i></td>
-                        <tr class="even">
-                            <td>rs382140</td>
-                            <td>A  </td>
-                            <td>AA, AG</td>
-                            <td><b>GG</b></td>
-                            <td></td>
-                        </tr>
 
-                    </tr>
+
                 </tbody>
             </table>
             <p class="caption">N/A = Data Not Available</p>
         </section>
+        <section class="reportFindingsElaborated traits" style="page-break-before: always">
+            <span class="withIcon">
+                <img class="icon " src="{% static 'tovana_health_reports/assets/Icons/IconSummary.png/content.png' %}" style="float: left; margin-left: -50px" />
+                <table class="yourRisk">
+                    <tr>
+                        <td>
+                            <b class="heading">Your Risk:</b><br /><p>{{interpretation.result}}</p>
+                        </td>
+
+                        <td style="width: 200px">
+                            <img style="width: 150px" src="{/assets/TovanaHealth/RiskMeter/Risk{{interpretation.riskMeter}}.png " />
+                        </td>
+
+                        <td style="width: 200px">
+                            {{ interpretation.interpretation}}
+                        </td>
+
+                    </tr>
+                </table>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}"/>
+                <b class="heading">Recommendations:</b>
+                <p> Caffeine can have many benefits, but also some negative effects if too much is consumed,
+                    so consuming the right amount of caffeine is the key to getting the benefits.
+                    The general recommendations are to consume a moderate amount of caffeine (up to 400 mg of caffeine per day)
+                    which is about 1-2 cups of coffee a day. Prior to exercise/sports activity current guidelines recommend
+                    ingestion of 3-9 mg/kg approximately 60 min prior to exercise. Due to the lack of
+                    genotype data you should follow the general recommendations for coffee consumption:</p>
+
+                <ul class="recommendations">
+                    <li>Eat more whole grains throughout the day- check the ingredient list for foods you buy and look
+                        for 100% whole wheat,oats/oatmeal, brown rice, popcorn,whole rye or other whole grains listed as the first ingredient.</li>
+                    <li>Also try eating brown rice instead of white, whole grain pasta instead of regular white pasta,
+                        try oatmeal for breakfast and snack on air popped popcorn instead of chips!</li>
+                </ul>
+
+                </ul>
+            </span>
+             <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
+                <b class="heading">Science:</b>
+                <p>
+                    plays an important role in insulin synthesis, processing, and secretion. Variations or polymorphisms in this gene have
+                    The <b><i>TCF7L2</i> gene</b> is considered the strongest type 2 diabetes (T2D) locus identified in the genome, and evidence suggests it
+                    been shown to impaired insulin synthesis, processing, and secretion and thus raise type 2 diabetes risk. Studies have
+                    shown that a high-quality carbohydrate diet like that found in whole grains & fibers can modify the risks of these genetic
+                    variants. One such variant, the <b>rs12255372 T allele</b> was shown to be associated with greater risk of type 2 diabetes
+                    especially when an individual has high glycemic load and glycemic index (i.e. high insulin demand) due to poor diet.
+                    Lowering the insulin demand by eating whole grain carbohydrates helps to decrease the effects of this risk allele
+                    (genetic marker) and genotype. In another study, whole grain diet was suggestive in having greater effects of lowering
+                    HbA1c (measure of glucose over 3 months), total cholesterol and other anthropomorphic measures in individuals with the
+                    <b>GT</b> or <b>TT</b> genotype compared to individuals that are not on a whole grain diet. The benefit of whole grain and fiber diet
+                    was also observed with the <b>GG genotype</b>, with even greater effects at modifying diabetes measures. Other genetic and
+                    environmental factors can also have an important impact on risk of type 2 diabetes and should be considered.
+                </p>
+
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
+                <b class="heading">Populations studied:</b> European, Mexican
+            </span>
+        </section>
+
 
 
 </body>
