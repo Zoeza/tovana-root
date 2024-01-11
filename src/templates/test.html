@@ -482,6 +482,7 @@
                 <b class="heading">Populations studied:</b> Emirati, Egyptian, Turkish, Japanese, Korean, Chinese, European, African, Ethiopian, Costa Rican
             </span>
         </section>
+        <!-- T2D Risk / Whole Grains & Fiber Benefits section  -->
 
         <section class="findings traits" id="cardiometabolic_t2d_risk" style="margin-top: 30px" >
 
@@ -600,7 +601,212 @@
                 <b class="heading">Populations studied:</b> European, Mexican
             </span>
         </section>
+        <!-- Omega-3 and Omega-6 Levels section -->
 
+        <section class="findings traits" id="omega_3_and_Omega_6" style="margin-top: 30px" >
+
+            <h2>Omega-3 and Omega-6 Levels</h2>
+
+            <div class="sectionOverview">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">
+                            <img src="{% static 'tovana_health_reports/assets/Traits/TraitOmega-3_and_Omega-6_Levels.png/content.png'%}"/>
+                        </td>
+                        <td style="text-align:justify">
+                            <p>Omega-3 and omega-6 fats are both \"polyunsaturated fats\" (or PUFAs), which have been shown to have
+                                beneficial effects on heart health, as well as, allergies, mental health, cognitive development
+                                and mortality. Our bodies need both fats but do not make either of them, so we must get them from food.
+                                It is good to maintain a 1:1 ratio of omega-6 to omega-3 fats so be mindful of what you
+                                eat, especially if you follow a western diet which has high levels of omega-6. Omega-6 has pro-inflammatory
+                                effects and too much omega-6 fats can be bad for you. Some of the effects of too much omega-6 include
+                                increase in blood pressure, blood clots that can cause heart attack and stroke, and can cause your body
+                                to retain water.
+                            </p>
+
+                            <p>These essential polyunsaturated fats can be found in fatty fish like salmon, mackerel, albacore tuna,
+                                trout and sardines, as well as plant foods like flaxseeds, walnuts, chia seeds, plant-based oils
+                                (canola, soy, corn, safflower and soybean oil). Eating the right amount of these polyunsaturated fats
+                                may have heart healthy benefits including lowering blood pressure, controlling blood sugar and slowing
+                                the buildup of plaque in arteries. Consuming too much of these foods can lead to weight gain because
+                                they are high in calories, so portion control is important. Polymorphisms (variants) of genes encoding
+                                enzymes in the metabolism of PUFAs contribute to plasma concentrations of fatty acids and may affect an individual's dietary
+                                requirements of these fats.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table class="findingSummary">
+                <thead>
+                    <tr>
+                        <th>Gene analyzed</th>
+                        <th>SNPs/Loci analyzed</th>
+                        <th style="white-space: wrap">Risk or<br/>effect variant</th>
+                        <th style="white-space: wrap">Risk or<br/>effect genotypes</th>
+                        <th>Your results</th>
+                        <th style="white-space: wrap">Scientific Strength/<br/>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td rowspan="2"><i>FADS1</i></td>
+                        <tr>
+                            <td>rs174538</td>
+                            <td>A   </td>
+                            <td>AA, AG</td>
+                            <td><b>AA</b></td>
+                            <td></td>
+                        </tr>
+                    </tr>
+
+                    <tr class="even">
+                        <td rowspan="2"><i>ELOVL2</i></td>
+                        <tr class="even">
+                            <td>rs3734398</td>
+                            <td>C    </td>
+                            <td>CC, CT</td>
+                            <td><b>TT</b></td>
+                            <td></td>
+                        </tr>
+                    </tr>
+
+                    <tr >
+                        <td rowspan="2"><i>NOS3</i></td>
+                        <tr>
+                            <td>rs1799983</td>
+                            <td>T </td>
+                            <td>AA, AC </td>
+                            <td><b>GG</b></td>
+                            <td></td>
+                        </tr>
+                    </tr>
+
+                </tbody>
+            </table>
+            <p class="caption">N/A = Data Not Available</p>
+        </section>
+        <section class="reportFindingsElaborated traits"  style="margin-top: 30px">
+            <span class="withIcon">
+                <img class="icon " src="{% static 'tovana_health_reports/assets/Icons/IconSummary.png/content.png' %}" style="float: left; margin-left: -50px" />
+                <table class="yourRisk">
+                    <tr>
+                        <td>
+                            <b class="heading">Your Risk:</b><br /><p>{{interpretation.result}}</p>
+                        </td>
+
+                        <td style="width: 200px">
+                            <img style="width: 150px" src="{/assets/TovanaHealth/RiskMeter/Risk{{interpretation.riskMeter}}.png " />
+                        </td>
+
+                        <td style="width: 200px">
+                            {{ interpretation.interpretation}}
+                        </td>
+
+                    </tr>
+                </table>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}"/>
+                <b class="heading">Recommendations:</b>
+                <ul class="recommendations">
+                    <li>Eat more whole grains throughout the day- check the ingredient list for foods you buy and look
+                        for 100% whole wheat,oats/oatmeal, brown rice, popcorn,whole rye or other whole grains listed as the first ingredient.</li>
+                    <li>Also try eating brown rice instead of white, whole grain pasta instead of regular white pasta,
+                        try oatmeal for breakfast and snack on air popped popcorn instead of chips!</li>
+                </ul>
+
+                </ul>
+
+                <table class="recommendations">
+                    <tr>
+                        <td>
+                            <table style="width: 300px">
+                                <thead>
+                                <tr>
+                                    <th>Age (years)</th>
+                                    <th>Omega-3 AI (g/day)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>&#8805; 19 (male)</td><td>1.6</td></tr>
+                                    <tr><td>&#8805; 19 (female)</td><td>1.1</td></tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan=\"2\">AI: Adequate Intake<br />Sources: NIH</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <table style="width: 300px; margin-top: 30px; margin-bottom:0px; padding-bottom:0px">
+                                <thead>
+                                <tr>
+                                    <th>Food Sources of Omega-6</th>
+                                    <th>g (grams)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Flaxseed oil, 1 tbsp</td><td>8.5</td></tr>
+                                    <tr><td>Canola oil, 1 tbsp</td><td>1.3</td></tr>
+                                    <tr><td>Flaxseed, whole, 1 tbsp</td><td>2.2</td></tr>
+                                    <tr><td>English walnuts, 1 tbsp</td><td>0.7</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td style="text-align: right">
+                            <table style="width: 400px">
+                                <thead>
+                                <tr>
+                                    <th>Food Sources of Omega-3</th>
+                                    <th>g (grams)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Flaxseed oil, 1 tbsp</td><td>7.26</td></tr>
+                                    <tr><td>Chia seeds, 1 ounce</td><td>5.06</td></tr>
+                                    <tr><td>English walnuts, 1 ounce</td><td>2.56</td></tr>
+                                    <tr><td>Flaxseed, whole, 1 tbsp</td><td>2.35</td></tr>
+                                    <tr><td>Salmon, Atlantic, wild, cooked, 3 ounces</td><td>1.57</td></tr>
+                                    <tr><td>Canola oil, 1 tbsp</td><td>1.28</td></tr>
+                                    <tr><td>Sardines, canned in tomato sauce, drained, 3 ounces</td><td>1.19</td></tr>
+                                    <tr><td>Soybean oil, 1 tbsp</td><td>0.92</td></tr>
+                                    <tr><td>Mayonnaise, 1 tbsp</td><td>0.74</td></tr>
+                                    <tr><td>Sea bass, cooked, 3 ounces</td><td>0.65</td></tr>
+                                    <tr><td>Edamame, frozen, prepared, &#189; cup</td><td>0.28</td></tr>
+                                    <tr><td>Shrimp, cooked, 3 ounces</td><td>0.24</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </table>
+            </span>
+             <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
+                <b class="heading">Science:</b>
+                <p>
+                    plays an important role in insulin synthesis, processing, and secretion. Variations or polymorphisms in this gene have
+                    The <b><i>TCF7L2</i> gene</b> is considered the strongest type 2 diabetes (T2D) locus identified in the genome, and evidence suggests it
+                    been shown to impaired insulin synthesis, processing, and secretion and thus raise type 2 diabetes risk. Studies have
+                    shown that a high-quality carbohydrate diet like that found in whole grains & fibers can modify the risks of these genetic
+                    variants. One such variant, the <b>rs12255372 T allele</b> was shown to be associated with greater risk of type 2 diabetes
+                    especially when an individual has high glycemic load and glycemic index (i.e. high insulin demand) due to poor diet.
+                    Lowering the insulin demand by eating whole grain carbohydrates helps to decrease the effects of this risk allele
+                    (genetic marker) and genotype. In another study, whole grain diet was suggestive in having greater effects of lowering
+                    HbA1c (measure of glucose over 3 months), total cholesterol and other anthropomorphic measures in individuals with the
+                    <b>GT</b> or <b>TT</b> genotype compared to individuals that are not on a whole grain diet. The benefit of whole grain and fiber diet
+                    was also observed with the <b>GG genotype</b>, with even greater effects at modifying diabetes measures. Other genetic and
+                    environmental factors can also have an important impact on risk of type 2 diabetes and should be considered.
+                </p>
+
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
+                <b class="heading">Populations studied:</b> European, Mexican
+            </span>
+        </section>
 
 
 </body>
