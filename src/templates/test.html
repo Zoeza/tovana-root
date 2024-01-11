@@ -817,7 +817,6 @@
         </section>
 
          <!-- FOOD REACTIONS & TASTE PERCEPTION - Lactose Intolerance section -->
-
         <section class="findings traits" style="margin-top: 30px"  id="food_reaction_and_taste_perception_lactose_intolerance">
                 <table class="header">
                     <tr>
@@ -942,6 +941,141 @@
                     enzyme and are less likely to be lactose intolerant. It should be noted that other polymorphisms or variants may play an
                     important role in the persistence (or deficiency) of the lactase enzyme in other (non-European) ethnic populations.
                 </p>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
+                <b class="heading">Populations studied:</b> European, Mexican
+            </span>
+        </section>
+
+         <!-- FOOD REACTIONS & TASTE PERCEPTION - Bitter Taste Perception -->
+        <section class="findings traits" id="food_reaction_and_taste_perception_bitter_taste_perception" style="margin-top: 30px" >
+
+            <h2>Bitter Taste Perception</h2>
+
+            <div class="sectionOverview">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">
+                            <img src="{% static 'tovana_health_reports/assets/Traits/TraitBitter_Taste_Perception.png/content.png'%}"/>
+                        </td>
+                        <td style="text-align:justify">
+                            <p>
+                                Bitterness or bitter taste is one of the five taste sensations and is one that humans are particularly sensitive to.
+                                Bitter taste is described as sharp, strong, or disagreeable in flavor, but when combined with other flavor elements,
+                                it can provide dimension and balance. Compounds that have an alkaline pH, such as baking soda, often have a bitter flavor.
+                                Some foods that are considered bitter are dark, leafy green vegetables (e.g. broccoli, Brussel sprouts, kale),
+                                grapefruit, bitter melon, mustard greens, olives, cocoa (or dark chocolate), dark coffee, and citrus peels.
+                            </p>
+
+
+                            <p>Some people can sense the bitter taste of food more than others. This means that one person might find a food to be more bitter
+                                tasting than someone else, even if it is the same food. This ability to detect bitterness is thought to have evolved as a defense
+                                mechanism to protect us from toxic plants and other substances, which often taste bitter.
+                                It is known that our ability to taste bitterness is inherited in adominant fashion, but some individuals are born with two
+                                recessive alleles (versions of the gene) andare not able to taste bitterness of certain compounds or chemicals. Your ability
+                                to taste bitterness may affect the way you experience certain foods and thus your dietary choices and your health.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table class="findingSummary">
+                <thead>
+                    <tr>
+                        <th>Gene analyzed</th>
+                        <th>SNPs/Loci analyzed</th>
+                        <th style="white-space: wrap">Risk or<br/>effect variant</th>
+                        <th style="white-space: wrap">Risk or<br/>effect genotypes</th>
+                        <th>Your results</th>
+                        <th style="white-space: wrap">Scientific Strength/<br/>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4"><i>TAS2R38</i></td>
+                        <tr>
+                            <td>rs713598</td>
+                            <td>G  </td>
+                            <td>CC or CG (Taster) CC GG (Non-Taster)</td>
+                            <td><b>CC</b></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>rs1726866</td>
+                            <td>A  </td>
+                            <td>GG or AG (Taster) GG AA (Non-Taster)</td>
+                            <td><b>GG</b></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>rs10246939</td>
+                            <td>C</td>
+                            <td>TT or CT (Taster) TC CC (Non-Taster)</td>
+                            <td><b>TC</b></td>
+                            <td></td>
+                        </tr>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+            <p class="caption">N/A = Data Not Available</p>
+        </section>
+        <section class="reportFindingsElaborated traits"  style="margin-top: 30px">
+            <span class="withIcon">
+                <img class="icon " src="{% static 'tovana_health_reports/assets/Icons/IconSummary.png/content.png' %}" style="float: left; margin-left: -50px" />
+                <table class="yourRisk">
+                    <tr>
+                        <td>
+                            <b class="heading">Your Risk:</b><br /><p>{{interpretation.result}}</p>
+                        </td>
+
+                        <td style="width: 200px">
+                            <img style="width: 150px" src="{/assets/TovanaHealth/RiskMeter/Risk{{interpretation.riskMeter}}.png " />
+                        </td>
+
+                        <td style="width: 200px">
+                            {{ interpretation.interpretation}}
+                        </td>
+
+                    </tr>
+                </table>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}"/>
+                <b class="heading">Recommendations:</b>
+                <ul class="recommendations">
+                    <li>Eat more whole grains throughout the day- check the ingredient list for foods you buy and look
+                        for 100% whole wheat,oats/oatmeal, brown rice, popcorn,whole rye or other whole grains listed as the first ingredient.</li>
+                    <li>Also try eating brown rice instead of white, whole grain pasta instead of regular white pasta,
+                        try oatmeal for breakfast and snack on air popped popcorn instead of chips!</li>
+                </ul>
+
+                </ul>
+            </span>
+             <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
+                <b class="heading">Science:</b>
+                <p>
+                    plays an important role in insulin synthesis, processing, and secretion. Variations or polymorphisms in this gene have
+                    The <b><i>TCF7L2</i> gene</b> is considered the strongest type 2 diabetes (T2D) locus identified in the genome, and evidence suggests it
+                    been shown to impaired insulin synthesis, processing, and secretion and thus raise type 2 diabetes risk. Studies have
+                    shown that a high-quality carbohydrate diet like that found in whole grains & fibers can modify the risks of these genetic
+                    variants. One such variant, the <b>rs12255372 T allele</b> was shown to be associated with greater risk of type 2 diabetes
+                    especially when an individual has high glycemic load and glycemic index (i.e. high insulin demand) due to poor diet.
+                    Lowering the insulin demand by eating whole grain carbohydrates helps to decrease the effects of this risk allele
+                    (genetic marker) and genotype. In another study, whole grain diet was suggestive in having greater effects of lowering
+                    HbA1c (measure of glucose over 3 months), total cholesterol and other anthropomorphic measures in individuals with the
+                    <b>GT</b> or <b>TT</b> genotype compared to individuals that are not on a whole grain diet. The benefit of whole grain and fiber diet
+                    was also observed with the <b>GG genotype</b>, with even greater effects at modifying diabetes measures. Other genetic and
+                    environmental factors can also have an important impact on risk of type 2 diabetes and should be considered.
+                </p>
+
             </span>
 
             <span class="withIcon longDesc">
