@@ -209,7 +209,6 @@
         </section>
 
         <!-- CARDIOMETABOLIC HEALTH - Caffeine Metabolism section  -->
-
         <section class="findings traits" style="page-break-before: always"  id="cardiometabolic_health_caffeine_metabolism">
                 <table class="header">
                     <tr>
@@ -1252,6 +1251,214 @@
             <span class="withIcon longDesc">
                 <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
                 <b class="heading">Populations studied:</b> European
+            </span>
+        </section>
+
+        <!-- NUTRITIONAL NEEDS & NUTRIENT METABOLISM - Vitamin B12 (Cobalamin) -->
+        <section class="findings traits" style="margin-top: 30px"  id=" nutrition_needs_and_nutrient_metabolism_vitamin_b12 ">
+
+            <h2>Vitamin B12 (Cobalamin)</h2>
+
+            <div class="sectionOverview">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">
+                            <img src="{% static 'tovana_health_reports/assets/Traits/TraitVitamin_B12_Cobalamin.png/content.png'%}"/>
+                        </td>
+                        <td style="text-align:justify">
+                            <p>
+                                Vitamin B12 is important to keep your nerve and red blood cells
+                                healthy and helps breakdown the protein that you eat so your body can use it for other functions.
+                            </p>
+
+                            <p>
+                                Vitamin B12 deficiency occurs when the body does not get enough B12 from food or has a difficult time absorbing B12.
+                                This is more common in older adults, those following vegetarian or vegan diets or those with digestive disorders.
+                                Symptoms of B12 deficiency can include anemia (low blood cells), loss of balance, numbness or tingling, weakness or fatigue and poor memory.
+                                It has been shown in several studies that genetic variations or polymorphisms serves
+                                as an independent risk factor for low vitamin B12 blood serum levels or deficiency.
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <table class="findingSummary">
+                <thead>
+                    <tr>
+                        <th>Gene analyzed</th>
+                        <th>SNPs/Loci analyzed</th>
+                        <th style="white-space: wrap">Risk or<br/>effect variant</th>
+                        <th style="white-space: wrap">Risk or<br/>effect genotypes</th>
+                        <th>Your results</th>
+                        <th style="white-space: wrap">Scientific Strength/<br/>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3"><i>FUT2</i></td>
+                        <tr>
+                            <td>rs602662</td>
+                            <td>G </td>
+                            <td>GG or AG </td>
+                            <td><b> GA</b></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>rs492602</td>
+                            <td>A</td>
+                            <td>AA or AG </td>
+                            <td><b> GA</b></td>
+                            <td></td>
+                        </tr>
+
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2"><i>FUT6</i></td>
+                        <tr>
+                            <td>rs3760775</td>
+                            <td>G </td>
+                            <td> GG or TG  </td>
+                            <td><b> GG</b></td>
+                            <td></td>
+                        </tr>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2"><i>CUBN</i></td>
+                        <tr>
+                            <td>rs1801222</td>
+                            <td>A </td>
+                            <td> AA or AG  </td>
+                            <td><b> GG</b></td>
+                            <td></td>
+                        </tr>
+                    </tr>
+
+                </tbody>
+            </table>
+            <p class="caption">N/A = Data Not Available</p>
+        </section>
+        <section class="reportFindingsElaborated traits" style="margin-top: 30px">
+            <span class="withIcon">
+                <img class="icon " src="{% static 'tovana_health_reports/assets/Icons/IconSummary.png/content.png' %}" style="float: left; margin-left: -50px" />
+                <table class="yourRisk">
+                    <tr>
+                        <td>
+                            <b class="heading">Your Risk:</b><br /><p>{{interpretation.result}}</p>
+                        </td>
+
+                        <td style="width: 200px">
+                            <img style="width: 150px" src="{/assets/TovanaHealth/RiskMeter/Risk{{interpretation.riskMeter}}.png " />
+                        </td>
+
+                        <td style="width: 200px">
+                            {{ interpretation.interpretation}}
+                        </td>
+
+                    </tr>
+                </table>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}"/>
+                <b class="heading">Recommendations:</b>
+                <p> Based on your genotype, you have an intermediate risk of being deficient in vitamin B12 if you do not maintain a source of vitamin B12 in your diet.
+                    Eating foods with vitamin B12 can help prevent and treat deficiencies.</p>
+
+                <ul class="recommendations">
+                    <li>Vitamin B2 is found in many foods which can help prevent and treat deficiencies. Some of the best sources of vitamin B2 are eggs, lean meats, low-fat milk,
+                        green vegetables (such as asparagus, broccoli and spinach), fortified cereals, bread and grain products..</li>
+                    <li>Supplements is likely not necessary because your riboflavin levels are likely only moderately low,
+                        but speak with your doctor about further testing and supplements as needed.</li>
+
+                </ul>
+
+                <table class="recommendations">
+                    <tr>
+                        <td>
+                            <table style="width: 300px">
+                                <thead>
+                                <tr>
+                                    <th>Age (years)</th>
+                                    <th>RDA (mg/day)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr><td>4-18 </td><td>2.4</td></tr>
+                                <tr><td>14-18 (pregnant woman)</td><td>2.6</td></tr>
+                                <tr><td>14-18 (lactating woman)</td><td>2.8</td></tr>
+                                <tr><td>&#8805; 19</td><td>2.4</td></tr>
+                                <tr><td>&#8805; 19 (pregnant woman )</td><td>2.6</td></tr>
+                                <tr><td>&#8805; 19 (lactating woman)</td><td>2.8</td></tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan=\"2\">Sources: NIH</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </td>
+                        <td style="text-align: right">
+                            <table style="width: 400px">
+                                <thead>
+                                <tr>
+                                <th>Food Sources of Vitamin B12</th>
+                                <th>mg (milligrams)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Clams, cooked, 3 oz</td><td>84.1</td></tr>
+                                    <tr><td>Liver, beef, cooked, 3 oz</td><td>70.7</td></tr>
+                                    <tr><td>Breakfast cereal, fortified with 100% DV for vitamin B 12, 1 serving</td><td>6</td></tr>
+                                    <tr><td>Trout, rainbow, wild, cooked, 3 oz</td><td>5.4</td></tr>
+                                    <tr><td>Salmon, sockeye, cooked, 3 oz</td><td>4.8</td></tr>
+                                    <tr><td>Tuna fish, light, canned in water, 3 oz</td><td>2.5</td></tr>
+                                    <tr><td>Egg, cooked, 2 large</td><td>1.5-1.6</td></tr>
+                                    <tr><td>ABreakfast cereals, fortified with 25% of the 1.5 DV for vitamin B12, 1 serving</td><td>1.5</td></tr>
+                                    <tr><td>Beef, top sirloin, broiled, 3 ounces </td><td>1.4</td></tr>
+                                    <tr><td>Cottage cheese, 1 cup </td><td>1.4</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </span>
+             <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
+                <b class="heading">Science:</b>
+                <p>
+                    There are multiple factors that contribute to variationsin B vitamin levels in humans
+                    and genetics plays a an important role to influence these levels.
+                </p>
+                 <P>
+                     Fucosyltransferases encoded by the FUT genes have been shown to influence vitamin B12 concentrations.
+                     One mechanism for this is by adding fucose to maintain the intestine cell surface glycan structure and their metabolism,
+                     thereby mediating the hosts interaction with intestinal microbiota influencing its composition.
+                     Well studied polymorphisms in the FUT2 gene have shown strong associations with vitamin B12 levels.
+                     The G allele of the rs602662 and the A allele of the rs492602 polymorphism are two such variations that confer risk for B12 deficiency.
+                     Differences in Another SNP (single nucleotide polymorphism) rs3760775 positioned intergenic 5'-upstream of the FUT6 gene,
+                     was also strongly associated with vitamin B12 levels, with the A allele shown in the study
+                     to cause an increase in B12 levels (and thus the G allele is considered the risk allele for B12 deficiency).
+                 </P>
+                 <p>
+                     The protein expressed by the <i><b>CUBN </b></i> gene forms a receptor complex responsible for vitamin B12 uptake in the ileum of the small intestine.
+                     There have been a number of studies that have shown that variants or polymorphisms in the <i><b>CUBN </b></i> gene are associated with vitamin B12 deficiency.
+                     In one of these studies, the reference <b> A allele </b> of the  <i><b>CUBN </b></i> <b> 1041A>G (rs1801222) polymorphism </b> was associated with a decrease in vitamin B12
+                     levels and individuals who have one or two copies of the A allele (i.e. with an <b> AA or AG genotype </b>) tend to also have increased homocysteine
+                     levels as a result of B12 deficiency,putting them at risk for cardiovascular disease (such as ischemic stroke).
+
+
+                 </p>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
+                <b class="heading">Populations studied:</b> European, African, Indo-European, Dravidian
+
             </span>
         </section>
 
