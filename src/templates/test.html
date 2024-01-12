@@ -1420,7 +1420,7 @@
                                     <tr><td>Egg, cooked, 2 large</td><td>1.5-1.6</td></tr>
                                     <tr><td>ABreakfast cereals, fortified with 25% of the 1.5 DV for vitamin B12, 1 serving</td><td>1.5</td></tr>
                                     <tr><td>Beef, top sirloin, broiled, 3 ounces </td><td>1.4</td></tr>
-                                    <tr><td>Cottage cheese, 1 cup </td><td>1.4</td></tr>
+                                    <tr><td>Cottage cheese, 1 cup </td><td>1.1-1.5</td></tr>
                                 </tbody>
                             </table>
                         </td>
@@ -1458,6 +1458,194 @@
             <span class="withIcon longDesc">
                 <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
                 <b class="heading">Populations studied:</b> European, African, Indo-European, Dravidian
+
+            </span>
+        </section>
+
+    <!-- NUTRITIONAL NEEDS & NUTRIENT METABOLISM - Vitamin C (Ascorbic Acid) -->
+        <section class="findings traits" style="margin-top: 30px"  id=" nutrition_needs_and_nutrient_metabolism_vitamin_c ">
+
+            <h2>Vitamin B12 (Cobalamin)</h2>
+
+            <div class="sectionOverview">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">
+                            <img src="{% static 'tovana_health_reports/assets/Traits/TraitVitamin_C_Ascorbic_Acid.png/content.png'%}"/>
+                        </td>
+                        <td style="text-align:justify">
+                            <p>
+                               Vitamin C is (or L-ascorbic acid) is an essential part of the human diet needed for growth and repair of tissues in all parts of the body.
+                                Vitamin C is used to heal wounds, repair and maintain parts of bones and teeth and works to block cell damage.
+                            </p>
+
+                            <p>
+                                Consuming too little vitamin C can lead to deficiency. Symptoms can include low blood cells,
+                                bleeding gums, difficulty fighting infections, swollen joints and weak teeth.
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <table class="findingSummary">
+                <thead>
+                    <tr>
+                        <th>Gene analyzed</th>
+                        <th>SNPs/Loci analyzed</th>
+                        <th style="white-space: wrap">Risk or<br/>effect variant</th>
+                        <th style="white-space: wrap">Risk or<br/>effect genotypes</th>
+                        <th>Your results</th>
+                        <th style="white-space: wrap">Scientific Strength/<br/>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2"><i>SLC23A1</i></td>
+                        <tr>
+                            <td>rs33972313</td>
+                            <td>T  </td>
+                            <td>TT or CT </td>
+                            <td><b> CC</b></td>
+                            <td></td>
+                        </tr>
+
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+            <p class="caption">N/A = Data Not Available</p>
+        </section>
+        <section class="reportFindingsElaborated traits" style="margin-top: 30px">
+            <span class="withIcon">
+                <img class="icon " src="{% static 'tovana_health_reports/assets/Icons/IconSummary.png/content.png' %}" style="float: left; margin-left: -50px" />
+                <table class="yourRisk">
+                    <tr>
+                        <td>
+                            <b class="heading">Your Risk:</b><br /><p>{{interpretation.result}}</p>
+                        </td>
+
+                        <td style="width: 200px">
+                            <img style="width: 150px" src="{/assets/TovanaHealth/RiskMeter/Risk{{interpretation.riskMeter}}.png " />
+                        </td>
+
+                        <td style="width: 200px">
+                            {{ interpretation.interpretation}}
+                        </td>
+
+                    </tr>
+                </table>
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconRecommendations.png/content.png' %}"/>
+                <b class="heading">Recommendations:</b>
+                <p>Based on your genotype, you have a low risk of being deficient in vitamin C if you do not maintain a source of vitamin C in your diet.</p>
+
+                <ul class="recommendations">
+                    <li>Vitamin B2 is found in many foods which can help prevent and treat deficiencies. Some of the best sources of vitamin B2 are eggs, lean meats, low-fat milk,
+                        green vegetables (such as asparagus, broccoli and spinach), fortified cereals, bread and grain products..</li>
+                    <li>Supplements is likely not necessary because your riboflavin levels are likely only moderately low,
+                        but speak with your doctor about further testing and supplements as needed.</li>
+
+                </ul>
+
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconWarning.png/content.png' %}"/>
+                <p>
+                    Smokers need to consume 35 mg/day more dietary vitamin C to make up for vitamin C depletion caused by smoking.
+                    A Tolerable Upper Intake Level of 2,000 mg/day is recommended for adults by the National Institute of Health in the US and Institute of Medicine of the National Academies.
+                    Although high levels of vitamin C from supplements ormedical prescriptions are generally harmless for most individuals, some people do have adverse reactions.
+
+                </p>
+                
+                <table class="recommendations">
+                    <tr>
+                        <td>
+                            <table style="width: 300px">
+                                <thead>
+                                <tr>
+                                    <th>Age (years)</th>
+                                    <th>RDA (mg/day)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>14-18 (male) </td><td>75</td></tr>
+                                    <tr><td>14-18 (female)</td><td>65</td></tr>
+                                    <tr><td>14-18 (pregnant women)</td><td>80</td></tr>
+                                    <tr><td>14-18 (lactating women)</td><td>75</td></tr>
+                                    <tr><td>&#8805; 19 (male)</td><td>90</td></tr>
+                                    <tr><td>&#8805; 19 (female )</td><td>75</td></tr>
+                                    <tr><td>&#8805; 19  (pregnant women)</td><td>85</td></tr>
+                                    <tr><td>&#8805; 19  (lactating women)</td><td>120</td></tr>
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan=\"2\">Sources: NIH</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </td>
+                        <td style="text-align: right">
+                            <table style="width: 400px">
+                                <thead>
+                                <tr>
+                                <th>Food Sources of Vitamin C</th>
+                                <th>mg (milligrams)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Red pepper, sweet, raw, 1⁄2 cup</td><td>95</td></tr>
+                                    <tr><td>Orange juice, 3⁄4 cup</td><td>93</td></tr>
+                                    <tr><td>Orange, 1 medium</td><td>70</td></tr>
+                                    <tr><td>Grapefruit juice, 3⁄4 cup</td><td>70</td></tr>
+                                    <tr><td>Grapefruit, 1⁄2 medium</td><td>65</td></tr>
+                                    <tr><td>Kiwi fruit, 1 medium</td><td>64</td></tr>
+                                    <tr><td>Green pepper, sweet, raw, 1⁄2 cup</td><td>60</td></tr>
+                                    <tr><td>Broccoli, cooked, 1⁄2 cup</td><td>51</td></tr>
+                                    <tr><td>Strawberries, fresh, sliced, 1⁄2 cup </td><td>49</td></tr>
+                                    <tr><td>Brussels sprouts, cooked, 1⁄2 cup </td><td>48</td></tr>
+                                    <tr><td>Tomato juice, 3⁄4 cup </td><td>33</td></tr>
+                                    <tr><td>Cantaloupe, 1⁄2 cup </td><td>29</td></tr>
+                                    <tr><td>Cabbage, cooked, 1⁄2 cup </td><td>28</td></tr>
+                                    <tr><td>Cauliflower, raw, 1⁄2 cup </td><td>26</td></tr>
+                                    <tr><td>Potato, baked, 1 medium</td><td>17</td></tr>
+                                    <tr><td>Tomato, raw, 1 medium</td><td>17</td></tr>
+
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </span>
+
+             <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconScienceOfDisease.png/content.png' %}"/>
+                <b class="heading">Science:</b>
+
+                 <P>
+                     Humans are unable to produce vitamin C (L-ascorbic acid) due to a series of loss-of function mutations in the gulonolactoneoxidase (GULO) locus.
+                     As a result, vitamin C needs to be acquired from dietary sources. Vitamin C deficiency has been shown to be the cause of scurvy and complex chronic diseases,
+                     such as cardiovascular diseases,due to the contributions of vitamin C as an antioxidant and in the synthesis of biological entities such as hormones and collagen.
+                     Active transport of vitamin C into the cell is achieved by co-transporter proteins, one of which is produced by the <b> <i>SLC23A1</i> gene </b> that is responsible
+                     for the absorption of dietary vitamin C in the intestines and its reabsorption in the kidneys.
+                     It has been found that individuals with the <b>  T risk allele in the rs33972313 SNP </b> found in exon 8 of the SLC23A1 gene are likely to have lower
+                     circulating levels of Vitamin C due to a conformational change or protein failure, impairing the activetransport of the vitamin.
+
+                 </P>
+
+            </span>
+
+            <span class="withIcon longDesc">
+                <img class="icon" src="{% static 'tovana_health_reports/assets/Icons/IconPopulationStudied.png/content.png' %}"/>
+                <b class="heading">Populations studied:</b> European
 
             </span>
         </section>
